@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eee263bef41c494e8748f9bb06b5c33, type: 3}
+  m_Name: GruntAlerted
+  m_EditorClassIdentifier: 
+  dialoguePieces:
+  - ID: 01
+    image: {fileID: 21300000, guid: 126f8a5d042fab945a9ddb41f083a9c8, type: 3}
+    text: "\u521A\u521A\u662F\u4E0D\u662F\u8DD1\u8FC7\u53BB\u4E00\u4E2A\u4EBA\uFF1F"
+    playTineLine: 0
+    options:
+    - text: "\u6CA1\u770B\u89C1\u554A\uFF0C\u4E0D\u597D\u610F\u601D"
+      targetID: 02
+    - text: "\u53EF\u80FD\u662F\u4F60\u6700\u8FD1\u538B\u529B\u592A\u5927\u4E86\u5427~"
+      targetID: 03
+  - ID: 02
+    image: {fileID: 21300000, guid: 126f8a5d042fab945a9ddb41f083a9c8, type: 3}
+    text: "\u6211\u81EA\u5DF1\u518D\u627E\u627E\u5427"
+    playTineLine: 0
+    options: []
+  - ID: 03
+    image: {fileID: 21300000, guid: 126f8a5d042fab945a9ddb41f083a9c8, type: 3}
+    text: "\u503C\u73ED\u771F\u7684\u597D\u7D2F\u554A"
+    playTineLine: 0
+    options: []

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73603191c3cd0924c9b5e8c142d01814, type: 3}
+  m_Name: ChickenLeg
+  m_EditorClassIdentifier: 
+  itemType: 0
+  itemName: "\u9E21\u817F"
+  itemDescription: "\u4ECE\u70E4\u9E21\u4E0A\u6495\u4E0B\u6765\u7684\u5927\u9E21\u817F\uFF0C\u8FD8\u5192\u7740\u70ED\u6C14\u3002\u53EF\u4EE5\u56DE\u590D20\u70B9\u751F\u547D\u503C"
+  itemIcon: {fileID: 21300000, guid: af16c8206dd8be9479709f7d52bf8797, type: 3}
+  itemCount: 1
+  countable: 1
+  useableItemData: {fileID: 11400000, guid: f631594a51f5a4b429038663e5137ada, type: 2}
+  weaponPrefab: {fileID: 0}
+  weaponData: {fileID: 0}
+  weaponAnimator: {fileID: 0}

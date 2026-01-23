@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eee263bef41c494e8748f9bb06b5c33, type: 3}
+  m_Name: TurtleShellAlerted
+  m_EditorClassIdentifier: 
+  dialoguePieces:
+  - ID: 01
+    image: {fileID: 21300000, guid: 6737d9c78acc99946bc3c1267fcf0360, type: 3}
+    text: "\u6709\u6CA1\u6709\u770B\u89C1\u521A\u624D\u90A3\u4E2A\u4EBA\u8DD1\u5230\u54EA\u91CC\u53BB\u4E86\uFF1F"
+    playTineLine: 0
+    options:
+    - text: "\u90A3\u8FB9\u261E"
+      targetID: 02
+    - text: "\u6CA1\u6709\u54E6"
+      targetID: 03
+  - ID: 02
+    image: {fileID: 21300000, guid: 6737d9c78acc99946bc3c1267fcf0360, type: 3}
+    text: "\u4E0D\u80FD\u8BA9\u4ED6\u8DD1\u4E86"
+    playTineLine: 0
+    options: []
+  - ID: 03
+    image: {fileID: 21300000, guid: 6737d9c78acc99946bc3c1267fcf0360, type: 3}
+    text: "\u6211\u4E00\u5B9A\u4F1A\u628A\u4ED6\u627E\u51FA\u6765\u7684"
+    playTineLine: 0
+    options: []

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eee263bef41c494e8748f9bb06b5c33, type: 3}
+  m_Name: ContinueGameIntro
+  m_EditorClassIdentifier: 
+  dialoguePieces:
+  - ID: 01
+    image: {fileID: 21300000, guid: b1b090995e828314bb182874711e96a1, type: 3}
+    text: "\u4F60\u56DE\u6765\u5566\uFF01\u611F\u89C9\u600E\u4E48\u6837\uFF1F"
+    playTineLine: 0
+    options:
+    - text: "\u8F7B\u800C\u6613\u4E3E\uFF01"
+      targetID: 02
+    - text: "\u8FD8\u662F\u6709\u70B9\u96BE\u5EA6\u7684\u3002"
+      targetID: 03
+  - ID: 02
+    image: {fileID: 21300000, guid: b1b090995e828314bb182874711e96a1, type: 3}
+    text: "\u4E0D\u6127\u662F\u4F60\uFF01\u6211\u5C31\u77E5\u9053\u4F60\u53EF\u4EE5\u7684"
+    playTineLine: 0
+    options: []
+  - ID: 03
+    image: {fileID: 21300000, guid: b1b090995e828314bb182874711e96a1, type: 3}
+    text: "\u76F8\u4FE1\u4F60\u5DF2\u7ECF\u770B\u5230\u4E86\u684C\u5B50\u4E0A\u7684\u5C0F\u76D2\u5B50\uFF0C\u90A3\u91CC\u9762\u5C31\u653E\u7740\u6211\u4E3A\u4F60\u51C6\u5907\u7684\u9B54\u6CD5\u9053\u5177\u3002"
+    playTineLine: 0
+    options: []
+  - ID: 04
+    image: {fileID: 21300000, guid: b1b090995e828314bb182874711e96a1, type: 3}
+    text: "\u6BCF\u5F53\u4F60\u7ED9\u6211\u4E00\u5757\u6C34\u6676\uFF0C\u4F60\u5C31\u53EF\u4EE5\u4ECE\u4E2D\u62FF\u8D70\u4E00\u6837\u9053\u5177\u3002\n\u4F46\u662F\u8981\u6CE8\u610F\u54E6\uFF0C\u4F60\u53EA\u80FD\u6253\u5F00\u4E00\u6B21\u76D2\u5B50~"
+    playTineLine: 0
+    options: []
+  - ID: 05
+    image: {fileID: 21300000, guid: b1b090995e828314bb182874711e96a1, type: 3}
+    text: "\u9009\u62E9\u559C\u6B22\u7684\u9053\u5177\uFF0C\u7136\u540E\u63A5\u7740\u53BB\u6218\u6597\u5427\uFF01"
+    playTineLine: 0
+    options: []

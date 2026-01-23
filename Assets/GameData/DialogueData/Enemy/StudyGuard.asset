@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eee263bef41c494e8748f9bb06b5c33, type: 3}
+  m_Name: StudyGuard
+  m_EditorClassIdentifier: 
+  dialoguePieces:
+  - ID: 01
+    image: {fileID: 21300000, guid: 126f8a5d042fab945a9ddb41f083a9c8, type: 3}
+    text: "\u4F60\u662F\u6765\u7ED9\u697C\u4E0A\u9001\u94A5\u5319\u7684\u5427\uFF1F\u5C31\u5728\u684C\u5B50\u4E0A\uFF0C\u5FEB\u62FF\u53BB\u5427~"
+    playTineLine: 0
+    options: []

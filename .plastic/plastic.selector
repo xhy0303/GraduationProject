@@ -1,0 +1,4 @@
+repository "毕业设计xhy@tj_xhy0303@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"

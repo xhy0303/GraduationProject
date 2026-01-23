@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 018a92b58e2d93445ba823d8d7fdcee5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animator: {instanceID: 0}
+  - humanAvatar: {fileID: 9000000, guid: e4aa31f274820b94eb0d0b764e0f383b, type: 3}
+  - yokaiAvatar: {fileID: 9000000, guid: a58d63122b09e9144938cd6a1ece4824, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

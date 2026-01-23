@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0b49f4d4b892ff4428ccce60f4a0ec71
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerStats: {instanceID: 0}
+  - renderObj: {fileID: -3871894682210775746, guid: e5ca83b32ff7c3d4d90105b741c7f374, type: 2}
+  - renderPipelineAsset: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
