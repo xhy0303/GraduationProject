@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.Profiling;
 using Unity.VisualScripting;
@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
 
     [Header("Basic Settings")]
     public float sightRange;
-    public float viewAngle = 90f; // ¿ÉÊÓ½Ç¶È·¶Î§£¨ÃæÇ°×óÓÒ¸÷Ò»°ëµÄ½Ç¶È£©
+    public float viewAngle = 90f; // å¯è§†è§’åº¦èŒƒå›´ï¼ˆé¢å‰å·¦å³å„ä¸€åŠçš„è§’åº¦ï¼‰
     public bool isGuard;
 
     protected GameObject attackTarget;
@@ -37,10 +37,10 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
         this.attackTarget = attackTarget;
     }
 
-    private float speed; //ÒÆ¶¯ËÙ¶È
+    private float speed; //ç§»åŠ¨é€Ÿåº¦
 
-    public float alertDuration = 3f; // ¹Û²ì³ÖĞøÊ±¼ä
-    private float alertTimer;         // ¹Û²ìµ¹¼ÆÊ±
+    public float alertDuration = 3f; // è§‚å¯ŸæŒç»­æ—¶é—´
+    private float alertTimer;         // è§‚å¯Ÿå€’è®¡æ—¶
 
     [Header("Patrol Settings")]
     //public float patrolRange;
@@ -60,12 +60,12 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
     [Header("Search Settings")]
     private Vector3 lastKnownPlayerPos;
     private Vector3 currentSearchTarget;
-    public float searchRadius = 10f; // ¿É¸ù¾İĞèÇóµ÷Õû
-    public float searchDuration = 6f; // ËÑË÷×´Ì¬³ÖĞøÊ±¼ä
+    public float searchRadius = 10f; // å¯æ ¹æ®éœ€æ±‚è°ƒæ•´
+    public float searchDuration = 6f; // æœç´¢çŠ¶æ€æŒç»­æ—¶é—´
     private float searchTimer;
 
 
-    //ÅĞ¶Ï¶¯»­
+    //åˆ¤æ–­åŠ¨ç”»
     bool isWalk;
     bool isChase;
     bool isFollow;
@@ -100,7 +100,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
         {
             enemyStates = EnemyStates.Patrol;
 
-            //»ñÈ¡Ñ²ÂßÂ·Ïß
+            //è·å–å·¡é€»è·¯çº¿
             patrolStops = new List<GameObject>();
             for (int i = 0; i < patrolRount.transform.childCount; i++)
             {
@@ -109,11 +109,11 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
 
             GetNewWayPos();
         }
-        //×¢²á¹Û²ìÕß£¬³¡¾°ÇĞ»»ºó¸ü¸Ä
+        //æ³¨å†Œè§‚å¯Ÿè€…ï¼Œåœºæ™¯åˆ‡æ¢åæ›´æ”¹
         GameManager.Instance.AddObserver(this);
     }
 
-    //³¡¾°ÇĞ»»ºóÆôÓÃ
+    //åœºæ™¯åˆ‡æ¢åå¯ç”¨
     //void OnEnable()
     //{
     //    GameManager.Instance.AddObserver(this);
@@ -139,7 +139,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
 
     private void Update()
     {
-        if (characterStats.CurrentHealth <= 0)//µĞÈËËÀÍö
+        if (characterStats.CurrentHealth <= 0)//æ•Œäººæ­»äº¡
         {
             isDead = true;
             agent.isStopped = true;
@@ -155,7 +155,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
         }
     }
 
-    private void OnDrawGizmosSelected()//ÔÚ³¡¾°ÊÓÍ¼ÖĞ»æÖÆÒ»¸öÇòÌå£¬±íÊ¾µĞÈËµÄÊÓÒ°·¶Î§
+    private void OnDrawGizmosSelected()//åœ¨åœºæ™¯è§†å›¾ä¸­ç»˜åˆ¶ä¸€ä¸ªçƒä½“ï¼Œè¡¨ç¤ºæ•Œäººçš„è§†é‡èŒƒå›´
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, sightRange);
@@ -169,11 +169,11 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
         }
         else if (FoundPlayer() && enemyStates != EnemyStates.Chase)
         {
-            // Èç¹û´¦ÓÚÑ²Âß»òÕ¾×®×´Ì¬Ê±·¢ÏÖÍæ¼Ò£¬½øÈë¾¯½ä×´Ì¬²¢ÖØÖÃ¼ÆÊ±Æ÷
+            // å¦‚æœå¤„äºå·¡é€»æˆ–ç«™æ¡©çŠ¶æ€æ—¶å‘ç°ç©å®¶ï¼Œè¿›å…¥è­¦æˆ’çŠ¶æ€å¹¶é‡ç½®è®¡æ—¶å™¨
             if (enemyStates == EnemyStates.Guard || enemyStates == EnemyStates.Patrol)
             {
                 enemyStates = EnemyStates.Alart;
-                alertTimer = alertDuration; // Ã¿´Î½øÈë¾¯½ä×´Ì¬Ê±ÖØÖÃ¼ÆÊ±Æ÷
+                alertTimer = alertDuration; // æ¯æ¬¡è¿›å…¥è­¦æˆ’çŠ¶æ€æ—¶é‡ç½®è®¡æ—¶å™¨
             }
         }
 
@@ -184,11 +184,11 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                 isChase = false;
                 isWalk = true;
                 agent.isStopped = false;
-                if (transform.position != guardPos) // Ã»ÓĞµ½´ïÕ¾×®µã
+                if (transform.position != guardPos) // æ²¡æœ‰åˆ°è¾¾ç«™æ¡©ç‚¹
                 {
                     agent.destination = guardPos;
                 }
-                if (Vector3.SqrMagnitude(transform.position - guardPos) <= agent.stoppingDistance) // µ½´ïÕ¾×®µã
+                if (Vector3.SqrMagnitude(transform.position - guardPos) <= agent.stoppingDistance) // åˆ°è¾¾ç«™æ¡©ç‚¹
                 {
                     agent.isStopped = true;
                     isWalk = false;
@@ -201,7 +201,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                 isFollow = false;
                 agent.isStopped = false;
                 agent.speed = speed * 0.5f;
-                // ¼ì²âÊÇ·ñµ½´ïÑ²Âßµã
+                // æ£€æµ‹æ˜¯å¦åˆ°è¾¾å·¡é€»ç‚¹
                 if (Vector3.Distance(transform.position, wayPos) < agent.stoppingDistance)
                 {
                     isWalk = false;
@@ -239,11 +239,11 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                     agent.isStopped = false;
                     agent.speed = speed;
 
-                    //¹¥»÷±»¶ã¿ªºó²»Ó¦¸ÃÖ±½Ó»Øµ½Ä¬ÈÏ×´Ì¬£¬¶øÊÇ½øĞĞËÑË÷
+                    //æ”»å‡»è¢«èº²å¼€åä¸åº”è¯¥ç›´æ¥å›åˆ°é»˜è®¤çŠ¶æ€ï¼Œè€Œæ˜¯è¿›è¡Œæœç´¢
                     //ReturnToDefaultState();
                     enemyStates = EnemyStates.Search;
-                    searchTimer = searchDuration; // ³õÊ¼»¯ËÑË÷¼ÆÊ±Æ÷
-                                                  // ³õÊ¼»¯µ±Ç°ËÑË÷Ä¿±êÎªÒ»¸öËæ»úÎ»ÖÃ
+                    searchTimer = searchDuration; // åˆå§‹åŒ–æœç´¢è®¡æ—¶å™¨
+                                                  // åˆå§‹åŒ–å½“å‰æœç´¢ç›®æ ‡ä¸ºä¸€ä¸ªéšæœºä½ç½®
                     currentSearchTarget = GetRandomSearchTarget(lastKnownPlayerPos, searchRadius);
 
                 }
@@ -251,10 +251,10 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                 {
                     agent.destination = attackTarget.transform.position;
 
-                    // ¼ÇÂ¼Íæ¼Ò×îºóÎ»ÖÃ
+                    // è®°å½•ç©å®¶æœ€åä½ç½®
                     lastKnownPlayerPos = attackTarget.transform.position;
                 }
-                // Èç¹ûÔÚ¹¥»÷·¶Î§Ö®ÄÚ£¬ÔòÍ£Ö¹ÒÆ¶¯²¢¹¥»÷
+                // å¦‚æœåœ¨æ”»å‡»èŒƒå›´ä¹‹å†…ï¼Œåˆ™åœæ­¢ç§»åŠ¨å¹¶æ”»å‡»
                 if (InAttackRange() || InSkillRange())
                 {
                     isFollow = false;
@@ -262,9 +262,9 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                     if (lastAttackTime < 0)
                     {
                         lastAttackTime = characterStats.CoolDown;
-                        // ±©»÷ÅĞ¶Ï
+                        // æš´å‡»åˆ¤æ–­
                         characterStats.isCritical = Random.value < characterStats.CriticalChance;
-                        // Ö´ĞĞ¹¥»÷
+                        // æ‰§è¡Œæ”»å‡»
                         Attack();
                     }
                 }
@@ -281,7 +281,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                 }
 
 
-                // ÔÚ¾¯½ä×´Ì¬ÏÂ³ÖĞø¼ì²âÍæ¼Ò
+                // åœ¨è­¦æˆ’çŠ¶æ€ä¸‹æŒç»­æ£€æµ‹ç©å®¶
                 if (FoundPlayer())
                 {
                     alertTimer -= Time.deltaTime;
@@ -293,16 +293,16 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                         enemyStates = EnemyStates.Chase;
                     }
 
-                    // ¼ÇÂ¼Íæ¼Ò×îºóÎ»ÖÃ£¬²¢ÇĞ»»µ½ËÑË÷×´Ì¬
+                    // è®°å½•ç©å®¶æœ€åä½ç½®ï¼Œå¹¶åˆ‡æ¢åˆ°æœç´¢çŠ¶æ€
                     lastKnownPlayerPos = attackTarget.transform.position;
                 }
                 else
                 {
-                    // ¼ÇÂ¼Íæ¼Ò×îºóÎ»ÖÃ£¬²¢ÇĞ»»µ½ËÑË÷×´Ì¬£¬ÔÚÕâÀïµÄ»°attackTargetÊÇ¿Õ¶ÔÏó
+                    // è®°å½•ç©å®¶æœ€åä½ç½®ï¼Œå¹¶åˆ‡æ¢åˆ°æœç´¢çŠ¶æ€ï¼Œåœ¨è¿™é‡Œçš„è¯attackTargetæ˜¯ç©ºå¯¹è±¡
                     //lastKnownPlayerPos = attackTarget.transform.position;
                     enemyStates = EnemyStates.Search;
-                    searchTimer = searchDuration; // ³õÊ¼»¯ËÑË÷¼ÆÊ±Æ÷
-                                                  // ³õÊ¼»¯µ±Ç°ËÑË÷Ä¿±êÎªÒ»¸öËæ»úÎ»ÖÃ
+                    searchTimer = searchDuration; // åˆå§‹åŒ–æœç´¢è®¡æ—¶å™¨
+                                                  // åˆå§‹åŒ–å½“å‰æœç´¢ç›®æ ‡ä¸ºä¸€ä¸ªéšæœºä½ç½®
                     currentSearchTarget = GetRandomSearchTarget(lastKnownPlayerPos, searchRadius);
                 }
                 break;
@@ -312,8 +312,8 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                 isWalk = false;
                 isChase = true;
                 agent.isStopped = false;
-                agent.speed = speed;  // Ê¹ÓÃÄ¬ÈÏËÙ¶È
-                                          // Èç¹ûµ½´ïµ±Ç°Ëæ»úÄ¿±êµã£¬ÔòÉú³ÉĞÂµÄÄ¿±êµã
+                agent.speed = speed;  // ä½¿ç”¨é»˜è®¤é€Ÿåº¦
+                                          // å¦‚æœåˆ°è¾¾å½“å‰éšæœºç›®æ ‡ç‚¹ï¼Œåˆ™ç”Ÿæˆæ–°çš„ç›®æ ‡ç‚¹
                 if (Vector3.Distance(transform.position, currentSearchTarget) < agent.stoppingDistance)
                 {
                     currentSearchTarget = GetRandomSearchTarget(lastKnownPlayerPos, searchRadius);
@@ -324,7 +324,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                 }
 
                 searchTimer -= Time.deltaTime;
-                // ÔÚËÑË÷¹ı³ÌÖĞÈç¹ûÔÙ´Î·¢ÏÖÍæ¼Ò£¬ÔòÖØĞÂ½øÈë¾¯½ä×´Ì¬
+                // åœ¨æœç´¢è¿‡ç¨‹ä¸­å¦‚æœå†æ¬¡å‘ç°ç©å®¶ï¼Œåˆ™é‡æ–°è¿›å…¥è­¦æˆ’çŠ¶æ€
                 if (FoundPlayer())
                 {
                     enemyStates = EnemyStates.Alart;
@@ -332,7 +332,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                 }
                 else if (searchTimer <= 0)
                 {
-                    // ËÑË÷Ê±¼ä½áÊø£¬»Øµ½Ä¬ÈÏ×´Ì¬
+                    // æœç´¢æ—¶é—´ç»“æŸï¼Œå›åˆ°é»˜è®¤çŠ¶æ€
                     ReturnToDefaultState();
                 }
                 break;
@@ -340,12 +340,12 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
             case EnemyStates.Dead:
                 collider.enabled = false;
                 agent.radius = 0;
-                //ËÀÍöÒÔºó²»Ïú»Ù£¬¶øÊÇ¼ÇÂ¼×´Ì¬£¬±ÜÃâÖØĞÂ¼ÓÔØ³¡¾°Ê±ÖØĞÂÉú³É
+                //æ­»äº¡ä»¥åä¸é”€æ¯ï¼Œè€Œæ˜¯è®°å½•çŠ¶æ€ï¼Œé¿å…é‡æ–°åŠ è½½åœºæ™¯æ—¶é‡æ–°ç”Ÿæˆ
                 //Destroy(gameObject, 2f);
 
                 transform.GetComponent<ObjectState>().UpdateActive(false, true);
 
-                //ËÀÍöÒÔºó»Ø¸´Íæ¼Ò±©Â¶×´Ì¬
+                //æ­»äº¡ä»¥åå›å¤ç©å®¶æš´éœ²çŠ¶æ€
                 GameManager.Instance.playerStats.ChangeExposure(PlayerStats.ExposureState.Peace);
 
                 break;
@@ -353,11 +353,11 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
     }
 
     /// <summary>
-    /// ·µ»ØÔÚ¸ø¶¨ÖĞĞÄµã¸½½üËæ»úÎ»ÖÃ
+    /// è¿”å›åœ¨ç»™å®šä¸­å¿ƒç‚¹é™„è¿‘éšæœºä½ç½®
     /// </summary>
-    /// <param name="center">ÖĞĞÄµã</param>
-    /// <param name="radius">ËÑË÷°ë¾¶</param>
-    /// <returns>Ëæ»úÄ¿±êµã</returns>
+    /// <param name="center">ä¸­å¿ƒç‚¹</param>
+    /// <param name="radius">æœç´¢åŠå¾„</param>
+    /// <returns>éšæœºç›®æ ‡ç‚¹</returns>
     Vector3 GetRandomSearchTarget(Vector3 center, float radius)
     {
         Vector2 randomPoint = Random.insideUnitCircle * radius;
@@ -376,7 +376,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
         animator.SetBool("Death", isDead);
     }
 
-    // ·µ»ØÄ¬ÈÏ×´Ì¬µÄ·½·¨
+    // è¿”å›é»˜è®¤çŠ¶æ€çš„æ–¹æ³•
     private void ReturnToDefaultState()
     {
         agent.speed = speed;
@@ -390,9 +390,9 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
             enemyStates = EnemyStates.Patrol;
         }
 
-        //Íæ¼Ò±©Â¶»Øµ½°²È«×´Ì¬
+        //ç©å®¶æš´éœ²å›åˆ°å®‰å…¨çŠ¶æ€
         GameManager.Instance.playerStats.ChangeExposure(PlayerStats.ExposureState.Peace);
-        //µĞÈË¶Ô»°Êı¾İ»Øµ½Æ½³£°æ±¾
+        //æ•Œäººå¯¹è¯æ•°æ®å›åˆ°å¹³å¸¸ç‰ˆæœ¬
         if (GetComponent<EnemyDialogueController>())
         {
             gameObject.GetComponent<EnemyDialogueController>().SetRegularDialogue();
@@ -413,13 +413,13 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
                     return true;
                 }
 
-                //// ¼ÆËãµĞÈËµ½Íæ¼ÒµÄ·½ÏòÏòÁ¿
+                //// è®¡ç®—æ•Œäººåˆ°ç©å®¶çš„æ–¹å‘å‘é‡
                 //Vector3 directionToPlayer = (collider.transform.position - transform.position).normalized;
 
-                //// ¼ÆËã¸Ã·½ÏòÓëµĞÈËÕıÇ°·½µÄ¼Ğ½Ç
+                //// è®¡ç®—è¯¥æ–¹å‘ä¸æ•Œäººæ­£å‰æ–¹çš„å¤¹è§’
                 //float angle = Vector3.Angle(transform.forward, directionToPlayer);
 
-                //// Èç¹û¼Ğ½ÇÔÚ¿ÉÊÓ½Ç¶È·¶Î§ÄÚ
+                //// å¦‚æœå¤¹è§’åœ¨å¯è§†è§’åº¦èŒƒå›´å†…
                 //if (angle <= viewAngle * 0.5f)
                 //{
                 //    attackTarget = collider.gameObject;
@@ -450,7 +450,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
     //    var colliders = Physics.OverlapSphere(transform.position, sightRange);//p12 10:17
     //    foreach (var collider in colliders)
     //    {
-    //        if (collider.CompareTag("Player"))//TODO:ºóÆÚÌí¼Ó½Ç¶È¹¦ÄÜ£¨½öÔÚµĞÈËÃæÇ°²Å»á±»·¢ÏÖ
+    //        if (collider.CompareTag("Player"))//TODO:åæœŸæ·»åŠ è§’åº¦åŠŸèƒ½ï¼ˆä»…åœ¨æ•Œäººé¢å‰æ‰ä¼šè¢«å‘ç°
     //        {
     //            attackTarget = collider.gameObject;
     //            return true;
@@ -464,7 +464,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
     //}
 
 
-    #region ÅĞ¶Ï¹¥»÷¾àÀë
+    #region åˆ¤æ–­æ”»å‡»è·ç¦»
 
     bool InAttackRange()
     {
@@ -496,13 +496,13 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
 
         if (InAttackRange())
         {
-            //½üÉí¹¥»÷¶¯»­
+            //è¿‘èº«æ”»å‡»åŠ¨ç”»
             animator.SetTrigger("Attack");
         }
 
         if (InSkillRange())
         {
-            //¼¼ÄÜ¹¥»÷¶¯»­
+            //æŠ€èƒ½æ”»å‡»åŠ¨ç”»
             animator.SetTrigger("Skill");
         }
     }
@@ -520,9 +520,9 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
     public void EndNotify()
     {
         
-        //Í£Ö¹ËùÓĞÒÆ¶¯£¬Í£Ö¹agent
+        //åœæ­¢æ‰€æœ‰ç§»åŠ¨ï¼Œåœæ­¢agent
         agent.isStopped = true;
-        //»ñÊ¤¶¯»­
+        //è·èƒœåŠ¨ç”»
         animator.SetBool("Win", true);
 
         playerDead = true;

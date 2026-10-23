@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class DialogueController : MonoBehaviour
         {
             canTalk = true;
             GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().
-                UpdateHintUI(canTalk, "按E交谈");
+                UpdateHintUI(canTalk, "鎸塃浜よ皥");
         }
     }
 
@@ -42,8 +42,8 @@ public class DialogueController : MonoBehaviour
 
     public void OpenDialogue()
     {
-        //打开UI面板
-        //传输对话内容
+        //鎵撳紑UI闈㈡澘
+        //浼犺緭瀵硅瘽鍐呭
 
         DialogueUI.Instance.UpdateDialogueData(currentDialogue);
         DialogueUI.Instance.UpdateMainDialogue(currentDialogue.dialoguePieces[0]);

@@ -1,14 +1,14 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectState:MonoBehaviour
-//¼ÇÂ¼¿É½»»¥ÎïÆ·£¨°üÀ¨µĞÈË£©ÔÚÍ¬Ò»´ÎÓÎÏ·ÖĞÍ¬Ò»³¡¾°ÄÚµÄ×´Ì¬
-//±ÜÃâÖØ¸´¼ÓÔØ£¨Èç±»»÷°ÜµÄµĞÈËÔÚÖØĞÂ¼ÓÔØ³¡¾°ºó¸´»î£©
+//è®°å½•å¯äº¤äº’ç‰©å“ï¼ˆåŒ…æ‹¬æ•Œäººï¼‰åœ¨åŒä¸€æ¬¡æ¸¸æˆä¸­åŒä¸€åœºæ™¯å†…çš„çŠ¶æ€
+//é¿å…é‡å¤åŠ è½½ï¼ˆå¦‚è¢«å‡»è´¥çš„æ•Œäººåœ¨é‡æ–°åŠ è½½åœºæ™¯åå¤æ´»ï¼‰
 {
     public int objIndex;
     public string objName;
-    public bool isActive = true;//ÎïÆ·ÊÇ·ñ¿É¼û
+    public bool isActive = true;//ç‰©å“æ˜¯å¦å¯è§
 
     int currentGame;
     string objID;
@@ -24,9 +24,9 @@ public class ObjectState:MonoBehaviour
         this.isActive = isActive;
         if(isEnemy)
         {
-            //Èç¹ûÊÇµĞÈË£¬ÏÈµÈ´ıÁ½Ãë£¬ÔÙÉèÖÃÎª²»¿É¼û
-            //ÕâÑù¿ÉÒÔ±ÜÃâµĞÈË±»»÷°ÜºóÁ¢¿ÌÏûÊ§£¬¸øÍæ¼ÒÒ»¸ö·´À¡
-            //¿ÉÒÔ¿¼ÂÇÊ¹ÓÃĞ­³Ì
+            //å¦‚æœæ˜¯æ•Œäººï¼Œå…ˆç­‰å¾…ä¸¤ç§’ï¼Œå†è®¾ç½®ä¸ºä¸å¯è§
+            //è¿™æ ·å¯ä»¥é¿å…æ•Œäººè¢«å‡»è´¥åç«‹åˆ»æ¶ˆå¤±ï¼Œç»™ç©å®¶ä¸€ä¸ªåé¦ˆ
+            //å¯ä»¥è€ƒè™‘ä½¿ç”¨åç¨‹
 
             //gameObject.SetActive(isActive);
 
@@ -35,7 +35,7 @@ public class ObjectState:MonoBehaviour
         else
         {
             if (!transform.GetComponent<ChestController>())
-                //Èç¹û²»ÊÇµĞÈËÇÒ²»ÊÇ±¦Ïä£¬ÉèÖÃÎª²»¿É¼û
+                //å¦‚æœä¸æ˜¯æ•Œäººä¸”ä¸æ˜¯å®ç®±ï¼Œè®¾ç½®ä¸ºä¸å¯è§
                 gameObject.SetActive(isActive);
             else
             {

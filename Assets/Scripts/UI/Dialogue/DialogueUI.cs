@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,7 +29,7 @@ public class DialogueUI : Manager<DialogueUI>
         base.Awake();
         nextBut.onClick.AddListener(ContinueDialogue);
 
-        director = FindObjectOfType<PlayableDirector>();
+        director = LegacyObjectLookup.FindFirst<PlayableDirector>();
     }
     void ContinueDialogue()
     {
@@ -38,10 +38,10 @@ public class DialogueUI : Manager<DialogueUI>
             var piece = currentData.dialoguePieces[currentIndex];
 
             if (currentData.dialoguePieces[currentIndex - 1].playTineLine)
-            //currentIndex - 1 ÊÇÒòÎªÔÚ UpdateMainDialogue ÖĞÒÑ¾­ ++ ÁË
+            //currentIndex - 1 æ˜¯å› ä¸ºåœ¨ UpdateMainDialogue ä¸­å·²ç» ++ äº†
             {
                 PlayTimeLine();
-                // ²»ÂíÉÏµ÷ÓÃ UpdateMainDialogue£¬µÈ Timeline ²¥·ÅÍêÔÙµ÷ÓÃ
+                // ä¸é©¬ä¸Šè°ƒç”¨ UpdateMainDialogueï¼Œç­‰ Timeline æ’­æ”¾å®Œå†è°ƒç”¨
             }
             else
             {
@@ -84,7 +84,7 @@ public class DialogueUI : Manager<DialogueUI>
 
 
         if (piece.options.Count == 0 && currentData.dialoguePieces.Count > 0)
-        //Èç¹ûµ±Ç°¶Ô»°µÄµ±Ç°¾ä×ÓÃ»ÓĞ·ÖÖ§Ñ¡ÏîÇÒÓĞÏÂÒ»¾äÊ±£¬ÏÔÊ¾ÏÂÒ»¾ä°´Å¥²¢¸üĞÂindex
+        //å¦‚æœå½“å‰å¯¹è¯çš„å½“å‰å¥å­æ²¡æœ‰åˆ†æ”¯é€‰é¡¹ä¸”æœ‰ä¸‹ä¸€å¥æ—¶ï¼Œæ˜¾ç¤ºä¸‹ä¸€å¥æŒ‰é’®å¹¶æ›´æ–°index
         {
             nextBut.interactable = true;
             nextBut.transform.GetChild(0).gameObject.SetActive(true);
@@ -94,13 +94,13 @@ public class DialogueUI : Manager<DialogueUI>
         else
         {
             //nextBut.gameObject.SetActive(false);
-            //Èç¹ûµ±Ç°¶Ô»°µÄµ±Ç°¾ä×ÓÓĞ·ÖÖ§Ñ¡Ïî£¬Òş²ØÏÂÒ»¾ä°´Å¥
-            //²»Ö±½ÓÉ¾³ıbutton£¬ÒòÎª»áÓ°ÏìlayoutµÄÏÔÊ¾Ğ§¹û
+            //å¦‚æœå½“å‰å¯¹è¯çš„å½“å‰å¥å­æœ‰åˆ†æ”¯é€‰é¡¹ï¼Œéšè—ä¸‹ä¸€å¥æŒ‰é’®
+            //ä¸ç›´æ¥åˆ é™¤buttonï¼Œå› ä¸ºä¼šå½±å“layoutçš„æ˜¾ç¤ºæ•ˆæœ
             nextBut.transform.GetChild(0).gameObject.SetActive(false);
             nextBut.interactable = false;
         }
 
-        //´´½¨option
+        //åˆ›å»ºoption
         CreateOption(piece);
 
     }
@@ -125,15 +125,15 @@ public class DialogueUI : Manager<DialogueUI>
 
     void PlayTimeLine()
     {
-        // Òş²Ø UI ÓëÊó±ê¹ÜÀíÆ÷
+        // éšè— UI ä¸é¼ æ ‡ç®¡ç†å™¨
         dialoguePanel.SetActive(false);
         MouseManager.Instance.gameObject.SetActive(false);
 
-        // ÖØÖÃ Timeline Ê±¼äµ½Æğµã
+        // é‡ç½® Timeline æ—¶é—´åˆ°èµ·ç‚¹
         director.time = 0;
         director.Evaluate();
 
-        // ²¥·Å Timeline
+        // æ’­æ”¾ Timeline
         director.Play();
         director.stopped += OnTimelineStopped;
     }
@@ -141,15 +141,15 @@ public class DialogueUI : Manager<DialogueUI>
 
     void OnTimelineStopped(PlayableDirector obj)
     {
-        // ÏÔÊ¾ UI
+        // æ˜¾ç¤º UI
         dialoguePanel.SetActive(true);
         MouseManager.Instance.gameObject.SetActive(true);
 
-        // ²¥·Å½áÊøºóÍÆ½ø¶Ô»°ÄÚÈİ
+        // æ’­æ”¾ç»“æŸåæ¨è¿›å¯¹è¯å†…å®¹
         var piece = currentData.dialoguePieces[currentIndex];
         UpdateMainDialogue(piece);
 
-        // ÒÆ³ıÊÂ¼ş¼àÌı
+        // ç§»é™¤äº‹ä»¶ç›‘å¬
         director.stopped -= OnTimelineStopped;
     }
 

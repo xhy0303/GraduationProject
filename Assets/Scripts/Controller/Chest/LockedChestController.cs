@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,11 +16,11 @@ public class LockedChestController : ChestController
                 if(InventoryManager.Instance.inventoryData.CheckItemInBag(keyData))
                 {
                     canOpen = true;
-                    GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "°´E´ò¿ª");
+                    GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "æŒ‰Eæ‰“å¼€");
                 }
                 else
                 {
-                    GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "ĞèÒªÔ¿³×");
+                    GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "éœ€è¦é’¥åŒ™");
                 }
                 
             }

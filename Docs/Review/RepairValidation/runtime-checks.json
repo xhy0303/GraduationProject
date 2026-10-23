@@ -1,0 +1,20 @@
+{
+    "steps": [
+        "Menu loaded",
+        "New game spawned player in Main",
+        "Inventory refreshed and game saved",
+        "Returned to menu",
+        "Continue restored player in Main",
+        "Yokai shape and animator restored",
+        "Invisible shape restored",
+        "Player and navigation ready: Dungon",
+        "Player and navigation ready: FirstFloor",
+        "Player and navigation ready: SecondFloor",
+        "Player and navigation ready: ThirdFloor",
+        "Defeat panel opened",
+        "Player and navigation ready: ThirdFloor",
+        "Victory panel and next-run save",
+        "Player and navigation ready: Main"
+    ],
+    "diagnostics": []
+}

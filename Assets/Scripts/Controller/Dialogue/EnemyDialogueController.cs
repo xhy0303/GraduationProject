@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
@@ -32,7 +32,7 @@ public class EnemyDialogueController : DialogueController
         {
             canTalk = true;
             GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().
-                UpdateHintUI(canTalk, "°´E½»Ì¸");
+                UpdateHintUI(canTalk, "æŒ‰Eäº¤è°ˆ");
         }
     }
 

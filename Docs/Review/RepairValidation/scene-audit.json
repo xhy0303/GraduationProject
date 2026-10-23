@@ -1,0 +1,64 @@
+{
+    "scenes": [
+        {
+            "scene": "Begin",
+            "objects": 4905,
+            "missingScripts": 0,
+            "missingMeshes": 0,
+            "missingMaterials": 0,
+            "colliders": 2061,
+            "navmeshVertices": 33460,
+            "issues": []
+        },
+        {
+            "scene": "Main",
+            "objects": 5422,
+            "missingScripts": 0,
+            "missingMeshes": 0,
+            "missingMaterials": 0,
+            "colliders": 2082,
+            "navmeshVertices": 33460,
+            "issues": []
+        },
+        {
+            "scene": "Dungon",
+            "objects": 658,
+            "missingScripts": 0,
+            "missingMeshes": 0,
+            "missingMaterials": 0,
+            "colliders": 345,
+            "navmeshVertices": 151,
+            "issues": []
+        },
+        {
+            "scene": "FirstFloor",
+            "objects": 1460,
+            "missingScripts": 0,
+            "missingMeshes": 0,
+            "missingMaterials": 0,
+            "colliders": 834,
+            "navmeshVertices": 1281,
+            "issues": []
+        },
+        {
+            "scene": "SecondFloor",
+            "objects": 1006,
+            "missingScripts": 0,
+            "missingMeshes": 0,
+            "missingMaterials": 0,
+            "colliders": 446,
+            "navmeshVertices": 637,
+            "issues": []
+        },
+        {
+            "scene": "ThirdFloor",
+            "objects": 567,
+            "missingScripts": 0,
+            "missingMeshes": 0,
+            "missingMaterials": 0,
+            "colliders": 163,
+            "navmeshVertices": 138,
+            "issues": []
+        }
+    ]
+}

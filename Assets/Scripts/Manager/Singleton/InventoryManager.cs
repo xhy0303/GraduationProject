@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,7 +38,7 @@ public class InventoryManager : Manager<InventoryManager>
 
     [Header("Drag Canvas")]
     public Canvas dragCanvas;
-    public DragData currentDrag;
+    [System.NonSerialized] public DragData currentDrag;
 
     [Header("UI Panel")]
     public GameObject bagPanel;
@@ -91,9 +91,9 @@ public class InventoryManager : Manager<InventoryManager>
         }
         bagPanel.SetActive(isOpen);
 
-        //´ò¿ª±³°üÊ±ÔİÍ£ÓÎÏ·
-        //ºóĞø´ò¿ªÉèÖÃ²Ëµ¥Ê±Ò²ÔİÍ£ÓÎÏ·
-        //¿ªÊ¼¶Ô»°Ê±Ò²ÔİÍ£ÓÎÏ·
+        //æ‰“å¼€èƒŒåŒ…æ—¶æš‚åœæ¸¸æˆ
+        //åç»­æ‰“å¼€è®¾ç½®èœå•æ—¶ä¹Ÿæš‚åœæ¸¸æˆ
+        //å¼€å§‹å¯¹è¯æ—¶ä¹Ÿæš‚åœæ¸¸æˆ
         GameManager.Instance.TogglePause(isOpen
             || SettingMenu.Instance.settingPanel.activeSelf
             || DialogueUI.Instance.dialoguePanel.activeSelf);
@@ -103,12 +103,12 @@ public class InventoryManager : Manager<InventoryManager>
             GameManager.Instance.playerStats.GetMaxDamage(),
             GameManager.Instance.playerStats.GetDefense());
 
-        gameData.text = "¡Á" + GameManager.Instance.gameData.gameTime;
+        gameData.text = "Ã—" + GameManager.Instance.gameData.gameTime;
 
     }
 
     public void UpdateEquipmentSlot(PlayerStats.PlayerShape shape)
-    //Ëæ×ÅÍæ¼ÒĞÎÌ¬µÄÇĞ»»£¬¸üĞÂ×°±¸À¸µÄ¿ÉÓÃĞÔ
+    //éšç€ç©å®¶å½¢æ€çš„åˆ‡æ¢ï¼Œæ›´æ–°è£…å¤‡æ çš„å¯ç”¨æ€§
     {
         //switch (GameManager.Instance.playerStats.currentShape)
         switch (shape) 
@@ -149,36 +149,43 @@ public class InventoryManager : Manager<InventoryManager>
         defenseText.text = defense.ToString();
     }
 
+    public bool IsRestoringEquipment { get; private set; }
+
     public void RefreshUI()
     {
+        IsRestoringEquipment = true;
+        try
+        {
         accessoryUI.RefreshUI();
         inventoryUI.RefreshUI();
         weaponUI.RefreshUI();
         shieldUI.RefreshUI();
         
         accessoryShopUI.RefreshUI();
+        }
+        finally { IsRestoringEquipment = false; }
     }
 
     public void SaveInventoryData()
     {
-        SaveManager.Instance.Save(inventoryData, inventoryData.name);
-        SaveManager.Instance.Save(weaponData, weaponData.name);
-        SaveManager.Instance.Save(shieldData, shieldData.name);
-        SaveManager.Instance.Save(accessoryData, accessoryData.name);
-        SaveManager.Instance.Save(accessoryShopData, accessoryShopData.name);
+        SaveManager.Instance.Save(inventoryData, "inventory.bag");
+        SaveManager.Instance.Save(weaponData, "inventory.weapon");
+        SaveManager.Instance.Save(shieldData, "inventory.shield");
+        SaveManager.Instance.Save(accessoryData, "inventory.accessory");
+        SaveManager.Instance.Save(accessoryShopData, "inventory.shop");
     }
 
     public void LoadInventoryData()
     {
-        SaveManager.Instance.Load(inventoryData, inventoryData.name);
-        SaveManager.Instance.Load(weaponData, weaponData.name);
-        SaveManager.Instance.Load(shieldData, shieldData.name);
-        SaveManager.Instance.Load(accessoryData, accessoryData.name);
-        SaveManager.Instance.Load(accessoryShopData, accessoryShopData.name);
+        SaveManager.Instance.Load(inventoryData, "inventory.bag", inventoryData.name);
+        SaveManager.Instance.Load(weaponData, "inventory.weapon", weaponData.name);
+        SaveManager.Instance.Load(shieldData, "inventory.shield", shieldData.name);
+        SaveManager.Instance.Load(accessoryData, "inventory.accessory", accessoryData.name);
+        SaveManager.Instance.Load(accessoryShopData, "inventory.shop", accessoryShopData.name);
     }
 
 
-    #region ¼ì²éÍÏ×§ÎïÆ·ÊÇ·ñÔÚslot·¶Î§ÄÚ
+    #region æ£€æŸ¥æ‹–æ‹½ç‰©å“æ˜¯å¦åœ¨slotèŒƒå›´å†…
 
     public bool CheckInventoryUI(Vector3 position)
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class BGMManager : Manager<BGMManager>
@@ -20,7 +20,7 @@ public class BGMManager : Manager<BGMManager>
         base.Awake();
         DontDestroyOnLoad(this);
 
-        UpdateBGM(false, PlayerStats.ExposureState.Peace); // Ä¬ÈÏÊÒÍâºÍÆ½ÒôÀÖ
+        UpdateBGM(false, PlayerStats.ExposureState.Peace); // é»˜è®¤å®¤å¤–å’Œå¹³éŸ³ä¹
     }
 
     public void UpdateBGM(bool isIndoor, PlayerStats.ExposureState state)
@@ -42,18 +42,18 @@ public class BGMManager : Manager<BGMManager>
             case PlayerStats.ExposureState.Peace:
                 return isIndoor ? indoorPeace : outdoorPeace;
             case PlayerStats.ExposureState.Alert:
-            case PlayerStats.ExposureState.Chase: // ×·»÷Ò²ÓÃ¾¯¾õÒôÀÖ
+            case PlayerStats.ExposureState.Chase: // è¿½å‡»ä¹Ÿç”¨è­¦è§‰éŸ³ä¹
                 return isIndoor ? indoorAlert : outdoorAlert;
             default:
                 return null;
         }
     }
 
-    [SerializeField] private float defaultVolume = 0.5f;  // Ä¬ÈÏÒôÁ¿
+    [SerializeField] private float defaultVolume = 0.5f;  // é»˜è®¤éŸ³é‡
 
     IEnumerator SwitchBGM(AudioClip newClip)
     {
-        // µ­³öµ±Ç°ÒôÀÖ
+        // æ·¡å‡ºå½“å‰éŸ³ä¹
         float t = 0f;
 
         while (t < fadeDuration)
@@ -67,7 +67,7 @@ public class BGMManager : Manager<BGMManager>
         bgmSource.clip = newClip;
         bgmSource.Play();
 
-        // µ­ÈëĞÂÒôÀÖ
+        // æ·¡å…¥æ–°éŸ³ä¹
         t = 0f;
         while (t < fadeDuration)
         {
@@ -83,7 +83,7 @@ public class BGMManager : Manager<BGMManager>
     {
         defaultVolume = newVolume;
 
-        // Èç¹ûÕıÔÚ²¥·ÅÒôÀÖ£¬ÊµÊ±¸üĞÂÒôÁ¿
+        // å¦‚æœæ­£åœ¨æ’­æ”¾éŸ³ä¹ï¼Œå®æ—¶æ›´æ–°éŸ³é‡
         if (bgmSource.isPlaying)
         {
             bgmSource.volume = newVolume;

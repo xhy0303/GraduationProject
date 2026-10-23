@@ -1,4 +1,4 @@
-using Cinemachine;
+ï»¿using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +10,10 @@ public class VirtualCamController : MonoBehaviour
 
     private void Awake()
     {
-        // »ñÈ¡ĞéÄâÏà»ú×é¼ş
+        // è·å–è™šæ‹Ÿç›¸æœºç»„ä»¶
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
 
-        // È·±£ĞéÄâÏà»ú×é¼şµÄ Body ²¿·ÖÊÇ CinemachineTransposer
+        // ç¡®ä¿è™šæ‹Ÿç›¸æœºç»„ä»¶çš„ Body éƒ¨åˆ†æ˜¯ CinemachineTransposer
         if (virtualCamera != null)
         {
             transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
@@ -23,13 +23,13 @@ public class VirtualCamController : MonoBehaviour
 
     private void Update()
     {
-        // Èç¹û transposer ÒÑ¾­³É¹¦»ñÈ¡µ½£¬Ôò¿ØÖÆÏà»ú¾àÀë
+        // å¦‚æœ transposer å·²ç»æˆåŠŸè·å–åˆ°ï¼Œåˆ™æ§åˆ¶ç›¸æœºè·ç¦»
         if (transposer != null)
         {
-            // Êó±ê¹öÂÖ¿ØÖÆĞéÄâÉãÏñ»úÀëÍæ¼ÒµÄ¾àÀë
+            // é¼ æ ‡æ»šè½®æ§åˆ¶è™šæ‹Ÿæ‘„åƒæœºç¦»ç©å®¶çš„è·ç¦»
             if (Input.GetAxis("Mouse ScrollWheel") > 0f)
             {
-                transposer.m_CameraDistance -= 1f;  // ÏòÍæ¼Ò¿¿½ü
+                transposer.m_CameraDistance -= 1f;  // å‘ç©å®¶é è¿‘
             }
             else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {

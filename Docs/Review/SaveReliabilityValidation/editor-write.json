@@ -1,0 +1,13 @@
+{
+    "mode": "write",
+    "checks": [
+        "Continue/new game enters saved Main scene",
+        "Every item has a unique registered ID",
+        "Bag can hold test set",
+        "Repeated UI refresh does not move saved equipment into bag",
+        "Weapon and shield models survive deferred shape replacement",
+        "Serialized inventory has stable IDs and no instanceID",
+        "Scene record persisted"
+    ],
+    "diagnostics": []
+}

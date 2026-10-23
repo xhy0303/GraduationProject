@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +19,7 @@ public class NoteDialogueController : DialogueController
             && GameManager.Instance.playerStats.exposureState == PlayerStats.ExposureState.Peace)
         {
             canTalk = true;
-            GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().UpdateHintUI(canTalk, "°´E²é¿´");
+            GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().UpdateHintUI(canTalk, "æŒ‰EæŸ¥çœ‹");
         }
     }
 

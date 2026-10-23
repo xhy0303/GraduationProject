@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,8 +25,8 @@ public class GolemController : EnemyController
             targetStats.GetComponent<NavMeshAgent>().isStopped = true;
             targetStats.GetComponent<NavMeshAgent>().velocity = direction * kickForce;
 
-            targetStats.GetComponent<Animator>().SetTrigger("Dizzy");//»÷ÔÎ¶¯»­
-            //targetStats.GetComponent<NavMeshAgent>().destination = targetStats.transform.position;//Í£Ö¹ÒÆ¶¯
+            targetStats.GetComponent<Animator>().SetTrigger("Dizzy");//å‡»æ™•åŠ¨ç”»
+            //targetStats.GetComponent<NavMeshAgent>().destination = targetStats.transform.position;//åœæ­¢ç§»åŠ¨
             targetStats.TakeDamage(characterStats, targetStats);
         }
     }

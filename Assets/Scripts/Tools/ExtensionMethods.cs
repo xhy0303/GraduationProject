@@ -1,17 +1,17 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public static class extensionMethod
 {
-    // ½Ç¶ÈãĞÖµ£¨µ¥Î»£º¶È£©£¬±íÊ¾ÔÚÃæÇ°¶àÉÙ¶È·¶Î§ÄÚÊÓÎª"ÃæÏòÄ¿±ê"
+    // è§’åº¦é˜ˆå€¼ï¼ˆå•ä½ï¼šåº¦ï¼‰ï¼Œè¡¨ç¤ºåœ¨é¢å‰å¤šå°‘åº¦èŒƒå›´å†…è§†ä¸º"é¢å‘ç›®æ ‡"
     private static float angleThreshold = 170f;
 
     public static bool isFacingTarget(this Transform transform, Transform target)
     {
         Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-        // ½«½Ç¶ÈãĞÖµ×ª»»ÎªÓàÏÒÖµ£¨µã»ıãĞÖµ£©
+        // å°†è§’åº¦é˜ˆå€¼è½¬æ¢ä¸ºä½™å¼¦å€¼ï¼ˆç‚¹ç§¯é˜ˆå€¼ï¼‰
         float cosThreshold = Mathf.Cos(angleThreshold * Mathf.Deg2Rad);
 
         float dot = Vector3.Dot(transform.forward, directionToTarget);

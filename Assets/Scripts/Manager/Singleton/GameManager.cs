@@ -1,10 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System.Net.Http.Headers;
 using UnityEngine.Rendering;
-using UnityEngine.Experimental.Rendering.Universal;
 using Unity.VisualScripting;
 
 public class GameManager : Manager<GameManager>
@@ -20,7 +19,7 @@ public class GameManager : Manager<GameManager>
     public GeneralGameData_SO gameData { get; private set; }
 
 
-    // ÓÎÏ·ÔİÍ£×´Ì¬£¨ÆäËû½Å±¾¿É¶Á²»¿É¸Ä£©
+    // æ¸¸æˆæš‚åœçŠ¶æ€ï¼ˆå…¶ä»–è„šæœ¬å¯è¯»ä¸å¯æ”¹ï¼‰
     public bool IsPaused { get; private set; }
 
     protected override void Awake()
@@ -35,17 +34,17 @@ public class GameManager : Manager<GameManager>
 
     }
 
-    // Ò»¼üÇĞ»»ÔİÍ£/»Ö¸´
+    // ä¸€é”®åˆ‡æ¢æš‚åœ/æ¢å¤
     public void TogglePause(bool pause)
     {
         IsPaused = pause;
 
-        // ºËĞÄÔİÍ£Âß¼­
+        // æ ¸å¿ƒæš‚åœé€»è¾‘
         Time.timeScale = pause ? 0 : 1;
         //Cursor.lockState = pause ? CursorLockMode.None : CursorLockMode.Locked;
         //Cursor.visible = pause;
 
-        // ¿ÉÑ¡£ºÔİÍ£Ê±¾²ÒôËùÓĞÒôÆµ£¨°´ĞèÈ¡Ïû×¢ÊÍ£©
+        // å¯é€‰ï¼šæš‚åœæ—¶é™éŸ³æ‰€æœ‰éŸ³é¢‘ï¼ˆæŒ‰éœ€å–æ¶ˆæ³¨é‡Šï¼‰
         // AudioListener.pause = pause;
     }
 
@@ -53,8 +52,8 @@ public class GameManager : Manager<GameManager>
     {
         playerStats = player;
 
-        followCam = GameObject.FindObjectOfType<CinemachineFreeLook>();
-        virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+        followCam = LegacyObjectLookup.FindFirst<CinemachineFreeLook>();
+        virtualCamera = LegacyObjectLookup.FindFirst<CinemachineVirtualCamera>();
 
         if (followCam != null)
         {
@@ -77,10 +76,10 @@ public class GameManager : Manager<GameManager>
         //followCam.Follow = playerStats.transform.GetChild(2);
         //followCam.LookAt = playerStats.transform.GetChild(2);
 
-        //Ã¿´ÎÇĞ»»³¡¾°ºó£¬ÔÚ×¢²áÍæ¼ÒµÄÍ¬Ê±¼ÓÔØ±³°üÊı¾İ²¢¸üĞÂUI
+        //æ¯æ¬¡åˆ‡æ¢åœºæ™¯åï¼Œåœ¨æ³¨å†Œç©å®¶çš„åŒæ—¶åŠ è½½èƒŒåŒ…æ•°æ®å¹¶æ›´æ–°UI
         //InventoryManager.Instance.LoadInventoryData();
 
-        //È¡ÏûÔÚ´Ë´¦¼ÓÔØ±³°üÊı¾İ£¬»áÓ°Ïì×°±¸ÅäÊÎÏà¹Ø¹¦ÄÜ£¬¸ÄÔÚ³¡¾°ÇĞ»»Ê±¼ÓÔØ
+        //å–æ¶ˆåœ¨æ­¤å¤„åŠ è½½èƒŒåŒ…æ•°æ®ï¼Œä¼šå½±å“è£…å¤‡é…é¥°ç›¸å…³åŠŸèƒ½ï¼Œæ”¹åœ¨åœºæ™¯åˆ‡æ¢æ—¶åŠ è½½
         InventoryManager.Instance.RefreshUI();
     }
 
@@ -107,7 +106,7 @@ public class GameManager : Manager<GameManager>
         switch(sceneName)
         {
             case "Main":
-                foreach (var item in FindObjectsOfType<TransitionDestination>())
+                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
                 {
                     if (item.destinationTag == TransitionDestination.DestinationTag.BirthPos)
                     {
@@ -117,7 +116,7 @@ public class GameManager : Manager<GameManager>
                 break;
 
             case "FirstFloor":
-                foreach (var item in FindObjectsOfType<TransitionDestination>())
+                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
                 {
                     if (item.destinationTag == TransitionDestination.DestinationTag.FrontGateIndoor)
                     {
@@ -127,7 +126,7 @@ public class GameManager : Manager<GameManager>
                 break;
 
             case "SecondFloor":
-                foreach (var item in FindObjectsOfType<TransitionDestination>())
+                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
                 {
                     if (item.destinationTag == TransitionDestination.DestinationTag.SecondFloorDOWN)
                     {
@@ -137,7 +136,7 @@ public class GameManager : Manager<GameManager>
                 break;
 
             case "ThirdFloor":
-                foreach (var item in FindObjectsOfType<TransitionDestination>())
+                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
                 {
                     if (item.destinationTag == TransitionDestination.DestinationTag.ThirdFloor)
                     {
@@ -147,7 +146,7 @@ public class GameManager : Manager<GameManager>
                 break;
 
             case "Dungon":
-                foreach (var item in FindObjectsOfType<TransitionDestination>())
+                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
                 {
                     if (item.destinationTag == TransitionDestination.DestinationTag.DungonIndoor)
                     {

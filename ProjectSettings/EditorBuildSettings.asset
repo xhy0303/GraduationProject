@@ -20,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondFloor.unity
     guid: 715fc13e39147b346ba1faac74ed37d0
-  - enabled: 0
-    path: Assets/Scenes/Test.unity
-    guid: 7aa154661b89a6645b3f195194caff0b
   - enabled: 1
     path: Assets/Scenes/ThirdFloor.unity
     guid: 05d41325011fc2640b9e0e6b1cf19610

@@ -1,0 +1,10 @@
+{
+    "mode": "write",
+    "checks": [
+        "Actual macOS player resumes Main",
+        "Player build contains 25 stable item IDs without UnityEditor APIs",
+        "Equipment UI restore preserves inventory records",
+        "Equipment models remain attached after frame-end destruction"
+    ],
+    "diagnostics": []
+}

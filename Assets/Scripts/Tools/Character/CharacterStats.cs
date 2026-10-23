@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -158,13 +158,13 @@ public class CharacterStats : MonoBehaviour
             characterData = Instantiate(templateData);
         }
 
-        //ÓÎÏ·Ò»¿ªÊ¼¸üĞÂÑªÌõUI
+        //æ¸¸æˆä¸€å¼€å§‹æ›´æ–°è¡€æ¡UI
         UpdateHealthBarOnAttack?.Invoke(CurrentHealth,MaxHealth);
     }
 
     public void TakeDamage(CharacterStats attacker, CharacterStats defender)
-        //½ÇÉ«Ö®¼äµÄÉËº¦¼ÆËã
-        //ÓÀÔ¶ÊÇdefenderµ÷ÓÃ¸Ã·½·¨
+        //è§’è‰²ä¹‹é—´çš„ä¼¤å®³è®¡ç®—
+        //æ°¸è¿œæ˜¯defenderè°ƒç”¨è¯¥æ–¹æ³•
     {
 
         int damage = UnityEngine.Random.Range(attacker.GetMinDamage(), attacker.GetMaxDamage())
@@ -179,18 +179,18 @@ public class CharacterStats : MonoBehaviour
         damage = Mathf.Max(damage, 1);
 
         if (defender.gameObject.GetComponent<GolemController>())
-            //ÎäÆ÷¹¥»÷Ê¯Í·ÈËÉËº¦¼õ°ë
+            //æ­¦å™¨æ”»å‡»çŸ³å¤´äººä¼¤å®³å‡åŠ
         {
             damage /= 2;
         }
 
         CurrentHealth = Mathf.Max(defender.CurrentHealth - damage, 0);
 
-        //ÑªÌõUI¸üĞÂ
+        //è¡€æ¡UIæ›´æ–°
         UpdateHealthBarOnAttack?.Invoke(CurrentHealth, MaxHealth);
 
         if(defender.GetComponent<EnemyController>())
-        //µĞÈËÊÜµ½¹¥»÷ºóÖ±½Ó½øÈëchase×´Ì¬
+        //æ•Œäººå—åˆ°æ”»å‡»åç›´æ¥è¿›å…¥chaseçŠ¶æ€
         {
             defender.GetComponent<EnemyController>().enemyStates = EnemyStates.Chase;
             defender.transform.LookAt(attacker.transform.position);
@@ -203,7 +203,7 @@ public class CharacterStats : MonoBehaviour
         int currentDamage = Mathf.Max(damage - defender.GetDefense(), 1);
 
         if (defender.gameObject.GetComponent<GolemController>())
-            //Ê¯Í··´»÷Ê¯Í·ÈËÊ®±¶ÉËº¦
+            //çŸ³å¤´åå‡»çŸ³å¤´äººåå€ä¼¤å®³
         {
             currentDamage *= 10;
         }
@@ -213,7 +213,7 @@ public class CharacterStats : MonoBehaviour
         UpdateHealthBarOnAttack?.Invoke(CurrentHealth, MaxHealth);
 
         if (defender.GetComponent<EnemyController>())
-        //µĞÈËÊÜµ½¹¥»÷ºóÖ±½Ó½øÈëchase×´Ì¬
+        //æ•Œäººå—åˆ°æ”»å‡»åç›´æ¥è¿›å…¥chaseçŠ¶æ€
         {
             defender.GetComponent<EnemyController>().enemyStates = EnemyStates.Chase;
         }

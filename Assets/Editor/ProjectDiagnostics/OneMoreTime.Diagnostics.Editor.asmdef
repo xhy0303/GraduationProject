@@ -1,0 +1,6 @@
+{
+  "name": "OneMoreTime.Diagnostics.Editor",
+  "references": [],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": false
+}

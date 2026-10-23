@@ -1,0 +1,2 @@
+Begin: Plane, vertices=6449, colors=6449, mean=RGBA(0.154, 0.290, 0.077, 1.000), bounds=Center: (-6.15, 1.17, 0.23), Extents: (75.70, 0.90, 68.87)
+Main: Plane, vertices=6449, colors=6449, mean=RGBA(0.154, 0.290, 0.077, 1.000), bounds=Center: (-6.15, 1.17, 0.23), Extents: (75.70, 0.90, 68.87)

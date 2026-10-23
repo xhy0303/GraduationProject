@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,8 +20,8 @@ public class InteractableObjectManagerData
 
 
 public class InteractableObjectManager : MonoBehaviour
-    //¼ÇÂ¼¿É½»»¥ÎïÆ·£¨°üÀ¨µĞÈË£©ÔÚÍ¬Ò»´ÎÓÎÏ·ÖĞÍ¬Ò»³¡¾°ÄÚµÄ×´Ì¬
-    //±ÜÃâÖØ¸´¼ÓÔØ£¨Èç±»»÷°ÜµÄµĞÈËÔÚÖØĞÂ¼ÓÔØ³¡¾°ºó¸´»î£©
+    //è®°å½•å¯äº¤äº’ç‰©å“ï¼ˆåŒ…æ‹¬æ•Œäººï¼‰åœ¨åŒä¸€æ¬¡æ¸¸æˆä¸­åŒä¸€åœºæ™¯å†…çš„çŠ¶æ€
+    //é¿å…é‡å¤åŠ è½½ï¼ˆå¦‚è¢«å‡»è´¥çš„æ•Œäººåœ¨é‡æ–°åŠ è½½åœºæ™¯åå¤æ´»ï¼‰
 {
 
     public List<ObjectState> objectStates;
@@ -29,39 +29,39 @@ public class InteractableObjectManager : MonoBehaviour
 
     private void Awake()
     {
-        // È·±£ objectStates ÒÑ¾­³õÊ¼»¯
+        // ç¡®ä¿ objectStates å·²ç»åˆå§‹åŒ–
         if (objectStates == null)
         {
             objectStates = new List<ObjectState>();
         }
 
-        // ÏÈ±éÀúËùÓĞ×Ó¶ÔÏó£¬°Ñ ObjectState ÊÕ¼¯µ½ÁĞ±íÖĞ£¨ÎŞÂÛÊÇ·ñÊÇµÚÒ»´Î¼ÓÔØ¶¼ÕâÃ´×ö£©
+        // å…ˆéå†æ‰€æœ‰å­å¯¹è±¡ï¼ŒæŠŠ ObjectState æ”¶é›†åˆ°åˆ—è¡¨ä¸­ï¼ˆæ— è®ºæ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡åŠ è½½éƒ½è¿™ä¹ˆåšï¼‰
         for (int i = 0; i < transform.childCount; i++)
         {
             ObjectState objState = transform.GetChild(i).GetComponent<ObjectState>();
             if (objState != null)
             {
-                // ³õÊ¼»¯Ã¿¸öÎïÆ·µÄÊı¾İ
+                // åˆå§‹åŒ–æ¯ä¸ªç‰©å“çš„æ•°æ®
                 objState.objIndex = i;
                 objState.objName = transform.GetChild(i).gameObject.name;
                 objState.isActive = true;
                 objState.GenerateID();
 
-                // Ìí¼Óµ½ÁĞ±íÖĞ
+                // æ·»åŠ åˆ°åˆ—è¡¨ä¸­
                 objectStates.Add(objState);
             }
         }
 
-        // ³¢ÊÔ¼ÓÔØ±£´æµÄÊı¾İ£¬²¢¸üĞÂÎïÌå×´Ì¬
+        // å°è¯•åŠ è½½ä¿å­˜çš„æ•°æ®ï¼Œå¹¶æ›´æ–°ç‰©ä½“çŠ¶æ€
         LoadObjectStates();
     }
 
     public void SaveObjectStates()
     {
-        // ĞÂ½¨Êı¾İÈİÆ÷
+        // æ–°å»ºæ•°æ®å®¹å™¨
         InteractableObjectManagerData data = new InteractableObjectManagerData();
 
-        // ±éÀúËùÓĞµÄ ObjectState£¬½«Êı¾İ¸´ÖÆ½øÈ¥
+        // éå†æ‰€æœ‰çš„ ObjectStateï¼Œå°†æ•°æ®å¤åˆ¶è¿›å»
         foreach (var obj in objectStates)
         {
             ObjectStateData stateData = new ObjectStateData();
@@ -71,41 +71,41 @@ public class InteractableObjectManager : MonoBehaviour
             data.objectStates.Add(stateData);
         }
 
-        // ¹¹ÔìÎ¨Ò»µÄ key£¨Ê¾Àı£º³¡¾°Ãû + ¹ÜÀíÆ÷¶ÔÏóÃû + µ±Ç°ÓÎÏ·´ÎÊı£©
+        // æ„é€ å”¯ä¸€çš„ keyï¼ˆç¤ºä¾‹ï¼šåœºæ™¯å + ç®¡ç†å™¨å¯¹è±¡å + å½“å‰æ¸¸æˆæ¬¡æ•°ï¼‰
         string key = SceneManager.GetActiveScene().name 
             + gameObject.name 
             + GameManager.Instance.gameData.gameTime.ToString();
 
-        // µ÷ÓÃ SaveManager ±£´æÊı¾İ
+        // è°ƒç”¨ SaveManager ä¿å­˜æ•°æ®
         SaveManager.Instance.Save(data, key);
-        //ÔÚ Unity ÖĞ£¬Ä¬ÈÏµÄ Object Ö¸µÄÊÇ UnityEngine.Object£¬
-        //¶øÄãµÄ InteractableObjectManagerData ²¢²»¼Ì³Ğ×Ô UnityEngine.Object£¬¶øÊÇÆÕÍ¨µÄ C# Àà¡£
-        //½«·½·¨µÄ²ÎÊıÀàĞÍ´Ó UnityEngine.Object ¸ÄÎª System.Object£¬
-        //    ÕâÑù¾ÍÄÜ½ÓÊÜÈÎºÎÆÕÍ¨µÄ C# ¶ÔÏó¡£
-        //    Äã¿ÉÒÔÖ±½ÓÊ¹ÓÃĞ¡Ğ´µÄ object£¬ÒòÎª object ¾ÍÊÇ System.Object¡£
+        //åœ¨ Unity ä¸­ï¼Œé»˜è®¤çš„ Object æŒ‡çš„æ˜¯ UnityEngine.Objectï¼Œ
+        //è€Œä½ çš„ InteractableObjectManagerData å¹¶ä¸ç»§æ‰¿è‡ª UnityEngine.Objectï¼Œè€Œæ˜¯æ™®é€šçš„ C# ç±»ã€‚
+        //å°†æ–¹æ³•çš„å‚æ•°ç±»å‹ä» UnityEngine.Object æ”¹ä¸º System.Objectï¼Œ
+        //    è¿™æ ·å°±èƒ½æ¥å—ä»»ä½•æ™®é€šçš„ C# å¯¹è±¡ã€‚
+        //    ä½ å¯ä»¥ç›´æ¥ä½¿ç”¨å°å†™çš„ objectï¼Œå› ä¸º object å°±æ˜¯ System.Objectã€‚
     }
 
     public void LoadObjectStates()
     {
-        // ĞÂ½¨Êı¾İÈİÆ÷£¨Êı¾İ»á¼ÓÔØµ½Õâ¸ö¶ÔÏóÉÏ£©
+        // æ–°å»ºæ•°æ®å®¹å™¨ï¼ˆæ•°æ®ä¼šåŠ è½½åˆ°è¿™ä¸ªå¯¹è±¡ä¸Šï¼‰
         InteractableObjectManagerData data = new InteractableObjectManagerData();
 
-        // ¹¹ÔìÓë±£´æÊ±ÏàÍ¬µÄ key
+        // æ„é€ ä¸ä¿å­˜æ—¶ç›¸åŒçš„ key
         string key = SceneManager.GetActiveScene().name 
             + gameObject.name
             + GameManager.Instance.gameData.gameTime.ToString();
 
-        // µ÷ÓÃ SaveManager ¼ÓÔØÊı¾İ
+        // è°ƒç”¨ SaveManager åŠ è½½æ•°æ®
         SaveManager.Instance.Load(data, key);
 
-        // ±éÀú¼ÓÔØµ½µÄÊı¾İ£¬¸üĞÂ³¡¾°ÖĞµÄ ObjectState
+        // éå†åŠ è½½åˆ°çš„æ•°æ®ï¼Œæ›´æ–°åœºæ™¯ä¸­çš„ ObjectState
         foreach (var stateData in data.objectStates)
         {
-            // ÕâÀï¼ÙÉè objIndex ÊÇÎ¨Ò»±êÊ¶£¬¿ÉÒÔÓÃËüÀ´ÕÒµ½¶ÔÓ¦µÄ ObjectState
+            // è¿™é‡Œå‡è®¾ objIndex æ˜¯å”¯ä¸€æ ‡è¯†ï¼Œå¯ä»¥ç”¨å®ƒæ¥æ‰¾åˆ°å¯¹åº”çš„ ObjectState
             ObjectState objState = objectStates.Find(x => x.objIndex == stateData.objIndex);
             if (objState != null)
             {
-                // ¸ù¾İ¼ÓÔØµÄÊı¾İ¸üĞÂ×´Ì¬
+                // æ ¹æ®åŠ è½½çš„æ•°æ®æ›´æ–°çŠ¶æ€
                 objState.UpdateActive(stateData.isActive);
             }
         }

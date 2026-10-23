@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,11 +43,11 @@ public class ItemToolTip : MonoBehaviour
         float width = corners[3].x - corners[0].x;
         float height = corners[1].y - corners[0].y;
 
-        if (mousePos.y < height)// Û±Íµ◊≤øø’º‰≤ª◊„
+        if (mousePos.y < height)//Èº†Ê†áÂ∫ïÈÉ®Á©∫Èó¥‰∏çË∂≥
         {
             rectTransform.position = mousePos + Vector3.up * height * 0.6f;
         }
-        else if (Screen.width - mousePos.x > width) // Û±Í”“≤‡ø’º‰≥‰◊„
+        else if (Screen.width - mousePos.x > width) //Èº†Ê†áÂè≥‰æßÁ©∫Èó¥ÂÖÖË∂≥
         {
             rectTransform.position = mousePos + Vector3.right * width * 0.6f;
         }

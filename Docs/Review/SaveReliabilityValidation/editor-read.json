@@ -1,0 +1,23 @@
+{
+    "mode": "read",
+    "checks": [
+        "Continue/new game enters saved Main scene",
+        "All bag IDs, counts and empty slots survive a new Unity process",
+        "All equipped slots survive restart and UI initialization",
+        "Shop stock survives restart",
+        "Health and run count survive restart",
+        "Restored accessory effect is active",
+        "Restored weapon/shield stats are active",
+        "World object state restores using saved run count before scene Awake",
+        "Weapon and shield models survive deferred shape replacement",
+        "Damaged primary restores verified backup",
+        "Unknown item ID rejects entire load without partial mutation",
+        "Semantically invalid primary uses intact backup",
+        "Legacy instance IDs never resolve to unrelated objects and original record is preserved",
+        "New game preserves unrelated preferences and archived legacy records",
+        "New game cannot resurrect old inventory even with a corrupted key index",
+        "New game resets in-memory run count",
+        "Victory persists next-run scene before exit"
+    ],
+    "diagnostics": []
+}

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 public class MouseManager : Manager<MouseManager>
 {
-    RaycastHit hitInfo;//½âÎöÔÚp5 06£º14
+    RaycastHit hitInfo;//è§£æåœ¨p5 06ï¼š14
     public event Action<Vector3> OnMouseCliked;//p6 03:55
     public event Action<GameObject> OnEnemyClicked;//p11 00:56
 

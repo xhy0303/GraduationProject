@@ -1,0 +1,278 @@
+[
+  {
+    "path": "Assets/Scripts/Controller/Chest/ChestController.cs",
+    "sha256": "69c73e08672f04ddb2c27a9ab6549f5b2fb06adffa7f4ae4a2bb3f02b6cfd4a4"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Chest/FinalChestController.cs",
+    "sha256": "e9b9567185e5c9c354bf419f099205b5fb092df051581cb5fc682838025cb71d"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Chest/KeyContainerController.cs",
+    "sha256": "dc772414f211216bf9866dc021c3f07ad513c918599b577ac93b92336709db6d"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Chest/LockedChestController.cs",
+    "sha256": "7094f70e0cacdd98d134aeb9a095162bbb434feb9ea6b0a53fb2f266a77b696b"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Dialogue/DialogueController.cs",
+    "sha256": "aff0663ed87d7a2ea1d05111f04e3fabd419cd6c98d4b95518b700f3f89ef3f1"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Dialogue/EnemyDialogueController.cs",
+    "sha256": "ed873b518e5e8b32018aeb4a2272e4b0a91dc03bcb3d57f273d4b590e22d69dd"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Dialogue/NPCDialogueController.cs",
+    "sha256": "b45e80731ef7cf166672f8c9fcb73e65f5bdc40428a388a9592c27f4b2303a82"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Dialogue/NoteDialogueController.cs",
+    "sha256": "2a4e7295a409fd42241816b628d9a3004ced7d19d2aa866afc095814791b4baf"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Enemy/EnemyController.cs",
+    "sha256": "c8362477630c846afa16c8c1eca3ab2cc87ea59d626e768ede9f97415c4f5183"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Enemy/GolemController.cs",
+    "sha256": "1e233dbca7448a9a374fa647eccd7a2259be369c534d67742567cb9d2fe181ba"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Enemy/GruntController.cs",
+    "sha256": "f839ea3facaf93a7ebb5cf28a9a48d117a89309dd8eb04c46a22d8241caa772f"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Enemy/RockController.cs",
+    "sha256": "3dd1bfdc044c3c5dabc67493ef772637dd837344bf3516a8a543a7e8b0b98f40"
+  },
+  {
+    "path": "Assets/Scripts/Controller/FinalLevelController.cs",
+    "sha256": "0bb6063fa0e904b17cfa1e7433ef63b48362085ab7f028dc8dc38cd39e2528ba"
+  },
+  {
+    "path": "Assets/Scripts/Controller/LockController.cs",
+    "sha256": "838f3c55da8a116aaec1d0ad3a85b14b16636c17a648836cfafeed9be92cf98c"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Player/PlayerController.cs",
+    "sha256": "522a8b5a784d729292c1586c0faef3fcf01d79bc3eaf0774114ceca034a5619a"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Player/ShapeShiftController.cs",
+    "sha256": "2b223d231aa8be10e04e2855bb2539465d8abdf7c5a431223742f4dd6faed742"
+  },
+  {
+    "path": "Assets/Scripts/Controller/Player/VirtualCamController.cs",
+    "sha256": "37c966f812dd8771ece5a7eb632e5fff7e4c706abf68ec6876e5282de3d450f2"
+  },
+  {
+    "path": "Assets/Scripts/Controller/SceneController.cs",
+    "sha256": "b6832a6ed01217cd8fc47868c74b3c6a6dda54b5f570d2898af005ab0c51d69e"
+  },
+  {
+    "path": "Assets/Scripts/Controller/ShopController.cs",
+    "sha256": "fa5357a7555fe07c5a67755cca8df0620b07e98c21488ecf360a34e915000dfb"
+  },
+  {
+    "path": "Assets/Scripts/Manager/InteractableObjectManager.cs",
+    "sha256": "39f4ee803523e544a7117c70f475b3320dbebd813cdae57d2d8ab4d47f03a6bc"
+  },
+  {
+    "path": "Assets/Scripts/Manager/Singleton/BGMManager.cs",
+    "sha256": "1fc2fc27e9355384c28f3f0185a3bcf5e28d0d9d101c73dbf415f222d43c163b"
+  },
+  {
+    "path": "Assets/Scripts/Manager/Singleton/GameManager.cs",
+    "sha256": "75616b26c84ff1ceb26c304b926e438fcc249020136b970fa9ba485540aca2fc"
+  },
+  {
+    "path": "Assets/Scripts/Manager/Singleton/GameOverManager.cs",
+    "sha256": "39a9f54dde074332daad29b46003b3d8b80611a7bcbaf2bc91023c98b401cd7b"
+  },
+  {
+    "path": "Assets/Scripts/Manager/Singleton/InventoryManager.cs",
+    "sha256": "3151c00961e64919b54e1e02bd0e1db081bb42e52bc2cf8480a1a6eca7d3c0b8"
+  },
+  {
+    "path": "Assets/Scripts/Manager/Singleton/Manager.cs",
+    "sha256": "50e343830c5e6d21d5e0ec74e98f701e0d2edc299b4b8d87f982e9d804bbf2e2"
+  },
+  {
+    "path": "Assets/Scripts/Manager/Singleton/MouseManager.cs",
+    "sha256": "6ca994d1fc4a3b0945c459d4a9f06d0461d68c85dac6573c1341e24e904cd46a"
+  },
+  {
+    "path": "Assets/Scripts/Manager/Singleton/SaveManager.cs",
+    "sha256": "016cb26eeebe45f262a2422ca3f0215a141d2742640c52403010dad6060a8052"
+  },
+  {
+    "path": "Assets/Scripts/Persistence/InventorySaveCodec.cs",
+    "sha256": "5f07cbb5ad27a5b592ef1126c92777cab816ca7e2fd82889c1e484ab97a1449c"
+  },
+  {
+    "path": "Assets/Scripts/Persistence/SaveRecordStore.cs",
+    "sha256": "87216b7e5b938883c4ca23c66e8de6af4a9122315db0b6fdffce2d174b5809b9"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/CharacterData_SO.cs",
+    "sha256": "db641349f2b0f97b6cefb4aa4f80b422a98d1bd7e5d4eaf278dfdc39b26b50bc"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/DialogueData_SO.cs",
+    "sha256": "9be0a45e6ee11e0dfdd4ed582bedfd2ad053f76a89dc8dd4143eabfb246b4caf"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/EquipmentData_SO.cs",
+    "sha256": "fa7d9d00f10325538143bd6e4098aa166343562009d98202cb632d15265dedd9"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/GeneralGameData_SO.cs",
+    "sha256": "cbf63d8f066d4973ae4c0918d7a1763debce855770cc8b02c2f95b8a9be78fd6"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/InventoryData_SO.cs",
+    "sha256": "c4b4c4938c8d1e9b0b13400ffb05449cb75a62692d09763ab3f68d1638b720a5"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/ItemCatalog.cs",
+    "sha256": "f36afb305fcab619c4f10b71e5d0388bed432d4a5e7272e003fb7e04a3f1354e"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/ItemData_SO.cs",
+    "sha256": "b4da0e23cf0de78fe75c1d192b636af6e2caf4d93b3d4c53f3cb1495df57e1fa"
+  },
+  {
+    "path": "Assets/Scripts/ScriptableObject/UseableItemData_SO.cs",
+    "sha256": "589c8760d4d36b6da4a52b2820292789086bcf83435f3357696ac019e7a03198"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Character/CharacterStats.cs",
+    "sha256": "0e32cb4494139f211c09f3f5c0dcc304d3a90bc9fc7045b7d3377161d6770c1e"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Character/EnemyDeathHandler.cs",
+    "sha256": "70d908581fb7dc9d0759e86ce36f35cc12505cb85d700ab463e07e10c0a69a09"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Character/EnemyStats.cs",
+    "sha256": "8fbd3e066657d9d484df8b7c8fa2a47687940282c08ed9e87ccf2642662a9c41"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Character/LootSpawner.cs",
+    "sha256": "7497421d0e1308057a389ba8d9fff374df94bf8981567cd1b94017aa75f6ab74"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Character/PlayerStats.cs",
+    "sha256": "7d396a9413d0bf91dc1b052d3fe1a5695031af162c8d1692eab2fe847efc9255"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Dialogue/DialogueOption.cs",
+    "sha256": "596666692e2eadbc8c094b1ec10b347be648b2bbe24abca7bf74b152bea95397"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Dialogue/DialoguePiece.cs",
+    "sha256": "43efa4026810bcf7bf2afd514b19ed88783338b44b4e33b933847b2776ada1de"
+  },
+  {
+    "path": "Assets/Scripts/Tools/ExtensionMethods.cs",
+    "sha256": "bf35407693106b57474374ea1a67d68e3fcc5b41170c4936668faa7ccc347b4b"
+  },
+  {
+    "path": "Assets/Scripts/Tools/IEndGameObserver.cs",
+    "sha256": "9f8b84a5e736d85cd6f33835b8260846590228ed81fec79cd16afb521830254e"
+  },
+  {
+    "path": "Assets/Scripts/Tools/LegacyObjectLookup.cs",
+    "sha256": "0caa2b44c53b08fda4da5746d1afaafe9efee5110efbcddea534f1b1e5f34e66"
+  },
+  {
+    "path": "Assets/Scripts/Tools/ObjectState.cs",
+    "sha256": "e5383849b8d984c4252f942cd83d0e1e6bfe216fea0b976ceec625c4ae1add70"
+  },
+  {
+    "path": "Assets/Scripts/Tools/StopAgent.cs",
+    "sha256": "e46b92cf28858ce7a15ed13fbbd4a0adb4f5064c3bb8eaab9b6e1b9496afdb23"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Transition/DungonDoor.cs",
+    "sha256": "acc0f864ea76fb87f799f71c931f5e64cc5ebbf56a9099945fe73fdf08b2aa55"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Transition/TransitionDestination.cs",
+    "sha256": "37f2e056265bd3505b18e06501b7952120b431c00db4b3922a1c0aff8375b6ad"
+  },
+  {
+    "path": "Assets/Scripts/Tools/Transition/TransitionPoint.cs",
+    "sha256": "5195cbd72657402697cddea9b9257eb1df28c9837d30dc459d99890b7f3c5cbc"
+  },
+  {
+    "path": "Assets/Scripts/UI/Dialogue/DialogueUI.cs",
+    "sha256": "db63b9a0a4b8b85802ade38274c616c104b9bd2e983c1e53db4a1b20d6050938"
+  },
+  {
+    "path": "Assets/Scripts/UI/Dialogue/OptionUI.cs",
+    "sha256": "08213900ebd9ef73e3ef1af9c65069fa3021f6005d4e93cf52d71c9b19d526b9"
+  },
+  {
+    "path": "Assets/Scripts/UI/HealthBarUI.cs",
+    "sha256": "4e14a8b83f21f76ed0c28bbbcad62dbb443c307452e9675e2aa17b5133e85676"
+  },
+  {
+    "path": "Assets/Scripts/UI/InteractUI.cs",
+    "sha256": "42322cc102f1b7b38c9595893dc97526deed4a7cf2beebef87a399d54bceede7"
+  },
+  {
+    "path": "Assets/Scripts/UI/Inventory/ContainerUI.cs",
+    "sha256": "a7aac5b7e8412771a82ccb8b5b965dd6fd893e2c6f303c4fe6ad3e40034265b4"
+  },
+  {
+    "path": "Assets/Scripts/UI/Inventory/DragItem.cs",
+    "sha256": "52d8aeb651da283851afb6ef976162029256037f638fa02567c6c2d2d3c32d94"
+  },
+  {
+    "path": "Assets/Scripts/UI/Inventory/ItemPickUp.cs",
+    "sha256": "23132556fec5805d89f0ad0af0a812770992f5d9793f9a47cc919eefc1813025"
+  },
+  {
+    "path": "Assets/Scripts/UI/Inventory/ItemToolTip.cs",
+    "sha256": "1f11fadc691f11140ade23ff0e0916db3004762cf051f1b6ee8b2a969f76c7a9"
+  },
+  {
+    "path": "Assets/Scripts/UI/Inventory/ItemUI.cs",
+    "sha256": "9015539020e7010fe4c1952e4254cc6c78947131c0e02d2d3503e16dac5fc1f8"
+  },
+  {
+    "path": "Assets/Scripts/UI/Inventory/SlotHolder.cs",
+    "sha256": "f652a95800d9d5297502f076b72dd8b292b902a9d8aab186efa8e6a7f72e35f6"
+  },
+  {
+    "path": "Assets/Scripts/UI/MainMenu.cs",
+    "sha256": "0804104a7f10fc7978ac78d6ce916ad86c39ccf37a3707c9ea6c8b2b4a3d7e26"
+  },
+  {
+    "path": "Assets/Scripts/UI/PlayerInfoUI.cs",
+    "sha256": "94f34e250765ed1fa8d6e2f0524949b9d1db814bd52bc9202f387697cd0c94e8"
+  },
+  {
+    "path": "Assets/Scripts/UI/SettingMenu.cs",
+    "sha256": "bcd38fe29a8e1031a961b8f53a29c73d631c3b5594ed844c2932710c36067889"
+  },
+  {
+    "path": "Assets/Editor/ItemCatalogBuilder.cs",
+    "sha256": "241931a16b4f8141894afbe5fa9c6a2ff603246d6c583541edb39aaddbeff510"
+  },
+  {
+    "path": "Assets/Editor/ProjectDiagnostics/PlayModeEntry.cs",
+    "sha256": "497f5d66f093511b28b97b8cb4277f8625de432d16e3e342426d3f1c8d3dacf1"
+  },
+  {
+    "path": "Assets/Editor/ProjectDiagnostics/ProjectDiagnostics.cs",
+    "sha256": "7503f06f6d3eaa758f4ad550ad5ec560e253e2fdc3a23644c936c11ad7b86a75"
+  },
+  {
+    "path": "Assets/Resources/ItemCatalog.asset",
+    "sha256": "fc9d97cbf07b9d590d203c78921846e0583b4e29e20ac799c78d9ad61e4f9d29"
+  }
+]

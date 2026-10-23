@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerInfoUI : MonoBehaviour
 {
-    //×¢Òâ×é¼şµÄÀàĞÍ
+    //æ³¨æ„ç»„ä»¶çš„ç±»å‹
 
     Image healthSlider;
     Image expSlider;

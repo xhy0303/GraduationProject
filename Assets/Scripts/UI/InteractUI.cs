@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +25,7 @@ public class InteractUI : MonoBehaviour
     {
         camPos = Camera.main.transform;
 
-        foreach (Canvas canvas in FindObjectsOfType<Canvas>())
+        foreach (Canvas canvas in LegacyObjectLookup.FindAll<Canvas>())
         {
             if (canvas.name == "InteractUICanvas")
             {
@@ -45,7 +45,7 @@ public class InteractUI : MonoBehaviour
     }
 
     private void LateUpdate()
-    //在所有的update方法结束后才执行
+    //鍦ㄦ墍鏈夌殑update鏂规硶缁撴潫鍚庢墠鎵ц
     {
         if (hintUI != null)
         {

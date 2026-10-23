@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -26,14 +26,14 @@ public class MainMenu : MonoBehaviour
     void ContinueGame()
     {
         Debug.Log("Continue Game");
-        //�л�����
-        //��ȡ����
-        //�����һ����Ϸ�����˽��ż�����Ϸ
-        //����û�н��ȵ�ʱ��ͼ�����Ϸ���б���
+        //切换场景
+        //读取进度
+        //如果第一次游戏就死了接着继续游戏
+        //或者没有进度的时候就继续游戏会有报错
         if(SaveManager.Instance.SceneName == "")
         {
-            Debug.Log("û�д浵");
-            //ֱ�ӿ�ʼ����Ϸ
+            Debug.Log("没有存档");
+            //直接开始新游戏
             NewGame();
             return;
         }
@@ -43,10 +43,9 @@ public class MainMenu : MonoBehaviour
 
     void NewGame()
     {
-        PlayerPrefs.DeleteAll();
         SaveManager.Instance.ResetGameData();
 
-        //�л�����
+        //切换场景
         SceneController.Instance.Transition2FirstLevel();
 
         Debug.Log("New Game");

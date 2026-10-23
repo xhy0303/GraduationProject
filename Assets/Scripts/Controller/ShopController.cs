@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,11 +18,11 @@ public class ShopController : MonoBehaviour
         {
             InventoryManager.Instance.shopPanel.SetActive(canOpen);
             //chosen = true;
-            //²»Ó¦¸ÃÔÚÕâÀïÉèÖÃÑ¡ÔñÓë·ñ£¬¶øÔÚInventoryManagerÀïÉèÖÃ
+            //ä¸åº”è¯¥åœ¨è¿™é‡Œè®¾ç½®é€‰æ‹©ä¸å¦ï¼Œè€Œåœ¨InventoryManageré‡Œè®¾ç½®
         }
 
         //if (chosen)
-        //    //Ñ¡ÔñÁËÊÎÆ·ÒÔºó¹Ø±ÕÉÌµêÃæ°å
+        //    //é€‰æ‹©äº†é¥°å“ä»¥åå…³é—­å•†åº—é¢æ¿
         //{
         //    InventoryManager.Instance.shopPanel.SetActive(false);
         //}
@@ -36,7 +36,7 @@ public class ShopController : MonoBehaviour
                 InventoryManager.Instance.accessoryShopData.GetEmptyCount()))
         {
             canOpen = true;
-            GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "°´B´ò¿ªÉÌµê");
+            GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "æŒ‰Bæ‰“å¼€å•†åº—");
         }
     }
 

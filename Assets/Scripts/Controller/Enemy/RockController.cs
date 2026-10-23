@@ -23,7 +23,7 @@ public class RockController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = Vector3.one;
+        rb.linearVelocity = Vector3.one;
         FlyToTarget();
 
         state = states.HitPlayer;

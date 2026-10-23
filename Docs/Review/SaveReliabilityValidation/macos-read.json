@@ -1,0 +1,13 @@
+{
+    "mode": "read",
+    "checks": [
+        "Actual macOS player resumes Main",
+        "All five inventories survive closing and relaunching the macOS app",
+        "Health and run count survive macOS app restart",
+        "Accessory effect restored in standalone build",
+        "World object state restored before gameplay",
+        "Equipment stats restored in standalone build",
+        "Equipment models remain attached after frame-end destruction"
+    ],
+    "diagnostics": []
+}

@@ -1,11 +1,10 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using System.Reflection;
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.RigisterPlayer(characterStats);
 
-        MouseManager.Instance.OnMouseCliked += MoveTo;//ÔÚMouseManagerµÄOnMouseClikedÊÂ¼şÖĞÌí¼Ó·½·¨
+        MouseManager.Instance.OnMouseCliked += MoveTo;//åœ¨MouseManagerçš„OnMouseClikedäº‹ä»¶ä¸­æ·»åŠ æ–¹æ³•
         MouseManager.Instance.OnEnemyClicked += EventAttack;
     }
 
@@ -68,11 +67,11 @@ public class PlayerController : MonoBehaviour
             GameOverManager.Instance.ShowGameOver(false);
         }
 
-        if (Input.GetKey(KeyCode.V) && GameManager.Instance.playerStats.EagleVision)//Ó¥ÑÛÊÓ¾õ
+        if (Input.GetKey(KeyCode.V) && GameManager.Instance.playerStats.EagleVision)//é¹°çœ¼è§†è§‰
         {
-            Debug.Log("°´ÏÂ V ¼ü");
+            Debug.Log("æŒ‰ä¸‹ V é”®");
 
-            foreach(var enemy in FindObjectsOfType<EnemyController>())
+            foreach(var enemy in LegacyObjectLookup.FindAll<EnemyController>())
             {
                 enemy.gameObject.GetComponent<Outline>().enabled = true;
             }
@@ -81,9 +80,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.V))
         {
-            Debug.Log("ËÉ¿ª V ¼ü");
+            Debug.Log("æ¾å¼€ V é”®");
 
-            foreach (var enemy in FindObjectsOfType<EnemyController>())
+            foreach (var enemy in LegacyObjectLookup.FindAll<EnemyController>())
             {
                 enemy.gameObject.GetComponent<Outline>().enabled = false;
             }
@@ -101,35 +100,27 @@ public class PlayerController : MonoBehaviour
         
         switch (formName)
         {
-            case "ÒşĞÎ":
+            case "éšå½¢":
                 GameManager.Instance.playerStats.currentShape = PlayerStats.PlayerShape.Invisiable;
 
-                Instantiate(invisiableForm, gameObject.transform);
-                if (gameObject.transform.childCount > 3)
-                {
-                    Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 2).gameObject);
-                }
+                ReplaceForm(invisiableForm);
                 animator.avatar = invisiableForm.gameObject.GetComponent<ShapeShiftController>().avatar;
 
                 StartCoroutine(RestartAnimator());
-                //Ê¹ÓÃĞ­³ÌÑÓ³ÙÒ»Ö¡ºóÔÙÖØĞÂÆôÓÃ Animator
+                //ä½¿ç”¨åç¨‹å»¶è¿Ÿä¸€å¸§åå†é‡æ–°å¯ç”¨ Animator
 
                 //animator.enabled = false;
                 //animator.enabled = true;
-                //ÔÚ´úÂëÖĞ¼òµ¥µØÇĞ»» animator µÄ enabled ×´Ì¬
-                //²»»áÏñÊÖ¶¯²Ù×÷ÄÇÑù³¹µ×ÖØÖÃ¶¯»­×´Ì¬»ú£¬
-                //ÒòÎªÄÚ²¿×´Ì¬Ã»ÓĞÍêÈ«ÖØÖÃ
+                //åœ¨ä»£ç ä¸­ç®€å•åœ°åˆ‡æ¢ animator çš„ enabled çŠ¶æ€
+                //ä¸ä¼šåƒæ‰‹åŠ¨æ“ä½œé‚£æ ·å½»åº•é‡ç½®åŠ¨ç”»çŠ¶æ€æœºï¼Œ
+                //å› ä¸ºå†…éƒ¨çŠ¶æ€æ²¡æœ‰å®Œå…¨é‡ç½®
 
                 break;
 
-            case "ÊŞÈË":
+            case "å…½äºº":
                 GameManager.Instance.playerStats.currentShape = PlayerStats.PlayerShape.Yokai;
 
-                Instantiate(yokaiForm, gameObject.transform);
-                if (gameObject.transform.childCount > 3)
-                {
-                    Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 2).gameObject);
-                }
+                ReplaceForm(yokaiForm);
                 animator.avatar = yokaiForm.gameObject.GetComponent<ShapeShiftController>().avatar;
 
                 StartCoroutine(RestartAnimator());
@@ -137,14 +128,10 @@ public class PlayerController : MonoBehaviour
 
                 break;
 
-            case "ÈËĞÎ":
+            case "äººå½¢":
                 GameManager.Instance.playerStats.currentShape = PlayerStats.PlayerShape.Human;
 
-                Instantiate(humanForm, gameObject.transform);
-                if (gameObject.transform.childCount > 3)//Èç¹û×Ó¶ÔÏóÊıÄ¿´óÓÚ3£¬ËµÃ÷ÊÇÇĞ»»ĞÎÌ¬£¬ÔòÒªÉ¾³ı¾ÉĞÎÌ¬
-                {
-                    Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 2).gameObject);
-                }
+                ReplaceForm(humanForm);
                 //Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 2).gameObject);
                 
                 animator.avatar = humanForm.gameObject.GetComponent<ShapeShiftController>().avatar;
@@ -159,10 +146,24 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    private void ReplaceForm(GameObject form)
+    {
+        // Destroy is deferred until end-of-frame. Detach the old model first so
+        // equipment restored this frame attaches to the new model at child 2.
+        if (transform.childCount > 2)
+        {
+            var previous = transform.GetChild(2);
+            previous.SetParent(null);
+            previous.gameObject.SetActive(false);
+            Destroy(previous.gameObject);
+        }
+        Instantiate(form, transform);
+    }
+
     IEnumerator RestartAnimator()
     {
         animator.enabled = false;
-        yield return null; // µÈ´ıÒ»Ö¡
+        yield return null; // ç­‰å¾…ä¸€å¸§
         animator.Rebind();
         animator.Update(0f);
         animator.enabled = true;
@@ -175,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void MoveTo(Vector3 destination)//ÒÆ¶¯µ½Êó±êµã»÷µÄÎ»ÖÃ
+    void MoveTo(Vector3 destination)//ç§»åŠ¨åˆ°é¼ æ ‡ç‚¹å‡»çš„ä½ç½®
     {
         StopAllCoroutines();
 
@@ -202,7 +203,7 @@ public class PlayerController : MonoBehaviour
         agent.SetDestination(destination);
     }
 
-    void EventAttack(GameObject target)//¹¥»÷µĞÈË
+    void EventAttack(GameObject target)//æ”»å‡»æ•Œäºº
     {
 
         if (isDead) return;
@@ -223,7 +224,7 @@ public class PlayerController : MonoBehaviour
         agent.stoppingDistance = characterStats.AttackRange;
 
         while (Vector3.Distance(attackTarget.transform.position, transform.position) 
-            > characterStats.AttackRange)//Íæ¼ÒºÍ¹¥»÷¶ÔÏóµÄ¾àÀëºÍ¹¥»÷¾àÀëµÄ±È½Ï
+            > characterStats.AttackRange)//ç©å®¶å’Œæ”»å‡»å¯¹è±¡çš„è·ç¦»å’Œæ”»å‡»è·ç¦»çš„æ¯”è¾ƒ
         {
             agent.destination = attackTarget.transform.position;
             yield return null;
@@ -246,11 +247,11 @@ public class PlayerController : MonoBehaviour
         {
             if (attackTarget.GetComponent<RockController>()
                /* && attackTarget.GetComponent<rockController>().state == rockController.states.HitNothing*/)
-            //Èç¹û²»ÊÇhitnothing£¬ÔòÔÚ¿ÕÖĞÒ²¿ÉÒÔ·´»÷
+            //å¦‚æœä¸æ˜¯hitnothingï¼Œåˆ™åœ¨ç©ºä¸­ä¹Ÿå¯ä»¥åå‡»
             {
 
                 attackTarget.GetComponent<RockController>().state = RockController.states.HitEnemy;
-                attackTarget.GetComponent<Rigidbody>().velocity = Vector3.one;
+                attackTarget.GetComponent<Rigidbody>().linearVelocity = Vector3.one;
                 attackTarget.GetComponent<Rigidbody>().AddForce(
                     (transform.forward).normalized
                     * attackTarget.GetComponent<RockController>().force,

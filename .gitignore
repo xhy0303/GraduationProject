@@ -100,3 +100,8 @@ InitTestScene*.unity*
 
 #忽略导入资源包
 Assets/AssetsPack
+
+# Local OS and generated test metadata
+.DS_Store
+/Assets/Resources/PerformanceTestRun*.json*
+/.plastic/

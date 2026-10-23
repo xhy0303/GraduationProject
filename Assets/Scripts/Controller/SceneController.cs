@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -43,30 +43,31 @@ public class SceneController : Manager<SceneController>
         string sceneName, 
         TransitionDestination.DestinationTag destinationTag)
     {
-        //Êı¾İ±£´æ
-        SaveManager.Instance.SavePlayerData();//Íæ¼ÒÊı¾İ
-        InventoryManager.Instance.SaveInventoryData();//±³°üÊı¾İ
-        foreach (var objManager in FindObjectsOfType<InteractableObjectManager>())
-            //³¡¾°ÖĞ¿É½»»¥ÎïÆ·Êı¾İ£¬²»ÓÃÊÖ¶¯¼ÇÔØ£¬ÔÚÆô¶¯Ê±×Ô¶¯¼ÓÔØ
+        //æ•°æ®ä¿å­˜
+        SaveManager.Instance.SavePlayerData();//ç©å®¶æ•°æ®
+        InventoryManager.Instance.SaveInventoryData();//èƒŒåŒ…æ•°æ®
+        foreach (var objManager in LegacyObjectLookup.FindAll<InteractableObjectManager>())
+            //åœºæ™¯ä¸­å¯äº¤äº’ç‰©å“æ•°æ®ï¼Œä¸ç”¨æ‰‹åŠ¨è®°è½½ï¼Œåœ¨å¯åŠ¨æ—¶è‡ªåŠ¨åŠ è½½
         {
             objManager.SaveObjectStates();
         }
 
         //QuestManager.Instance.SaveQuestManager();
 
-        if (sceneName != SceneManager.GetActiveScene().name)//¿ç³¡¾°´«ËÍ
+        if (sceneName != SceneManager.GetActiveScene().name)//è·¨åœºæ™¯ä¼ é€
         {
             yield return SceneManager.LoadSceneAsync(sceneName);
             yield return Instantiate(playerPrefab, 
                 FindDestination(destinationTag).transform.position,
                 FindDestination(destinationTag).transform.rotation);
 
-            //´«ËÍÒÔºó×Ô¶¯¼ÓÔØÊı¾İ
+            //ä¼ é€ä»¥åè‡ªåŠ¨åŠ è½½æ•°æ®
             SaveManager.Instance.LoadPlayerData();
             SaveManager.Instance.LoadInventoryData();
 
             InventoryManager.Instance.RefreshUI();
 
+            SaveManager.Instance.SaveAllData();
             UpdateBGMAccordingToScene();
 
             yield break;
@@ -91,7 +92,7 @@ public class SceneController : Manager<SceneController>
     private TransitionDestination FindDestination(
         TransitionDestination.DestinationTag destinationTag)
     {
-        TransitionDestination[] destinations = FindObjectsOfType<TransitionDestination>();
+        TransitionDestination[] destinations = LegacyObjectLookup.FindAll<TransitionDestination>();
         foreach (TransitionDestination destination in destinations)
         {
             if (destination.destinationTag == destinationTag)
@@ -103,17 +104,16 @@ public class SceneController : Manager<SceneController>
     }
 
     public void Transition2FirstLevel()
-    //¿ªÊ¼²Ëµ¥Ñ¡ÔñĞÂÓÎÏ·
+    //å¼€å§‹èœå•é€‰æ‹©æ–°æ¸¸æˆ
     {
         StartCoroutine(LoadLevel("Main"));
     }
 
     public void Transition2LoadGame()
-    //¿ªÊ¼²Ëµ¥Ñ¡Ôñ¼ÌĞøÓÎÏ·
+    //å¼€å§‹èœå•é€‰æ‹©ç»§ç»­æ¸¸æˆ
     {
-        StartCoroutine(LoadLevel(SaveManager.Instance.SceneName));
-
         SaveManager.Instance.LoadGeneralGameData();
+        StartCoroutine(LoadLevel(SaveManager.Instance.SceneName));
     }
 
     public void Back2Home()
@@ -122,7 +122,7 @@ public class SceneController : Manager<SceneController>
     }
 
     IEnumerator LoadLevel(string sceneName)
-        //´Ó¿ªÊ¼²Ëµ¥¼ÓÔØÓÎÏ·
+        //ä»å¼€å§‹èœå•åŠ è½½æ¸¸æˆ
     {
         yield return SceneManager.LoadSceneAsync(sceneName);
 
@@ -136,8 +136,9 @@ public class SceneController : Manager<SceneController>
             SaveManager.Instance.LoadInventoryData();
             SaveManager.Instance.LoadGeneralGameData();
 
-            //²»ĞèÒªÔÚÕâÀï±£´æÊı¾İ
+            //ä¸éœ€è¦åœ¨è¿™é‡Œä¿å­˜æ•°æ®
             InventoryManager.Instance.RefreshUI();
+            SaveManager.Instance.RecordScene(sceneName);
         }
 
         
@@ -150,12 +151,13 @@ public class SceneController : Manager<SceneController>
 
     private void UpdateBGMAccordingToScene()
     {
-        // ¼òµ¥ÅĞ¶ÏÊÇ·ñÎªÊÒÄÚ³¡¾°£¨¿É¸ù¾İÄãÊµ¼ÊÇé¿öĞŞ¸Ä£©
+        // ç®€å•åˆ¤æ–­æ˜¯å¦ä¸ºå®¤å†…åœºæ™¯ï¼ˆå¯æ ¹æ®ä½ å®é™…æƒ…å†µä¿®æ”¹ï¼‰
         string sceneName = SceneManager.GetActiveScene().name;
         bool isIndoor = sceneName != "Begin" && sceneName != "Main";
-        //³ı¿ªÊ¼²Ëµ¥ºÍÖ÷³¡¾°Ö®Íâ¶¼ËãÊÒÄÚ
+        //é™¤å¼€å§‹èœå•å’Œä¸»åœºæ™¯ä¹‹å¤–éƒ½ç®—å®¤å†…
 
-        var state = GameManager.Instance.playerStats.exposureState;
+        var state = GameManager.Instance.playerStats != null
+            ? GameManager.Instance.playerStats.exposureState : PlayerStats.ExposureState.Peace;
         BGMManager.Instance.UpdateBGM(isIndoor, state);
     }
 

@@ -1,0 +1,1025 @@
+{
+  "005ef329f9069a341a4c65ac96ebd0c1": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "04f209c668832d1488c829452682e78b": [
+    "Assets/Prefabs/Characters/Enemy/Grunt_Eliet.prefab"
+  ],
+  "0551f82b6f53c0741a8aa56baa66b40f": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Mushroom_onWorld.prefab"
+  ],
+  "058f2e2c9d883044693fba0d537bf847": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity",
+    "Assets/Scenes/SecondFloor.unity"
+  ],
+  "07073b7fa31817a49bb19773d73ad2e7": [
+    "Assets/Animation/Animator/NPC.controller"
+  ],
+  "07ac7cd75f5dd114aa1e15cedaf5e65c": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "08a1c14a984751b4e992a4afa3974807": [
+    "Assets/Prefabs/Structure/FirstFloor.prefab",
+    "Assets/Prefabs/Structure/SecondFloor.prefab",
+    "Assets/Prefabs/Structure/ThirdFloor.prefab"
+  ],
+  "08c3544f7f1144268bcc2a28cb6209e7": [
+    "Assets/Animation/Animator/EnemySlime.controller"
+  ],
+  "0a0f196d581b28443810eaee04f4774e": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "0c4ad39810d23aa4ab62d4c6a710edad": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "0c51cd6bc7fe46448baf7bfb42d12910": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle2_onWorld.prefab"
+  ],
+  "0c837400ef1130c4196d20ee30637d9c": [
+    "Assets/Prefabs/Objects/TableSet.prefab"
+  ],
+  "0cad13889ac6b6b4a85c840f4d926a31": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "0e94f8f9621dc254ca920f620b8e454e": [
+    "Assets/Prefabs/Objects/Candle.prefab"
+  ],
+  "0efcf7622bb601241a7b13c428d69ccd": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "0f2c5202b918687408ac5bc7429a03ea": [
+    "Assets/Prefabs/Characters/Enemy/Golem.prefab"
+  ],
+  "0f2c7a33d20ae394a94e8f5fbd2d6657": [
+    "Assets/GameData/ItemData/Other/ChestKey.asset",
+    "Assets/GameData/ItemData/Other/DungonKey.asset"
+  ],
+  "0fde05fa0f3321942a21896ff4f0856f": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "10ab3d5deb170ed4abd1f3ceb362f135": [
+    "Assets/GameData/DialogueData/Enemy/SlimeAlerted.asset",
+    "Assets/GameData/DialogueData/Enemy/SlimePeace.asset"
+  ],
+  "11277a3f23988ec47908362d708edaa8": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "126f8a5d042fab945a9ddb41f083a9c8": [
+    "Assets/GameData/DialogueData/Enemy/DungonGuard.asset",
+    "Assets/GameData/DialogueData/Enemy/GateGuardL.asset",
+    "Assets/GameData/DialogueData/Enemy/GateGuardR.asset",
+    "Assets/GameData/DialogueData/Enemy/GruntAlerted.asset",
+    "Assets/GameData/DialogueData/Enemy/GruntPeace.asset",
+    "Assets/GameData/DialogueData/Enemy/PotionGuard.asset",
+    "Assets/GameData/DialogueData/Enemy/StandByGruntL.asset",
+    "Assets/GameData/DialogueData/Enemy/StandByGruntR.asset",
+    "Assets/GameData/DialogueData/Enemy/StudyGuard.asset",
+    "Assets/GameData/DialogueData/Enemy/WeaponGuard.asset"
+  ],
+  "1318707b7e4eaec46b0fd01799f22d5f": [
+    "Assets/Prefabs/Structure/WoodFloor.prefab"
+  ],
+  "13c02251496aa834d855f757733c3349": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "1588532e68f51a040bda71c68cfab177": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "159ce2de46ba64a489f7d0f284f10fa8": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "165204e33a8fc984ca78203466309b27": [
+    "Assets/GameData/ItemData/Useable/Bottle1.asset"
+  ],
+  "180e2fa043d9e8742a7d8391684bb993": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "18f63ff904099034daf971dac5b32582": [
+    "Assets/Prefabs/Objects/Candle.prefab",
+    "Assets/Prefabs/Objects/Light.prefab",
+    "Assets/Prefabs/Objects/Pot.prefab"
+  ],
+  "19489ee2a3e3b214aa18f2f5975cf67d": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "1978b0a3e563c684a926418906719528": [
+    "Assets/Prefabs/Objects/CanPickUp/Hammer_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Hammer_eq.prefab"
+  ],
+  "1a3505bc71ef61347b241b18d4b0833d": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "1cf6f4c6e6e0518419839d3f5448dd99": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity",
+    "Assets/Scenes/Test.unity"
+  ],
+  "1edf7241b2a288443ab170bec8c6ea63": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "1fd5730651233094ba529cb4a686312a": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "217201e1e5a30eb4698cef5440bbce30": [
+    "Assets/GameData/ItemData/Accessory/ShapeShiftRIng.asset"
+  ],
+  "219b3ba7a1084d44ba6ba3754e84f3a4": [
+    "Assets/Scenes/Begin.unity"
+  ],
+  "22f2ed5deaacaea45ab29c471232fc1e": [
+    "Assets/GameData/ItemData/Equipment/Hammer.asset"
+  ],
+  "230dc22592fef7b4fa38844ac6cb7cf2": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "25cc2c37e339f4e409306df4dde6c404": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "277732ec12fc05b459aacc79ebafb4f2": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "299e7a1cb6456cf4fa6079cf5978df9b": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "2d18e23e3ce249b4489b8bcdd02d3f48": [
+    "Assets/Prefabs/Managers/MouseManager.prefab"
+  ],
+  "2e71a8202d3b4a3448ec85ced5a40265": [
+    "Assets/Prefabs/Managers/MouseManager.prefab"
+  ],
+  "2f12fcec4b3dcc0489472b3a9cfa44c1": [
+    "Assets/Prefabs/Objects/Light.prefab"
+  ],
+  "2f3f7d4927009b84583c02fcbc509217": [
+    "Assets/Scenes/Dungon.unity",
+    "Assets/Scenes/FirstFloor.unity",
+    "Assets/Scenes/SecondFloor.unity",
+    "Assets/Scenes/ThirdFloor.unity"
+  ],
+  "2f6c4572e07a60b43b00e1c4f489a806": [
+    "Assets/Prefabs/Structure/Wall.prefab",
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "2ff5148f5d004674992fef3fffecde31": [
+    "Assets/Scenes/Begin.unity"
+  ],
+  "300ee636ab1b3b7429c61eaa1f29b0b8": [
+    "Assets/Prefabs/Objects/CanPickUp/Axe_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Carrot_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/ChickenLeg_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Chicken_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Mushroom_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Onion_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Tomato_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Axe_eq.prefab"
+  ],
+  "30d4fe7af77240a44b9354aaed8e5beb": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "3145bb61b40518042b553622e1283379": [
+    "Assets/GameData/ItemData/Equipment/Shield.asset"
+  ],
+  "31922dbc214e7204fa18a74c11ee13cd": [
+    "Assets/GameData/ItemData/Equipment/Dagger.asset"
+  ],
+  "31c380590cd298740b58c26b0247a98f": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "34c9d18903a08814894201f2e670954e": [
+    "Assets/GameData/ItemData/Useable/Onion.asset"
+  ],
+  "34d3f526198dae440bb2ce6005d86055": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "35bb20ecf5de4fdd8dcd8e28e4053f3d": [
+    "Assets/Animation/Animator/EnemySlime.controller"
+  ],
+  "373e018c84074eaca27e94e2b90039bb": [
+    "Assets/Animation/Animator/EnemySlime.controller"
+  ],
+  "379c92303d62f9c4fa143f4305675a4f": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "3b98afa4672041948bc8d9708f0dec82": [
+    "Assets/Prefabs/Structure/House_S.prefab"
+  ],
+  "3c94a574020d3de429d0c295b3a83db4": [
+    "Assets/Prefabs/Objects/TableSet.prefab"
+  ],
+  "3cdafb3c2f54d434894928d72d282874": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "3cf57bb0c3bf0e14dae5d174e1c87e3a": [
+    "Assets/Prefabs/Structure/FloorBlock.prefab",
+    "Assets/Prefabs/Structure/House_S.prefab"
+  ],
+  "3db42ff34acb5a244afe73b009494c8b": [
+    "Assets/GameData/ItemData/Equipment/FF7Sword.asset"
+  ],
+  "3dfa02b374829d844a378d018d13489c": [
+    "Assets/Prefabs/Structure/FirstFloor.prefab"
+  ],
+  "3e833f3c41837e2499848cbd3a40b527": [
+    "Assets/Prefabs/Lanterns.prefab",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "3f06f901add4fb24c8b3216e12c58a0e": [
+    "Assets/GameData/ItemData/Equipment/Sword_L.asset"
+  ],
+  "3f9b178ccd3b86f4ebbfc1f5a2815e56": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "416cb7e11aa1a4047a5209e5ade3e35c": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Onion_onWorld.prefab"
+  ],
+  "421140039854e8c42938a8cb73d3480c": [
+    "Assets/Prefabs/Characters/Player/Shape/Yokai.prefab"
+  ],
+  "42b182dba1d708b41921836ec2eedb83": [
+    "Assets/Scenes/Begin.unity"
+  ],
+  "42c503437b790c246a505a3c8583102f": [
+    "Assets/GameData/ItemData/Useable/Tomato.asset"
+  ],
+  "43a7d98bd4222b64e933596512dc09ad": [
+    "Assets/Prefabs/UI/DialogueCanvas.prefab",
+    "Assets/Prefabs/UI/SettingCanvas.prefab"
+  ],
+  "4461c87bad5222349b14c22b26d43b95": [
+    "Assets/GameData/ItemData/Accessory/VisionStone.asset"
+  ],
+  "4471b1f7f824e4d44887e1364c6fc61a": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "44b00c7db33473946ad48053b41e081f": [
+    "Assets/Prefabs/Objects/TableSet.prefab"
+  ],
+  "45191552e7fe0e542a0dfdb33d6ed64d": [
+    "Assets/GameData/ItemData/Useable/Mushroom.asset"
+  ],
+  "47c96e5414c2b4449920b448538df93a": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "485cd2ab0486a8e4aaa55e94ec27c6b6": [
+    "Assets/Prefabs/UI/SettingCanvas.prefab"
+  ],
+  "4922535dfb84575409797fc05fc8044e": [
+    "Assets/Prefabs/Structure/House_S.prefab",
+    "Assets/Prefabs/Structure/WoodenColumn.prefab"
+  ],
+  "494f6d43e170e9145bc7865d243ee00b": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "4966c2b1203d24149bf4aa3d9ff95619": [
+    "Assets/Prefabs/Structure/Stairs.prefab"
+  ],
+  "499de41728ca38244ad4a1cca9bba1d2": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "49c61f7d98b36a6438e5deb41f0f7207": [
+    "Assets/Prefabs/Objects/CanPickUp/Ax_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Dagger_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Hammer_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Shield_L_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Sword_L_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Ax_eq.prefab",
+    "Assets/Prefabs/Objects/Equipment/Dagger_eq.prefab",
+    "Assets/Prefabs/Objects/Equipment/Hammer_eq.prefab",
+    "Assets/Prefabs/Objects/Equipment/Shield_L_eq.prefab",
+    "Assets/Prefabs/Objects/Equipment/Sword_L_eq.prefab"
+  ],
+  "4c48cf7d06fb67248992c3758b08c410": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "4cb2db9c417f6ee4597cbbaf076d80fd": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "4d6a99baee23b654f9e4bb672ae0b438": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab",
+    "Assets/Prefabs/UI/SettingCanvas.prefab"
+  ],
+  "4f2713344093cbc42be1bc8cee65aa05": [
+    "Assets/Prefabs/Structure/House_S.prefab"
+  ],
+  "4f8e653bf1c0b054680c13a05741c202": [
+    "Assets/Prefabs/UI/HealthBarHolder.prefab",
+    "Assets/Prefabs/UI/Player Info Canvas.prefab"
+  ],
+  "5062c1312f2beb14694d90a058d444e4": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "5625abbb9b09ca5419edd1ab9f0839d3": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "56fc0b4f7d154039a7099564596a545b": [
+    "Assets/Prefabs/Characters/Enemy/Slime.prefab"
+  ],
+  "57d3eed6d2253d24994d5ad37e00aedc": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "57d87bfbb2ba594448a962cf67428ef9": [
+    "Assets/GameData/ItemData/Useable/Carrot.asset"
+  ],
+  "5b072622174ffe44e907f42bfe5b2f1b": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "5b283b002bf74fc4b827cc4e67b99155": [
+    "Assets/Animation/Animator/EnemySlime.controller"
+  ],
+  "5b419e9db3f5102478db3de1673bffd3": [
+    "Assets/GameData/ItemData/Equipment/Sword.asset"
+  ],
+  "5cac7ad8464f8e944b859c007daf9617": [
+    "Assets/Prefabs/Objects/CanPickUp/Shield_L_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Shield_L_eq.prefab"
+  ],
+  "5d190d8211c88a64281f7b90c69f3eb3": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "5fbfbee0f9885764383291c4c5e18668": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "6019f1b4a095b0b4396f5561a51fee89": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "603970f97e50c56488ec3c5a6febd940": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "60e1133243b97e347b653163a8c01b64": [
+    "Assets/AddOns/PipeLineSettings/New Universal Render Pipeline Asset_Renderer.asset",
+    "Assets/Settings/High_PipelineAsset_ForwardRenderer.asset",
+    "Assets/Settings/Low_PipelineAsset_ForwardRenderer.asset",
+    "Assets/Settings/Medium_PipelineAsset_ForwardRenderer.asset",
+    "Assets/Settings/Ultra_PipelineAsset_ForwardRenderer.asset",
+    "Assets/Settings/Very High_PipelineAsset_ForwardRenderer.asset",
+    "Assets/Settings/Very Low_PipelineAsset_ForwardRenderer.asset"
+  ],
+  "60f79905accf3b24fa0114b941f1aac0": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "615ecf391b0ba0b40a9c3882ac5e6afc": [
+    "Assets/GameData/DialogueData/Note/DungonHintNote.asset",
+    "Assets/GameData/DialogueData/Note/WeaponRoomNote.asset"
+  ],
+  "619d901944b860b48aaab4e6c76daa84": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "61b9dd48e54ad8f48b34dd5d75bb8e39": [
+    "Assets/Prefabs/Structure/House_M.prefab",
+    "Assets/Prefabs/Structure/House_S.prefab"
+  ],
+  "61d36fd741d737440a1141db2542d983": [
+    "Assets/Prefabs/Effect/rockBreakParticle.prefab",
+    "Assets/Prefabs/Rock.prefab"
+  ],
+  "633dca2d2047e074ebf00763cd0f7ff4": [
+    "Assets/Scenes/Begin.unity"
+  ],
+  "64689f87a2e19254a88d88bed9a14cbe": [
+    "Assets/Prefabs/Characters/Enemy/Grunt_Eliet.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/ChestKey_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/DungonKey_onWorld.prefab"
+  ],
+  "661464e19c087564badb2bf5230c842c": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "6675c6557a13efc4aacb9db75446046f": [
+    "Assets/Prefabs/Objects/CanPickUp/Ax_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Ax_eq.prefab"
+  ],
+  "6719635bc85a50a46b061f10f73ad139": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle1_onWorld.prefab"
+  ],
+  "6737d9c78acc99946bc3c1267fcf0360": [
+    "Assets/GameData/DialogueData/Enemy/TurtleShellAlerted.asset",
+    "Assets/GameData/DialogueData/Enemy/TurtleShellPeace.asset"
+  ],
+  "675b3bbef6ce0924784ad185c6118c34": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "677b9a0a767b83d49b0a06c69946691f": [
+    "Assets/Prefabs/Objects/CanPickUp/ChestKey_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/DungonKey_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle1_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle2_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle3_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle4_onWorld.prefab",
+    "Assets/Prefabs/Objects/Lamp.prefab",
+    "Assets/Prefabs/Structure/Stairs.prefab"
+  ],
+  "677eaff49b668ff40acbdfbdc1e4326b": [
+    "Assets/Prefabs/Objects/Chest.prefab"
+  ],
+  "69f0af3a0a6c73b4ab4b89eb82cdc488": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "6bb9dc321d1ff63488d8a3e5904c73e6": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "6c7eaede4efc960409fb9ef2dfb77f29": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "6c9c07f9f24d95b45adb9fe21eb7188e": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "6ca81f8e804de8c4e8a057edb47e84af": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "6d668bf4736dda644878cad05255f1ed": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "6ee4d4450faa2ae4190de7a3739d0931": [
+    "Assets/Prefabs/Structure/WoodFloor.prefab"
+  ],
+  "6fd11993b5248a4428c9af6a3180861a": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Tomato_onWorld.prefab"
+  ],
+  "6fe7dcc4259a56f48a849e7ff954d529": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Carrot_onWorld.prefab"
+  ],
+  "7066e0747291df44fa5c2bf93bee3a6e": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "709d65b1ace67914fa1bc7a4d71b97f9": [
+    "Assets/GameData/ItemData/Useable/Bottle2.asset"
+  ],
+  "70c500e3f9a702743946d084c36b42c6": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab",
+    "Assets/Prefabs/UI/SlotHolder.prefab"
+  ],
+  "725d9061657be724facf6fda9fe05b4f": [
+    "Assets/Scenes/Dungon.unity",
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "74f1aa9e584aa4842aecf049e25f5339": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "768be665aba8b4e4aae7a973ae9616cf": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "78d68d5b001762445ab6e0e1dbcb5dd8": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "7949f56788bb5a74fb917567a76b008d": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab",
+    "Assets/Prefabs/UI/Player Info Canvas.prefab",
+    "Assets/Prefabs/UI/SlotHolder.prefab"
+  ],
+  "79f4cdb09da63b74081e5ed761e963ee": [
+    "Assets/Prefabs/Objects/CanPickUp/Dagger_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Dagger_eq.prefab"
+  ],
+  "7a02a2dc17fd0fd44a9a94199e34d2a1": [
+    "Assets/GameData/ItemData/Equipment/Shield_L.asset"
+  ],
+  "7a660ebf797107540b2e0443416860fe": [
+    "Assets/Prefabs/Structure/FirstFloor.prefab",
+    "Assets/Prefabs/Structure/FloorBlock.prefab",
+    "Assets/Prefabs/Structure/House_S.prefab",
+    "Assets/Prefabs/Structure/SecondFloor.prefab",
+    "Assets/Prefabs/Structure/ThirdFloor.prefab"
+  ],
+  "7a92d70f42aca1d40aa5675904d4fb0a": [
+    "Assets/Prefabs/Fences.prefab"
+  ],
+  "7c87c77e24344db44af20c4872109381": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/FirstFloor.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "7d4a349e204be984cbd483b7ba288543": [
+    "Assets/Prefabs/Managers/MouseManager.prefab"
+  ],
+  "7d58521943eb42b4c9b63ded3906e306": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "7e725651e0c0d0b418152e280bb00731": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "82d123ce4a1a7824bae34da0dd9e13f5": [
+    "Assets/Prefabs/Characters/Player/Shape/Invisiable.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Shield_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Shield_eq.prefab"
+  ],
+  "83e8d2542718a2e49a73d71c3a5fc685": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "850cb2b9d6f923d4d994514275a52ee9": [
+    "Assets/Prefabs/Objects/Lamp.prefab"
+  ],
+  "85f3ca444c369c646987d61b86238707": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "8662c5c621c785c4b8030eac9758e764": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "88f2fd29f58b9734683512546acec310": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "8aaac2cbed66d7a438abe5d0466b786b": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "8ad79b265210cac4180535b79fd4f14c": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "8cf19caeee9bb3c43a09d57a2a2ba09d": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "8d4e431aa8afeff4188180f08e6372f6": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle4_onWorld.prefab"
+  ],
+  "8dc54d6d3a990504c8f8585ff986dc78": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "8dd861a6e819de241bca68a36048a6bd": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "8e748ab8b2b891145b67425cad73aebf": [
+    "Assets/Prefabs/Characters/Player/Shape/Invisiable.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Sword_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Sword_eq.prefab"
+  ],
+  "8ec3313cbc664ad68d21f18f52f2ebf0": [
+    "Assets/Animation/Animator/EnemySlime.controller"
+  ],
+  "8ee5b23764b3d8244b127179f583df9a": [
+    "Assets/Animation/Animator/Chest.controller",
+    "Assets/Prefabs/Objects/Chest.prefab"
+  ],
+  "8f6d58fd471ba8a45a4b681953e29c26": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "90a2dde0942123c4ebb9c4af580c5818": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "92d4430c1aabefa4691079bac409cbf9": [
+    "Assets/Prefabs/Objects/TableSet.prefab"
+  ],
+  "93c267456671add44adbdb4274873674": [
+    "Assets/GameData/ItemData/Useable/Bottle3.asset"
+  ],
+  "93d1b88863b5d6e4f8bd41fd97feb859": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "942e6d5330e147fe84c5ab6ab2193ca1": [
+    "Assets/Prefabs/Characters/Enemy/TurtleShell.prefab"
+  ],
+  "9523e2f8cbbc1a645a5243a865fc4f5a": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "957781e2e64d0264f970dde36a30bd93": [
+    "Assets/Prefabs/Characters/Enemy/Golem.prefab",
+    "Assets/Prefabs/Rock.prefab"
+  ],
+  "95e1f8e80605eb74e89658e5a939fc08": [
+    "Assets/Prefabs/Structure/FirstFloor.prefab"
+  ],
+  "969c700466c01504ab00323e7222b0df": [
+    "Assets/Prefabs/Characters/NPC.prefab"
+  ],
+  "96d4bfdb0d6d8c042bf8fccf6524d239": [
+    "Assets/Prefabs/Managers/MouseManager.prefab"
+  ],
+  "9831a843c0fcb604c98a6ca97736e043": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Chicken_onWorld.prefab"
+  ],
+  "98f5378049f9b5745a77677f581b32b1": [
+    "Assets/Scenes/Dungon.unity",
+    "Assets/Scenes/FirstFloor.unity",
+    "Assets/Scenes/SecondFloor.unity",
+    "Assets/Scenes/ThirdFloor.unity"
+  ],
+  "9ac126ddf2d5a244f8381406185c7958": [
+    "Assets/GameData/ItemData/Accessory/TheRing.asset"
+  ],
+  "9b5bede90017114478bfb13246a608e0": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "9c94e6efefcb6a24da892541529c2e2d": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "9cbcdb01cae86b946b34460714b64e65": [
+    "Assets/Prefabs/Structure/FirstFloor.prefab"
+  ],
+  "9d5f6625b0b035841a1153f7e5466a94": [
+    "Assets/Prefabs/UI/HealthBarHolder.prefab",
+    "Assets/Prefabs/UI/Player Info Canvas.prefab"
+  ],
+  "9d96437b1954fd74c84a5e1999bb2cb1": [
+    "Assets/Prefabs/Objects/Mud_1.prefab",
+    "Assets/Prefabs/Objects/Mud_2.prefab",
+    "Assets/Prefabs/Objects/Mud_3.prefab"
+  ],
+  "9e4d87ed8442a2a40b13957dd237e343": [
+    "Assets/Prefabs/Fences.prefab"
+  ],
+  "9ed6d6d6b67851d4694f69ba0dd4c0b6": [
+    "Assets/Prefabs/Characters/NPC.prefab"
+  ],
+  "9f0e03164414016409d28995a128ba98": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "a1f67aa07796fb24d9b3adf4cc449805": [
+    "Assets/Prefabs/Objects/CanPickUp/Axe_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Axe_eq.prefab"
+  ],
+  "a3010b0fc7044499ad34afdf5326f623": [
+    "Assets/Animation/Animator/EnemySlime.controller"
+  ],
+  "a3253e1c495385442a4b856ed6842b0c": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "a454050719005b444b59a84eaafba779": [
+    "Assets/Prefabs/UI/ItemToolTip.prefab"
+  ],
+  "a4bea954a587ec5458a18b16999efd37": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "a507d7782a15a784287355f31af5c972": [
+    "Assets/Prefabs/Characters/Player/Shape/Human.prefab",
+    "Assets/Prefabs/Characters/Player/Shape/Invisiable.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Shield_onWorld.prefab",
+    "Assets/Prefabs/Objects/CanPickUp/Sword_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Shield_eq.prefab",
+    "Assets/Prefabs/Objects/Equipment/Sword_eq.prefab"
+  ],
+  "a572b7e4c3d8eb446823b4269e41cb5d": [
+    "Assets/Prefabs/Objects/Light.prefab"
+  ],
+  "a58d63122b09e9144938cd6a1ece4824": [
+    "Assets/Prefabs/Characters/Player/Shape/Yokai.prefab"
+  ],
+  "a778b631c6253a04899cb31bad047c81": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "a85d74d78da4d334caf7d581691d2df7": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "a8e48fb3bf59d15439283a510bd4effb": [
+    "Assets/Scenes/Begin.unity"
+  ],
+  "ac8efb728f1fb9b4092c4df591c827ca": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "af0251662ce5880478fc4015a2c7df13": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "af16c8206dd8be9479709f7d52bf8797": [
+    "Assets/GameData/ItemData/Useable/ChickenLeg.asset"
+  ],
+  "af50dc4fa7b6d314895d0f8c79adb4a5": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "b1b090995e828314bb182874711e96a1": [
+    "Assets/GameData/DialogueData/NPC/ContinueGameIntro.asset",
+    "Assets/GameData/DialogueData/NPC/NewGameIntro.asset",
+    "Assets/GameData/DialogueData/NPC/OldGamerIntro.asset"
+  ],
+  "b20cb9cb9197fb64a830cea6c0550d0e": [
+    "Assets/Prefabs/Characters/Player/Shape/Yokai.prefab"
+  ],
+  "b28311bcbf17b47458fddc96553ce9c8": [
+    "Assets/GameData/ItemData/Accessory/InvisibilityHat.asset"
+  ],
+  "b31206230675efe48a43468accb147c8": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "b3cbfff6d18692242a6d605e22852538": [
+    "Assets/Prefabs/Structure/WoodFloor.prefab"
+  ],
+  "b3d13e7a390c61140bd5ef86fa39200e": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "b59260a10a276b442981d187714abb55": [
+    "Assets/Prefabs/Structure/FirstFloor.prefab"
+  ],
+  "b5b4599d7c937f34ab44f521e004d5cc": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "b68dfa4cf666e794c81f98001fa74cc6": [
+    "Assets/Prefabs/Objects/Chest.prefab"
+  ],
+  "b7047bf84b3ed884c8a126e02a796faa": [
+    "Assets/Prefabs/Structure/House_S.prefab",
+    "Assets/Scenes/Main.unity"
+  ],
+  "b71b0f8d2f881c743a85228f3030d1cb": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "b75052460f939504bb8234a900cbd411": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/ChickenLeg_onWorld.prefab"
+  ],
+  "b79ff7bb68348be479d3db6b7fe8a569": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "b96201848d117da4ca7dc3ade4bd59de": [
+    "Assets/Prefabs/Characters/Player/Shape/Yokai.prefab"
+  ],
+  "b9de24523a11d714db3851b5f0f9d527": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "ba52853a69186a841a52a9cc2e9b77fa": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "bad41f2c1607a6644a1783272bf0e1ef": [
+    "Assets/GameData/ItemData/Useable/Bottle4.asset"
+  ],
+  "bb470d63914d5214081b7cf78b5bf7cf": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "bbe49cddba26c3f47a29801033bca5cb": [
+    "Assets/Animation/Animator/NPC.controller"
+  ],
+  "bd0bdebacec96e1459c665ca7de79712": [
+    "Assets/Prefabs/Structure/House_S.prefab"
+  ],
+  "c0e095fcea4ab9d41bfa1cf75a32235c": [
+    "Assets/Prefabs/Objects/Pot.prefab"
+  ],
+  "c12c2872ef9d9e94fb404dc0c9784fcb": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "c60edd51c065ceb46b345849a03bc106": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "c6308cb7062fac34e8e50600086b12a1": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "c65426a375c90574a95eaaf4840e9481": [
+    "Assets/Prefabs/Objects/TableSet.prefab"
+  ],
+  "c79d59d66358e0f45a098f4b8a82f8be": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "c98f3d481d3eb5445bfd2795c1c3eea6": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "ca12e4d3b8ba552408c001532eecb3ac": [
+    "Assets/Prefabs/Structure/House_M.prefab",
+    "Assets/Prefabs/Structure/House_S.prefab"
+  ],
+  "cb64638fce6533e4fa935c52d5fbd298": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "cc37350187d9a7f4db05b8c5e5063f74": [
+    "Assets/Prefabs/Objects/Chest.prefab"
+  ],
+  "cc421da483ed06c49933077a621bff25": [
+    "Assets/Scenes/Dungon.unity",
+    "Assets/Scenes/FirstFloor.unity",
+    "Assets/Scenes/SecondFloor.unity",
+    "Assets/Scenes/ThirdFloor.unity"
+  ],
+  "ccd422c405af8f8469775368ada0cb13": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "cdb3df0886f5927478bcff5eb0b06c07": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "ce9b38f12fedb194d8b4177a9d4a66d7": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "cebfacc247a640945a2c30b442202fca": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "cfb04594231799d4092ee0064447ce94": [
+    "Assets/Prefabs/Objects/Mud_1.prefab",
+    "Assets/Prefabs/Objects/Mud_2.prefab",
+    "Assets/Prefabs/Objects/Mud_3.prefab"
+  ],
+  "d00dec123be83b445adbe6c8f3f02f41": [
+    "Assets/Prefabs/Objects/CanPickUp/Sword_L_onWorld.prefab",
+    "Assets/Prefabs/Objects/Equipment/Sword_L_eq.prefab"
+  ],
+  "d0e49cb11ded67f48916846e6ff3aae9": [
+    "Assets/Prefabs/Structure/Stairs.prefab"
+  ],
+  "d21d8fecacb790e47a4fca5124453b85": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "d289be10adc7ef642944978691a25843": [
+    "Assets/Prefabs/Objects/CanPickUp/Food/Bottle3_onWorld.prefab"
+  ],
+  "d4ad967689295ba4eaf8baeaebc8721b": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "d6a5846a7caabc044bca6c28dc4063b8": [
+    "Assets/GameData/ItemData/Equipment/Axe.asset"
+  ],
+  "d71581b97fb501e488eb778f198bb010": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "d8ea93d2d4757e444a5349f4bc849128": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "daa8b4942c4d7ea4a88351aa44a1bef4": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "dab90a45cedf47b4291bd9816c597551": [
+    "Assets/Prefabs/UI/DialogueCanvas.prefab",
+    "Assets/Prefabs/UI/GameOverCanvas.prefab",
+    "Assets/Prefabs/UI/InventoryCanvas.prefab",
+    "Assets/Prefabs/UI/SettingCanvas.prefab"
+  ],
+  "dae57aea7aee8914da3ecfa4dc3e092d": [
+    "Assets/Scenes/Begin.unity"
+  ],
+  "db94335d337e94a43962c505a87693c3": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "dc66b1f7b771bef46a6e8bae9a948679": [
+    "Assets/Prefabs/Characters/Enemy/Grunt.prefab",
+    "Assets/Prefabs/Characters/Enemy/Grunt_Eliet.prefab",
+    "Assets/Prefabs/Effect/rockBreakParticle.prefab"
+  ],
+  "df5dbabd43c042141b8e9a42e2d0d25d": [
+    "Assets/Prefabs/Structure/Fort.prefab"
+  ],
+  "dfc28b3690770d347bcf84c54bd7ef50": [
+    "Assets/GameData/ItemData/Useable/Chicken.asset"
+  ],
+  "e289bf5debb17f6459818c207d781953": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "e2e682b966e3f644392ffbfab511e0e2": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "e37d55d9adae8724c9dcf1dff5b67578": [
+    "Assets/Prefabs/Objects/BoxSet.prefab"
+  ],
+  "e4aa31f274820b94eb0d0b764e0f383b": [
+    "Assets/Prefabs/Characters/Player/Player.prefab",
+    "Assets/Prefabs/Characters/Player/Shape/Human.prefab",
+    "Assets/Prefabs/Characters/Player/Shape/Invisiable.prefab"
+  ],
+  "e636c9e93cca6d4438de72b860fb9f78": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "e8163d2436aeaa2499e4123929570457": [
+    "Assets/GameData/ItemData/Equipment/Ax.asset"
+  ],
+  "ea68aa111adc3264f9968657e12cc86a": [
+    "Assets/Prefabs/Objects/Pot.prefab"
+  ],
+  "eb5e3fc8d0caf3945a6effdb6372a9c7": [
+    "Assets/Prefabs/Characters/Enemy/Grunt.prefab",
+    "Assets/Prefabs/Characters/Enemy/Grunt_Eliet.prefab"
+  ],
+  "ebee340de387f334f9ac44e044abd8fb": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "eccbae3cfc77ad245ade46e143aa3200": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "ed9b9bf9a486970418dd2229156b5369": [
+    "Assets/Scenes/Main.unity"
+  ],
+  "ee24e119d4e40b74e82fa4ef4de7e2ec": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "ee5e6083f97bd7f409ef0e9d1133d919": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "eebb56c82efbd8d4bb0eb6bd925a0e9d": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "f02116c209ecd9e488fc4d2cd8996133": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "f0c16f0ea935ea64297ca1d4d55d9746": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "f0c8c1d913b359a428b42d53947d3e93": [
+    "Assets/Animation/Animator/Player_Base.controller"
+  ],
+  "f10541572d6d93144ab62d62774e6af5": [
+    "Assets/Animation/Animator/EnemyGrunt.controller"
+  ],
+  "f1fc5bb90ac285e4486771552d63bcb8": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "f2db1d06f79fef94592fee4b86c679d8": [
+    "Assets/Scenes/FirstFloor.unity"
+  ],
+  "f4591a8a2d6d8d44f92ad23458aa2f15": [
+    "Assets/Prefabs/Objects/Lamp.prefab"
+  ],
+  "f5f7d4d2b3764ec4aa59441ec6c2697b": [
+    "Assets/Prefabs/Characters/Enemy/Slime.prefab",
+    "Assets/Prefabs/Characters/Enemy/TurtleShell.prefab"
+  ],
+  "f7fdfbe18d9268f40973ba9d7a11fc39": [
+    "Assets/Scenes/Begin.unity"
+  ],
+  "f8c873f1e53e83f4aabf342d6be1dfc3": [
+    "Assets/Prefabs/Managers/MouseManager.prefab"
+  ],
+  "f8fceb41b68ef0a4ea35add24f4635e0": [
+    "Assets/Prefabs/UI/InventoryCanvas.prefab"
+  ],
+  "f99c1e532d874b5aa4c470d8aad16a64": [
+    "Assets/Animation/Animator/EnemySlime.controller"
+  ],
+  "fa2e670bb3648a84b9df8d16da25b85e": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "fd2de4bd876f4ac4980370e624362931": [
+    "Assets/Scenes/Dungon.unity"
+  ],
+  "ff542d5984e390047b650ec7f855ffd9": [
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "ff62b58c5a9ea164fa8ddf8038e10cd1": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "ffacf536317b3234c817c6cf40cf4711": [
+    "Assets/Prefabs/Characters/NPC.prefab"
+  ],
+  "ffbddc4ef9676cc419e81e06aaa836d8": [
+    "Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset",
+    "Assets/Scenes/Begin.unity",
+    "Assets/Scenes/Main.unity"
+  ],
+  "ffbfc83c15ef21748afa887bd6079b30": [
+    "Assets/Scenes/FirstFloor.unity"
+  ]
+}

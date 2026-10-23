@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eee263bef41c494e8748f9bb06b5c33, type: 3}
+  m_Name: ContinueGameIntro
+  m_EditorClassIdentifier:
+  dialoguePieces:
+  - ID: 01
+    image: {fileID: 21300000, guid: 564936c4c9d13a74e8f9862336de573c, type: 2}
+    text: 你回来啦！感觉怎么样？
+    playTineLine: 0
+    options:
+    - text: 轻而易举！
+      targetID: 02
+    - text: 还是有点难度的。
+      targetID: 03
+  - ID: 02
+    image: {fileID: 21300000, guid: 564936c4c9d13a74e8f9862336de573c, type: 2}
+    text: 不愧是你！我就知道你可以的
+    playTineLine: 0
+    options: []
+  - ID: 03
+    image: {fileID: 21300000, guid: 564936c4c9d13a74e8f9862336de573c, type: 2}
+    text: 相信你已经看到了桌子上的小盒子，那里面就放着我为你准备的魔法道具。
+    playTineLine: 0
+    options: []
+  - ID: 04
+    image: {fileID: 21300000, guid: 564936c4c9d13a74e8f9862336de573c, type: 2}
+    text: "每当你给我一块水晶，你就可以从中拿走一样道具。\n但是要注意哦，你只能打开一次盒子~"
+    playTineLine: 0
+    options: []
+  - ID: 05
+    image: {fileID: 21300000, guid: 564936c4c9d13a74e8f9862336de573c, type: 2}
+    text: 选择喜欢的道具，然后接着去战斗吧！
+    playTineLine: 0
+    options: []

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,7 +47,7 @@ public class ChestController : MonoBehaviour
         if (isOpen && chestAnimator != null)
         {
             chestAnimator.SetTrigger("OpenChest");
-            //Ö»ÓĞÊ·Ê«ÎïÆ·À¸ÓĞÎïÆ·Ê±²Å»á²¥·ÅÊ·Ê«¶¯»­
+            //åªæœ‰å²è¯—ç‰©å“æ æœ‰ç‰©å“æ—¶æ‰ä¼šæ’­æ”¾å²è¯—åŠ¨ç”»
             chestAnimator.SetBool("Epic", isEpic && epicItems.Length != 0);
         }
 
@@ -81,7 +81,7 @@ public class ChestController : MonoBehaviour
         if (other.CompareTag("Player") && !isOpen) 
         {
             canOpen = true;
-            GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "°´E´ò¿ª");
+            GameManager.Instance.playerStats.GetComponent<InteractUI>().UpdateHintUI(true, "æŒ‰Eæ‰“å¼€");
         }
     }
 

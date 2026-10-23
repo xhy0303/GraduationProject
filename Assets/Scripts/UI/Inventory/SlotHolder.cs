@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -30,13 +30,14 @@ public class SlotHolder : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         if (itemUI.GetItem() != null)
         {
             if (itemUI.GetItem().itemType 
-                == ItemType.Useable && itemUI.Bag.inventoryItems[itemUI.index].num > 0)
+                == ItemType.Useable && itemUI.GetItem().useableItemData != null
+                && itemUI.Bag.inventoryItems[itemUI.index].num > 0)
             {
                 GameManager.Instance.playerStats.ApplyHealth(
                     itemUI.GetItem().useableItemData.healthPoint);
                 itemUI.Bag.inventoryItems[itemUI.index].num--;
 
-                //¸üĞÂÈÎÎñÎïÆ·½ø¶È
+                //æ›´æ–°ä»»åŠ¡ç‰©å“è¿›åº¦
                // QuestManager.Instance.UpdateQuestProgress(itemUI.GetItem().name, -1);
 
             }
@@ -62,14 +63,14 @@ public class SlotHolder : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                 else
                 {
                     //GameManager.Instance.playerStats.UnEquipWeapon();
-                    //»áÓÉÓÚplayer¿ªÊ¼Ê±Î´Éú³É¶ø±¨´í
+                    //ä¼šç”±äºplayerå¼€å§‹æ—¶æœªç”Ÿæˆè€ŒæŠ¥é”™
                     if (GameManager.Instance.playerStats != null)
                     {
                         GameManager.Instance.playerStats.UnEquipWeapon();
                     }
                     else
                     {
-                        Debug.LogError("playerStats Î´³õÊ¼»¯£¡");
+                        Debug.LogError("playerStats æœªåˆå§‹åŒ–ï¼");
                     }
 
                 }
@@ -80,7 +81,7 @@ public class SlotHolder : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                 if (itemUI.Bag.inventoryItems[itemUI.index].itemData != null)
                 {
                     GameManager.Instance.playerStats.ChangeShield(itemUI.Bag.inventoryItems[itemUI.index].itemData);
-                    //ÔÚmanagerÉú³ÉµÄÊ±ºòplayer»¹Î´×¢²á£¬»áµ¼ÖÂRefreshUIÎŞ·¨³É¹¦Ö´ĞĞ
+                    //åœ¨managerç”Ÿæˆçš„æ—¶å€™playerè¿˜æœªæ³¨å†Œï¼Œä¼šå¯¼è‡´RefreshUIæ— æ³•æˆåŠŸæ‰§è¡Œ
                 }
                 else
                 {
@@ -91,7 +92,7 @@ public class SlotHolder : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                     }
                     else
                     {
-                        Debug.LogError("playerStats Î´³õÊ¼»¯£¡");
+                        Debug.LogError("playerStats æœªåˆå§‹åŒ–ï¼");
                     }
 
                 }
@@ -101,10 +102,12 @@ public class SlotHolder : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                 itemUI.Bag = InventoryManager.Instance.accessoryData;
                 if (itemUI.Bag.inventoryItems[itemUI.index].itemData != null)
                 {
-                    GameManager.Instance.playerStats.ChangeAccessory(
-                        itemUI.Bag.inventoryItems[itemUI.index].itemData);
-                    //ÔÚmanagerÉú³ÉµÄÊ±ºòplayer»¹Î´×¢²á£¬»áµ¼ÖÂRefreshUIÎŞ·¨³É¹¦Ö´ĞĞ
-                    //ĞŞ¸Ä£ºÔÚ×¢²áÍæ¼ÒµÄÊ±ºòrefreshUI
+                    if (InventoryManager.Instance.IsRestoringEquipment)
+                        GameManager.Instance.playerStats.RestoreAccessory(itemUI.Bag.inventoryItems[itemUI.index].itemData);
+                    else
+                        GameManager.Instance.playerStats.ChangeAccessory(itemUI.Bag.inventoryItems[itemUI.index].itemData);
+                    //åœ¨managerç”Ÿæˆçš„æ—¶å€™playerè¿˜æœªæ³¨å†Œï¼Œä¼šå¯¼è‡´RefreshUIæ— æ³•æˆåŠŸæ‰§è¡Œ
+                    //ä¿®æ”¹ï¼šåœ¨æ³¨å†Œç©å®¶çš„æ—¶å€™refreshUI
                 }
                 else
                 {
@@ -114,7 +117,7 @@ public class SlotHolder : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                     }
                     else
                     {
-                        Debug.LogError("playerStats Î´³õÊ¼»¯£¡");
+                        Debug.LogError("playerStats æœªåˆå§‹åŒ–ï¼");
                     }
 
                 }

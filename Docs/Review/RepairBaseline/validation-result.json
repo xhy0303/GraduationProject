@@ -1,0 +1,11 @@
+{
+  "unityVersion": "6000.5.10f1",
+  "project": "/tmp/onemoretime-unity6-validation",
+  "successfulBatchExit": true,
+  "compilerErrors": 0,
+  "compilerWarnings": 0,
+  "nullReferenceExceptions": 0,
+  "lookupCompatibility": "passed",
+  "unresolvedAssetGuids": 276,
+  "runtimePlaythrough": "not run due to missing original assets"
+}

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class EnemyDeathHandler : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class EnemyDeathHandler : MonoBehaviour
 
     void Update()
     {
-        // Ê¾Àı£ºµ±µĞÈËËÀÍöÊ±µ÷ÓÃ
+        // ç¤ºä¾‹ï¼šå½“æ•Œäººæ­»äº¡æ—¶è°ƒç”¨
         if (!hasDied && IsDead())
         {
             hasDied = true;
@@ -18,8 +18,8 @@ public class EnemyDeathHandler : MonoBehaviour
 
     bool IsDead()
     {
-        // ¸ù¾İÄãµÄµĞÈËÂß¼­ÅĞ¶ÏËÀÍö×´Ì¬£¨±ÈÈçÑªÁ¿ <= 0£¬»òÕß²¥·ÅÁËËÀÍö¶¯»­£©
-        // ÕâÀï×ö¼òµ¥Ê¾Àı
+        // æ ¹æ®ä½ çš„æ•Œäººé€»è¾‘åˆ¤æ–­æ­»äº¡çŠ¶æ€ï¼ˆæ¯”å¦‚è¡€é‡ <= 0ï¼Œæˆ–è€…æ’­æ”¾äº†æ­»äº¡åŠ¨ç”»ï¼‰
+        // è¿™é‡Œåšç®€å•ç¤ºä¾‹
         EnemyController ec = GetComponent<EnemyController>();
         return ec != null && ec.isDead; 
     }

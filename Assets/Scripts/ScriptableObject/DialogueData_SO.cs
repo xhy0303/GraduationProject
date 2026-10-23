@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class DialogueData_SO : ScriptableObject
 {
     public List<DialoguePiece> dialoguePieces = new List<DialoguePiece>();
 
-    public Dictionary<string, DialoguePiece> dialogueIndex = new Dictionary<string, DialoguePiece>();
+    [System.NonSerialized] public Dictionary<string, DialoguePiece> dialogueIndex = new Dictionary<string, DialoguePiece>();
 
 #if UNITY_EDITOR
     private void OnValidate()
@@ -24,7 +24,7 @@ public class DialogueData_SO : ScriptableObject
         }
     }
 #else
-    void Awake()//±£Ö¤ÔÚ´ò°üÖ´ĞĞµÄÓÎÏ·ÀïµÚÒ»Ê±¼ä»ñµÃ¶Ô»°µÄËùÓĞ×ÖµäÆ¥Åä 
+    void Awake()//ä¿è¯åœ¨æ‰“åŒ…æ‰§è¡Œçš„æ¸¸æˆé‡Œç¬¬ä¸€æ—¶é—´è·å¾—å¯¹è¯çš„æ‰€æœ‰å­—å…¸åŒ¹é…
     {
         dialogueIndex.Clear();
         foreach (var piece in dialoguePieces)

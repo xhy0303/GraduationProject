@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +21,7 @@ public class FinalChestController : ChestController
         if (isOpen)
         {
             chestAnimator.SetTrigger("OpenChest");
-            //Ö»ÓĞÊ·Ê«ÎïÆ·À¸ÓĞÎïÆ·Ê±²Å»á²¥·ÅÊ·Ê«¶¯»­
+            //åªæœ‰å²è¯—ç‰©å“æ æœ‰ç‰©å“æ—¶æ‰ä¼šæ’­æ”¾å²è¯—åŠ¨ç”»
             chestAnimator.SetBool("Epic", isEpic);
         }
     }
@@ -29,9 +29,9 @@ public class FinalChestController : ChestController
     void GameOverWin()
     {
         GameOverManager.Instance.ShowGameOver(true);
-        //»ñÊ¤ÒÔºóÓÎÏ·Í¨¹Ø´ÎÊı+1
+        //è·èƒœä»¥åæ¸¸æˆé€šå…³æ¬¡æ•°+1
         GameManager.Instance.gameData.Win();
-        //ÖØÉèÏà¹ØÊı¾İ
+        //é‡è®¾ç›¸å…³æ•°æ®
         SaveManager.Instance.SetDataAfterWin();
     }
 

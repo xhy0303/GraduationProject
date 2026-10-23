@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,20 +21,20 @@ public class ItemPickUp : MonoBehaviour
         {
            if(canPickUp)
             {
-                //×°±¸ÎäÆ÷
-                //GameManager.Instance.playerStats.EquipWeapon(itemData);//²»Ó¦¸ÃÔÚÕâÀïÖ±½Ó×°±¸
+                //è£…å¤‡æ­¦å™¨
+                //GameManager.Instance.playerStats.EquipWeapon(itemData);//ä¸åº”è¯¥åœ¨è¿™é‡Œç›´æ¥è£…å¤‡
 
-                //Ìí¼Óµ½±³°ü
+                //æ·»åŠ åˆ°èƒŒåŒ…
                 InventoryManager.Instance.inventoryData.AddItem(itemData, itemData.itemCount);
                 InventoryManager.Instance.inventoryUI.RefreshUI();
 
-                ////É¾³ı³¡¾°ÖĞµÄÎïÆ·
+                ////åˆ é™¤åœºæ™¯ä¸­çš„ç‰©å“
                 //Destroy(gameObject);
-                //²»Ö±½ÓÏú»ÙÎïÆ·£¬¶øÊÇ½«ÆäÉèÖÃÎª²»¿É¼û£¬²¢ÔÚObjectStateÀï¼ÇÂ¼×´Ì¬
-                //ÒÔÃâÔÚÖØĞÂ¼ÓÔØ³¡¾°Ê±ÎïÆ·ÖØĞÂÉú³É
+                //ä¸ç›´æ¥é”€æ¯ç‰©å“ï¼Œè€Œæ˜¯å°†å…¶è®¾ç½®ä¸ºä¸å¯è§ï¼Œå¹¶åœ¨ObjectStateé‡Œè®°å½•çŠ¶æ€
+                //ä»¥å…åœ¨é‡æ–°åŠ è½½åœºæ™¯æ—¶ç‰©å“é‡æ–°ç”Ÿæˆ
                 transform.GetComponent<ObjectState>().UpdateActive(false);
 
-                //¹Ø±Õ½»»¥ÌáÊ¾UI
+                //å…³é—­äº¤äº’æç¤ºUI
                 GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().
                     UpdateHintUI(false, "");
             }
@@ -48,7 +48,7 @@ public class ItemPickUp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canPickUp = true;
-            GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().UpdateHintUI(canPickUp, "°´EÊ°È¡");
+            GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().UpdateHintUI(canPickUp, "æŒ‰Eæ‹¾å–");
         }
     }
 

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,55 +6,114 @@ using UnityEngine.SceneManagement;
 
 public class SaveManager : Manager<SaveManager>
 {
-    string sceneName = "level";
-
+    [System.Serializable] private sealed class SceneRecord { public string name; }
+    public string LastLoadStatus { get; private set; } = "";
+    private static bool IsPlayableScene(string name)
+    {
+        return name == "Main" || name == "Dungon" || name == "FirstFloor" || name == "SecondFloor" || name == "ThirdFloor";
+    }
     public string SceneName
     {
         get
         {
-            return PlayerPrefs.GetString(sceneName);
+            for (int i = 0; i < 2; i++)
+            {
+                if (!SaveRecordStore.TryRead("scene", "scene", i == 1, out var payload)) continue;
+                var value = JsonUtility.FromJson<SceneRecord>(payload);
+                if (value != null && IsPlayableScene(value.name)) return value.name;
+            }
+            if (!SaveRecordStore.HasRecord("scene") && SaveRecordStore.CanReadLegacy)
+            {
+                var legacy = PlayerPrefs.GetString("level", "");
+                if (IsPlayableScene(legacy)) return legacy;
+            }
+            return "";
         }
     }
-
     protected override void Awake()
     {
         base.Awake();
+        if (Instance != this) return;
         DontDestroyOnLoad(this);
     }
-
     public void Save(object data, string key)
     {
-        var jsonData = JsonUtility.ToJson(data, true);
-        PlayerPrefs.SetString(key, jsonData);
-        PlayerPrefs.SetString(sceneName, SceneManager.GetActiveScene().name);
-
+        var inventory = data as InventoryData_SO;
+        var json = inventory != null ? InventorySaveCodec.Encode(inventory) : JsonUtility.ToJson(data);
+        SaveRecordStore.Write(key, inventory != null ? "inventory" : data.GetType().FullName, json);
+        RecordScene(SceneManager.GetActiveScene().name);
         PlayerPrefs.Save();
     }
-
-    public void Load(object data, string key)
+    public void RecordScene(string name)
     {
-        if (PlayerPrefs.HasKey(key))
+        if (!IsPlayableScene(name)) return;
+        SaveRecordStore.Write("scene", "scene", JsonUtility.ToJson(new SceneRecord { name = name }));
+        PlayerPrefs.Save();
+    }
+    public void Load(object data, string key, string legacyKey = null)
+    {
+        LastLoadStatus = "";
+        var inventory = data as InventoryData_SO;
+        string kind = inventory != null ? "inventory" : data.GetType().FullName;
+        for (int i = 0; i < 2; i++)
         {
-            var jsonData = PlayerPrefs.GetString(key);
-            JsonUtility.FromJsonOverwrite(jsonData, data);
+            if (!SaveRecordStore.TryRead(key, kind, i == 1, out var json)) continue;
+            bool applied;
+            if (inventory != null) applied = InventorySaveCodec.TryDecode(json, inventory, out _);
+            else applied = TryApply(json, data);
+            if (!applied) continue;
+            if (i == 1) Report("å­˜æ¡£ " + key + " æ ¡éªŒå¤±è´¥ï¼Œå·²æ¢å¤ä¸Šä¸€ä»½æœ‰æ•ˆå¤‡ä»½ã€‚");
+            return;
         }
+        if (SaveRecordStore.HasRecord(key))
+        {
+            Report("å­˜æ¡£ " + key + " æ— æ³•è¯»å–ï¼Œä¿ç•™åŸè®°å½•å¹¶ä½¿ç”¨åˆå§‹æ•°æ®ã€‚");
+            return;
+        }
+        var oldKey = legacyKey ?? key;
+        if (!SaveRecordStore.CanReadLegacy || !PlayerPrefs.HasKey(oldKey)) return;
+        var oldJson = PlayerPrefs.GetString(oldKey);
+        if (inventory != null)
+        {
+            if (!InventorySaveCodec.TryDecodeLegacy(oldJson, inventory))
+                Report("æ—§èƒŒåŒ… " + oldKey + " ä»…åŒ…å«ä¸´æ—¶å®ä¾‹å¼•ç”¨ï¼Œæ— æ³•å¯é æ¢å¤ç‰©å“ï¼›æ—§æ¡£åŸæ ·ä¿ç•™ï¼Œå½“å‰ä½¿ç”¨åˆå§‹èƒŒåŒ…ã€‚");
+        }
+        else if (!TryApply(oldJson, data)) Report("æ—§å­˜æ¡£ " + oldKey + " æ— æ³•è¯»å–ï¼ŒåŸè®°å½•å·²ä¿ç•™ã€‚");
+    }
+    private static bool TryApply(string json, object data)
+    {
+        var before = JsonUtility.ToJson(data);
+        try
+        {
+            if (string.IsNullOrWhiteSpace(json) || !json.TrimStart().StartsWith("{")) return false;
+            JsonUtility.FromJsonOverwrite(json, data);
+            if (data is CharacterData_SO character && (character.maxHealth <= 0 || character.currentHealth < 0 || character.currentHealth > character.maxHealth))
+                throw new System.ArgumentException("Invalid character data");
+            if (data is GeneralGameData_SO progress && progress.gameTime < 0)
+                throw new System.ArgumentException("Invalid progress");
+            return true;
+        }
+        catch (System.ArgumentException) { JsonUtility.FromJsonOverwrite(before, data); return false; }
+    }
+    private void Report(string message)
+    {
+        LastLoadStatus = message;
+        Debug.Log(message);
     }
 
-    #region Êı¾İ±£´æ
+    #region æ•°æ®ä¿å­˜
     public void SavePlayerData()
     {
-        Save(GameManager.Instance.playerStats.characterData,
-            GameManager.Instance.playerStats.characterData.name);
+        Save(GameManager.Instance.playerStats.characterData, "player");
     }
 
     public void LoadPlayerData()
     {
-        Load(GameManager.Instance.playerStats.characterData,
-            GameManager.Instance.playerStats.characterData.name);
+        Load(GameManager.Instance.playerStats.characterData, "player", GameManager.Instance.playerStats.characterData.name);
     }
 
     public void SaveInventoryData()
-        //Í³Ò»ÕûÀíµ½SaveManagerÀïµ÷ÓÃ
+        //ç»Ÿä¸€æ•´ç†åˆ°SaveManageré‡Œè°ƒç”¨
     {
         InventoryManager.Instance.SaveInventoryData();
     }
@@ -65,12 +124,12 @@ public class SaveManager : Manager<SaveManager>
 
     public void SaveGeneralGameData()
     {
-        Save(GameManager.Instance.gameData, GameManager.Instance.gameData.name);
+        Save(GameManager.Instance.gameData, "progress");
     }
     public void LoadGeneralGameData()
-    //Ö»ÓĞÔÚ¿ªÊ¼ÓÎÏ·Ê±£¨²»¹ÜÊÇĞÂÓÎÏ·»¹ÊÇ¶Áµµ£©²Å»áµ÷ÓÃ
+    //åªæœ‰åœ¨å¼€å§‹æ¸¸æˆæ—¶ï¼ˆä¸ç®¡æ˜¯æ–°æ¸¸æˆè¿˜æ˜¯è¯»æ¡£ï¼‰æ‰ä¼šè°ƒç”¨
     {
-        Load(GameManager.Instance.gameData, GameManager.Instance.gameData.name);
+        Load(GameManager.Instance.gameData, "progress", GameManager.Instance.gameData.name);
     }
 
     #endregion
@@ -80,8 +139,8 @@ public class SaveManager : Manager<SaveManager>
         SavePlayerData();
         SaveInventoryData();
 
-        foreach (var objManager in FindObjectsOfType<InteractableObjectManager>())
-        //³¡¾°ÖĞ¿É½»»¥ÎïÆ·Êı¾İ£¬²»ÓÃÊÖ¶¯¼ÇÔØ£¬ÔÚÆô¶¯Ê±×Ô¶¯¼ÓÔØ
+        foreach (var objManager in LegacyObjectLookup.FindAll<InteractableObjectManager>())
+        //åœºæ™¯ä¸­å¯äº¤äº’ç‰©å“æ•°æ®ï¼Œä¸ç”¨æ‰‹åŠ¨è®°è½½ï¼Œåœ¨å¯åŠ¨æ—¶è‡ªåŠ¨åŠ è½½
         {
             objManager.SaveObjectStates();
         }
@@ -92,33 +151,33 @@ public class SaveManager : Manager<SaveManager>
 
     public void SetDataAfterWin()
     {
-        //ÓÎÏ·Ê¤Àûºó£¬ÖØÖÃÊı¾İ
+        //æ¸¸æˆèƒœåˆ©åï¼Œé‡ç½®æ•°æ®
         Save(GameManager.Instance.playerStats.templateData,
-            GameManager.Instance.playerStats.characterData.name);//Íæ¼ÒÉúÃüÖµ
+            "player");//ç©å®¶ç”Ÿå‘½å€¼
 
-        Save(GameManager.Instance.gameData, GameManager.Instance.gameData.name);//ÓÎÏ·Ê±¼ä
+        Save(GameManager.Instance.gameData, "progress");//æ¸¸æˆæ—¶é—´
 
         Save(InventoryManager.Instance.inventoryTemplate,
-            InventoryManager.Instance.inventoryData.name);//±³°üÊı¾İ
+            "inventory.bag");//èƒŒåŒ…æ•°æ®
         Save(InventoryManager.Instance.weaponTemplate,
-            InventoryManager.Instance.weaponData.name);//ÎäÆ÷À¸Êı¾İ
+            "inventory.weapon");//æ­¦å™¨æ æ•°æ®
         Save(InventoryManager.Instance.shieldTemplate,
-            InventoryManager.Instance.shieldData.name);//¶ÜÅÆÀ¸Êı¾İ
+            "inventory.shield");//ç›¾ç‰Œæ æ•°æ®
         Save(InventoryManager.Instance.accessoryTemplate,
-            InventoryManager.Instance.accessoryData.name);//ÊÎÆ·À¸Êı¾İ
+            "inventory.accessory");//é¥°å“æ æ•°æ®
         Save(InventoryManager.Instance.accessoryShopTemplate,
-            InventoryManager.Instance.accessoryShopData.name);//ÊÎÆ·ÉÌµêÊı¾İ
+            "inventory.shop");//é¥°å“å•†åº—æ•°æ®
 
-        PlayerPrefs.SetString(sceneName, "Main");
+        RecordScene("Main");
 
 
     }
 
     public void ResetGameData()
     {
-        //ÖØÖÃÊı¾İ
-        Save(GameManager.Instance.gameDataTemplate, 
-            GameManager.Instance.gameData.name);//ÖØÖÃÓÎÏ·Ê±¼ä
+        SaveRecordStore.StartNewGame();
+        JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(GameManager.Instance.gameDataTemplate), GameManager.Instance.gameData);
+        Save(GameManager.Instance.gameDataTemplate, "progress");//é‡ç½®æ¸¸æˆæ—¶é—´
     }
 
 }

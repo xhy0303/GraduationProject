@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +15,7 @@ public class GameOverManager : Manager<GameOverManager>
     protected override void Awake()
     {
         base.Awake();
-        DontDestroyOnLoad(this);
+        // This panel belongs to the scene UI and is recreated with that scene.
 
         gameOverPanel=transform.GetChild(0).gameObject;
 

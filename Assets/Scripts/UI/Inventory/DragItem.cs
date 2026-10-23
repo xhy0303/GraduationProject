@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,20 +28,20 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         InventoryManager.Instance.currentDrag.originalParent = (RectTransform)transform.parent;
 
 
-        //¼ÇÂ¼Ô­Ê¼ĞÅÏ¢
+        //è®°å½•åŸå§‹ä¿¡æ¯
         transform.SetParent(InventoryManager.Instance.dragCanvas.transform, true);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //¸úËæÊó±êÎ»ÖÃÒÆ¶¯
+        //è·Ÿéšé¼ æ ‡ä½ç½®ç§»åŠ¨
         transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //·ÅÏÂÎïÆ·£¬½»»»Êı¾İ
-        if (EventSystem.current.IsPointerOverGameObject())//Êó±êÊÇ·ñÖ¸ÏòUIÎïÆ·
+        //æ”¾ä¸‹ç‰©å“ï¼Œäº¤æ¢æ•°æ®
+        if (EventSystem.current.IsPointerOverGameObject())//é¼ æ ‡æ˜¯å¦æŒ‡å‘UIç‰©å“
         {
             if (InventoryManager.Instance.CheckInventoryUI(eventData.position)
                 || InventoryManager.Instance.CheckWeaponUI(eventData.position)
@@ -68,17 +68,17 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                         {
                             case SlotType.Bag:
                                 if (currentHolder.slotType == SlotType.Bag)
-                                    //Èç¹ûÊ±±³°üÖ®¼äÀ´»Ø½»»»
+                                    //å¦‚æœæ—¶èƒŒåŒ…ä¹‹é—´æ¥å›äº¤æ¢
                                     SwapItem();
                                 else
                                 {
-                                    //±³°üºÍÆäËûÀ¸Î»½»»»
+                                    //èƒŒåŒ…å’Œå…¶ä»–æ ä½äº¤æ¢
                                     if (targetHolder.itemUI.Bag.inventoryItems[targetHolder.itemUI.index].itemData == null)
-                                    //±³°üÄ¿±êÀ¸Î»Îª¿Õ
+                                    //èƒŒåŒ…ç›®æ ‡æ ä½ä¸ºç©º
                                     {
                                         if (currentHolder.slotType == SlotType.Shop
                                             && GameManager.Instance.gameData.CanShop(InventoryManager.Instance.accessoryShopData.GetEmptyCount()))
-                                        //ÉÌµêµ½±³°üµÄ»°£¬¾ÍÒªÈ·±£´ÓÉÌµêÖĞÈ¡³öµÄÎïÆ·Ã»ÓĞ³¬¹ıÉÏÏŞ£¨µÚ¶ş´Î¿ªÊ¼ÓÎÏ·Ö»ÄÜÄÃÒ»¸öÊÎÆ·)
+                                        //å•†åº—åˆ°èƒŒåŒ…çš„è¯ï¼Œå°±è¦ç¡®ä¿ä»å•†åº—ä¸­å–å‡ºçš„ç‰©å“æ²¡æœ‰è¶…è¿‡ä¸Šé™ï¼ˆç¬¬äºŒæ¬¡å¼€å§‹æ¸¸æˆåªèƒ½æ‹¿ä¸€ä¸ªé¥°å“)
                                         {
                                             SwapItem();
                                         }
@@ -109,7 +109,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                                 break;
 
                             case SlotType.Shop:
-                                //Ö»ÓĞ±³°üÀïµÄÊÎÆ·¿ÉÒÔ·Åµ½ÉÌµê
+                                //åªæœ‰èƒŒåŒ…é‡Œçš„é¥°å“å¯ä»¥æ”¾åˆ°å•†åº—
                                 if (currentHolder.slotType == SlotType.Bag
                                     && currentItemUI.Bag.inventoryItems[currentItemUI.index].itemData.itemType
                                     == ItemType.Accessory) 
@@ -131,7 +131,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
         transform.SetParent(InventoryManager.Instance.currentDrag.originalParent);
 
-        //ÖØÖÃItemSlotµÄÎ»ÖÃ
+        //é‡ç½®ItemSlotçš„ä½ç½®
         RectTransform t = transform as RectTransform;
         t.offsetMax = -Vector2.one * 5;
         t.offsetMin = Vector2.one * 5;
@@ -141,7 +141,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     {
         var targetItem = targetHolder.itemUI.Bag.inventoryItems[targetHolder.itemUI.index];
         var tempItem = currentHolder.itemUI.Bag.inventoryItems[currentHolder.itemUI.index];
-        //²»µ¥ÊÇUIµÄ½»»»£¬Ò²ÊÇ±³°üÊı¾İ¿âµÄ½»»»
+        //ä¸å•æ˜¯UIçš„äº¤æ¢ï¼Œä¹Ÿæ˜¯èƒŒåŒ…æ•°æ®åº“çš„äº¤æ¢
 
 
 

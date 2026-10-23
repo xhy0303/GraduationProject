@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +7,7 @@ public class PlayerStats : CharacterStats
 {
 
     public enum ExposureState { Peace, Alert, Chase };
-    //½ÇÉ«µÄ×´Ì¬
+    //è§’è‰²çš„çŠ¶æ€
 
     public enum PlayerShape { Human, Yokai, Invisiable };
 
@@ -30,7 +30,7 @@ public class PlayerStats : CharacterStats
 
     //public Transform weaponSlot;
     //public Transform shieldSlot;
-    //ÇĞ»»ĞÎÌ¬ÒÔºóSlotÎ»ÖÃ»áÊ±³£¸Ä±ä£¬ËùÒÔ²»ÔÚ´Ë´¦±£´æ
+    //åˆ‡æ¢å½¢æ€ä»¥åSlotä½ç½®ä¼šæ—¶å¸¸æ”¹å˜ï¼Œæ‰€ä»¥ä¸åœ¨æ­¤å¤„ä¿å­˜
 
 
 
@@ -38,17 +38,17 @@ public class PlayerStats : CharacterStats
 
     public void ChangeWeapon(ItemData_SO weapon)
     {
-        bool isTwoHanded = (weapon.itemName == "¿³²ñ¸«"
-            || weapon.itemName == "Õ½Ê¿Ö®¸«"
-            || weapon.itemName == "ÖØ´¸"
-            || weapon.itemName == "¾Ş½£");
+        bool isTwoHanded = (weapon.itemName == "ç æŸ´æ–§"
+            || weapon.itemName == "æˆ˜å£«ä¹‹æ–§"
+            || weapon.itemName == "é‡é”¤"
+            || weapon.itemName == "å·¨å‰‘");
 
-        UnEquipWeapon(); // ´«µİ²ÎÊı£¬¸æËßĞ¶ÏÂÎäÆ÷Ê±ÊÇ·ñĞèÒª»Ö¸´¶ÜÅÆ²Û
+        UnEquipWeapon(); // ä¼ é€’å‚æ•°ï¼Œå‘Šè¯‰å¸ä¸‹æ­¦å™¨æ—¶æ˜¯å¦éœ€è¦æ¢å¤ç›¾ç‰Œæ§½
         EquipWeapon(weapon);
 
         if (isTwoHanded)
         {
-            // ×°±¸Ë«ÊÖÎäÆ÷Ê±Ğ¶ÏÂ¶ÜÅÆ£¬Í¬Ê±»¹Ô­Êı¾İ¿â
+            // è£…å¤‡åŒæ‰‹æ­¦å™¨æ—¶å¸ä¸‹ç›¾ç‰Œï¼ŒåŒæ—¶è¿˜åŸæ•°æ®åº“
             UnEquipShield();
             var shield = InventoryManager.Instance.shieldData.inventoryItems[0].itemData;
             if (shield != null)
@@ -73,9 +73,9 @@ public class PlayerStats : CharacterStats
     {
         if (weaponData.weaponPrefab != null)
         {
-            //¸üĞÂÊôĞÔ
+            //æ›´æ–°å±æ€§
             this.weaponData = weaponData.weaponData;
-            //ÇĞ»»¶¯»­
+            //åˆ‡æ¢åŠ¨ç”»
             GetComponent<Animator>().runtimeAnimatorController = weaponData.weaponAnimator;
             Transform weaponSlot = transform.GetChild(2).GetComponent<ShapeShiftController>().weaponSlot;
             GameObject newWeapon = Instantiate(weaponData.weaponPrefab, weaponSlot);
@@ -83,9 +83,9 @@ public class PlayerStats : CharacterStats
     }
     public void UnEquipWeapon()
     {
-        // »¹Ô­ÊôĞÔ
+        // è¿˜åŸå±æ€§
         this.weaponData = null;
-        // »¹Ô­¶¯»­
+        // è¿˜åŸåŠ¨ç”»
         GetComponent<Animator>().runtimeAnimatorController = baseAnimator;
 
         if (transform.GetChild(2).GetComponent<ShapeShiftController>().weaponSlot.transform.childCount != 0)
@@ -100,7 +100,7 @@ public class PlayerStats : CharacterStats
             }
         }
 
-        // ¸ù¾İ²ÎÊı¾ö¶¨ÊÇ·ñ»¹Ô­¶ÜÅÆ²Û
+        // æ ¹æ®å‚æ•°å†³å®šæ˜¯å¦è¿˜åŸç›¾ç‰Œæ§½
         if (GameManager.Instance.playerStats.currentShape == PlayerShape.Human)
         {
             InventoryManager.Instance.ChangeShieldSlot(true);
@@ -119,7 +119,7 @@ public class PlayerStats : CharacterStats
     {
         if (shieldData.weaponPrefab != null)
         {
-            //¸üĞÂÊôĞÔ
+            //æ›´æ–°å±æ€§
             this.shieldData = shieldData.weaponData;
 
             Instantiate(shieldData.weaponPrefab, transform.GetChild(2).GetComponent<ShapeShiftController>().shieldSlot);
@@ -145,7 +145,7 @@ public class PlayerStats : CharacterStats
 
     public void ChangeAccessory(ItemData_SO accessory)
     {   
-        //ÇĞ»»ÊÎÆ·Ê±»¹Ô­ÎäÆ÷ºÍ¶ÜÅÆ²Û
+        //åˆ‡æ¢é¥°å“æ—¶è¿˜åŸæ­¦å™¨å’Œç›¾ç‰Œæ§½
         UnEquipWeapon();
         var weapon = InventoryManager.Instance.weaponData.inventoryItems[0].itemData;
         if (weapon != null)
@@ -180,23 +180,32 @@ public class PlayerStats : CharacterStats
         
 
     }
+    // Restore visuals without moving saved weapons/shields back into the bag.
+    public void RestoreAccessory(ItemData_SO accessory)
+    {
+        EagleVision = false;
+        if (accessory.itemName != "éšå½¢å¸½" && accessory.itemName != "å¹»å½¢ä¹‹æˆ’")
+            GetComponent<PlayerController>().ShapeShift("äººå½¢");
+        EquipAccessory(accessory);
+    }
+
     public void EquipAccessory(ItemData_SO accessoryData)
     {
-        //¸Ä±äÍâĞÎÔÚPlayerControllerÖĞ
+        //æ”¹å˜å¤–å½¢åœ¨PlayerControllerä¸­
         switch (accessoryData.itemName)
         {
-            case "ÒşĞÎÃ±":
+            case "éšå½¢å¸½":
                 GameManager.Instance.playerStats.gameObject.GetComponent<PlayerController>().
-                    ShapeShift("ÒşĞÎ");
+                    ShapeShift("éšå½¢");
 
                 break;
 
-            case "»ÃĞÎÖ®½ä":
+            case "å¹»å½¢ä¹‹æˆ’":
                 GameManager.Instance.playerStats.gameObject.GetComponent<PlayerController>().
-                    ShapeShift("ÊŞÈË");
+                    ShapeShift("å…½äºº");
                 break;
 
-            case "Ó¥ÑÛ±¦Ê¯":
+            case "é¹°çœ¼å®çŸ³":
                 GameManager.Instance.playerStats.EagleVision = true;
                 break;
         }
@@ -208,12 +217,12 @@ public class PlayerStats : CharacterStats
     {
         this.accessoryData = null;
 
-        //»¹Ô­Ó¥ÑÛÊÓ¾õ
+        //è¿˜åŸé¹°çœ¼è§†è§‰
         GameManager.Instance.playerStats.EagleVision = false;
 
-        //»¹Ô­ÍâĞÎ
+        //è¿˜åŸå¤–å½¢
         GameManager.Instance.playerStats.gameObject.GetComponent<PlayerController>().
-                    ShapeShift("ÈËĞÎ");
+                    ShapeShift("äººå½¢");
 
         //InventoryManager.Instance.weaponUI.RefreshUI();
         //InventoryManager.Instance.shieldUI.RefreshUI();
@@ -230,7 +239,7 @@ public class PlayerStats : CharacterStats
         }
         else
         {
-            if (InventoryManager.Instance.accessoryData.inventoryItems[0].itemData.itemName == "Á¦Á¿Ö®½ä")
+            if (InventoryManager.Instance.accessoryData.inventoryItems[0].itemData.itemName == "åŠ›é‡ä¹‹æˆ’")
             {
                 if (weaponData != null)
                     return (characterData.baseAttack + weaponData.minDamage) * 5;
@@ -258,7 +267,7 @@ public class PlayerStats : CharacterStats
         }
         else
         {
-            if (InventoryManager.Instance.accessoryData.inventoryItems[0].itemData.itemName == "Á¦Á¿Ö®½ä")
+            if (InventoryManager.Instance.accessoryData.inventoryItems[0].itemData.itemName == "åŠ›é‡ä¹‹æˆ’")
             {
                 if (weaponData != null)
                     return (characterData.baseAttack + weaponData.maxDamage) * 5;
@@ -286,7 +295,7 @@ public class PlayerStats : CharacterStats
         }
         else
         {
-            if (InventoryManager.Instance.accessoryData.inventoryItems[0].itemData.itemName == "Á¦Á¿Ö®½ä")
+            if (InventoryManager.Instance.accessoryData.inventoryItems[0].itemData.itemName == "åŠ›é‡ä¹‹æˆ’")
             {
                 if (shieldData != null)
                     return (characterData.baseDefense + shieldData.defense) * 5;
@@ -343,7 +352,7 @@ public class PlayerStats : CharacterStats
     }
     #endregion
 
-    #region Ê¹ÓÃµÀ¾ß
+    #region ä½¿ç”¨é“å…·
 
     public void ApplyHealth(int health)
     {

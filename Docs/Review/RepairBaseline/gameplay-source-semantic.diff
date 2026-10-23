@@ -1,0 +1,195 @@
+--- Assets/Scripts/UI/HealthBarUI.cs (decoded original)
++++ Assets/Scripts/UI/HealthBarUI.cs
+@@ -30,7 +30,7 @@
+     {
+         camPos = Camera.main.transform;
+ 
+-        foreach (Canvas canvas in FindObjectsOfType<Canvas>())
++        foreach (Canvas canvas in LegacyObjectLookup.FindAll<Canvas>())
+         {
+             //if (canvas.renderMode == RenderMode.WorldSpace)
+             //    //仅有血条UI为World Space模式
+--- Assets/Scripts/UI/InteractUI.cs (decoded original)
++++ Assets/Scripts/UI/InteractUI.cs
+@@ -25,7 +25,7 @@
+     {
+         camPos = Camera.main.transform;
+ 
+-        foreach (Canvas canvas in FindObjectsOfType<Canvas>())
++        foreach (Canvas canvas in LegacyObjectLookup.FindAll<Canvas>())
+         {
+             if (canvas.name == "InteractUICanvas")
+             {
+--- Assets/Scripts/UI/Dialogue/DialogueUI.cs (decoded original)
++++ Assets/Scripts/UI/Dialogue/DialogueUI.cs
+@@ -29,7 +29,7 @@
+         base.Awake();
+         nextBut.onClick.AddListener(ContinueDialogue);
+ 
+-        director = FindObjectOfType<PlayableDirector>();
++        director = LegacyObjectLookup.FindFirst<PlayableDirector>();
+     }
+     void ContinueDialogue()
+     {
+--- Assets/Scripts/Controller/SceneController.cs (decoded original)
++++ Assets/Scripts/Controller/SceneController.cs
+@@ -46,7 +46,7 @@
+         //数据保存
+         SaveManager.Instance.SavePlayerData();//玩家数据
+         InventoryManager.Instance.SaveInventoryData();//背包数据
+-        foreach (var objManager in FindObjectsOfType<InteractableObjectManager>())
++        foreach (var objManager in LegacyObjectLookup.FindAll<InteractableObjectManager>())
+             //场景中可交互物品数据，不用手动记载，在启动时自动加载
+         {
+             objManager.SaveObjectStates();
+@@ -91,7 +91,7 @@
+     private TransitionDestination FindDestination(
+         TransitionDestination.DestinationTag destinationTag)
+     {
+-        TransitionDestination[] destinations = FindObjectsOfType<TransitionDestination>();
++        TransitionDestination[] destinations = LegacyObjectLookup.FindAll<TransitionDestination>();
+         foreach (TransitionDestination destination in destinations)
+         {
+             if (destination.destinationTag == destinationTag)
+--- Assets/Scripts/Controller/FinalLevelController.cs (decoded original)
++++ Assets/Scripts/Controller/FinalLevelController.cs
+@@ -28,7 +28,7 @@
+ 
+     void Start()
+     {
+-        director = FindObjectOfType<PlayableDirector>();
++        director = LegacyObjectLookup.FindFirst<PlayableDirector>();
+         director.stopped += StartGame; // 订阅动画播放结束事件
+     }
+ 
+--- Assets/Scripts/Controller/Enemy/RockController.cs (decoded original)
++++ Assets/Scripts/Controller/Enemy/RockController.cs
+@@ -23,7 +23,7 @@
+     private void Start()
+     {
+         rb = GetComponent<Rigidbody>();
+-        rb.velocity = Vector3.one;
++        rb.linearVelocity = Vector3.one;
+         FlyToTarget();
+ 
+         state = states.HitPlayer;
+--- Assets/Scripts/Controller/Player/PlayerController.cs (decoded original)
++++ Assets/Scripts/Controller/Player/PlayerController.cs
+@@ -72,7 +72,7 @@
+         {
+             Debug.Log("按下 V 键");
+ 
+-            foreach(var enemy in FindObjectsOfType<EnemyController>())
++            foreach(var enemy in LegacyObjectLookup.FindAll<EnemyController>())
+             {
+                 enemy.gameObject.GetComponent<Outline>().enabled = true;
+             }
+@@ -83,7 +83,7 @@
+         {
+             Debug.Log("松开 V 键");
+ 
+-            foreach (var enemy in FindObjectsOfType<EnemyController>())
++            foreach (var enemy in LegacyObjectLookup.FindAll<EnemyController>())
+             {
+                 enemy.gameObject.GetComponent<Outline>().enabled = false;
+             }
+@@ -250,7 +250,7 @@
+             {
+ 
+                 attackTarget.GetComponent<RockController>().state = RockController.states.HitEnemy;
+-                attackTarget.GetComponent<Rigidbody>().velocity = Vector3.one;
++                attackTarget.GetComponent<Rigidbody>().linearVelocity = Vector3.one;
+                 attackTarget.GetComponent<Rigidbody>().AddForce(
+                     (transform.forward).normalized
+                     * attackTarget.GetComponent<RockController>().force,
+--- Assets/Scripts/Manager/Singleton/InventoryManager.cs (decoded original)
++++ Assets/Scripts/Manager/Singleton/InventoryManager.cs
+@@ -38,7 +38,7 @@
+ 
+     [Header("Drag Canvas")]
+     public Canvas dragCanvas;
+-    public DragData currentDrag;
++    [System.NonSerialized] public DragData currentDrag;
+ 
+     [Header("UI Panel")]
+     public GameObject bagPanel;
+--- Assets/Scripts/Manager/Singleton/GameManager.cs (decoded original)
++++ Assets/Scripts/Manager/Singleton/GameManager.cs
+@@ -53,8 +53,8 @@
+     {
+         playerStats = player;
+ 
+-        followCam = GameObject.FindObjectOfType<CinemachineFreeLook>();
+-        virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
++        followCam = LegacyObjectLookup.FindFirst<CinemachineFreeLook>();
++        virtualCamera = LegacyObjectLookup.FindFirst<CinemachineVirtualCamera>();
+ 
+         if (followCam != null)
+         {
+@@ -107,7 +107,7 @@
+         switch(sceneName)
+         {
+             case "Main":
+-                foreach (var item in FindObjectsOfType<TransitionDestination>())
++                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
+                 {
+                     if (item.destinationTag == TransitionDestination.DestinationTag.BirthPos)
+                     {
+@@ -117,7 +117,7 @@
+                 break;
+ 
+             case "FirstFloor":
+-                foreach (var item in FindObjectsOfType<TransitionDestination>())
++                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
+                 {
+                     if (item.destinationTag == TransitionDestination.DestinationTag.FrontGateIndoor)
+                     {
+@@ -127,7 +127,7 @@
+                 break;
+ 
+             case "SecondFloor":
+-                foreach (var item in FindObjectsOfType<TransitionDestination>())
++                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
+                 {
+                     if (item.destinationTag == TransitionDestination.DestinationTag.SecondFloorDOWN)
+                     {
+@@ -137,7 +137,7 @@
+                 break;
+ 
+             case "ThirdFloor":
+-                foreach (var item in FindObjectsOfType<TransitionDestination>())
++                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
+                 {
+                     if (item.destinationTag == TransitionDestination.DestinationTag.ThirdFloor)
+                     {
+@@ -147,7 +147,7 @@
+                 break;
+ 
+             case "Dungon":
+-                foreach (var item in FindObjectsOfType<TransitionDestination>())
++                foreach (var item in LegacyObjectLookup.FindAll<TransitionDestination>())
+                 {
+                     if (item.destinationTag == TransitionDestination.DestinationTag.DungonIndoor)
+                     {
+--- Assets/Scripts/Manager/Singleton/SaveManager.cs (decoded original)
++++ Assets/Scripts/Manager/Singleton/SaveManager.cs
+@@ -80,7 +80,7 @@
+         SavePlayerData();
+         SaveInventoryData();
+ 
+-        foreach (var objManager in FindObjectsOfType<InteractableObjectManager>())
++        foreach (var objManager in LegacyObjectLookup.FindAll<InteractableObjectManager>())
+         //场景中可交互物品数据，不用手动记载，在启动时自动加载
+         {
+             objManager.SaveObjectStates();
+--- Assets/Scripts/ScriptableObject/DialogueData_SO.cs (decoded original)
++++ Assets/Scripts/ScriptableObject/DialogueData_SO.cs
+@@ -8,7 +8,7 @@
+ {
+     public List<DialoguePiece> dialoguePieces = new List<DialoguePiece>();
+ 
+-    public Dictionary<string, DialoguePiece> dialogueIndex = new Dictionary<string, DialoguePiece>();
++    [System.NonSerialized] public Dictionary<string, DialoguePiece> dialogueIndex = new Dictionary<string, DialoguePiece>();
+ 
+ #if UNITY_EDITOR
+     private void OnValidate()

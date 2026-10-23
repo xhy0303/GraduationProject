@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,11 +37,11 @@ public class OptionUI : MonoBehaviour
 
         //    if (takeQuest)
         //    {
-        //        //Ìí¼Óµ½ÈÎÎñÁĞ±í
-        //        //ÅĞ¶ÏÊÇ·ñÒÑ¾­ÓĞ´ËÈÎÎñ£¨Ò»Ãû×ÖÅĞ¶Ï
+        //        //æ·»åŠ åˆ°ä»»åŠ¡åˆ—è¡¨
+        //        //åˆ¤æ–­æ˜¯å¦å·²ç»æœ‰æ­¤ä»»åŠ¡ï¼ˆä¸€åå­—åˆ¤æ–­
         //        if (QuestManager.Instance.HasQuest(newTask.questData))
         //        {
-        //            //ÅĞ¶ÏÊÇ·ñÍê³É²¢·¢·Å½±Àø
+        //            //åˆ¤æ–­æ˜¯å¦å®Œæˆå¹¶å‘æ”¾å¥–åŠ±
         //            if (QuestManager.Instance.GetTask(newTask.questData).IsCompleted)
         //            {
         //                newTask.questData.GiveRewards();
@@ -51,7 +51,7 @@ public class OptionUI : MonoBehaviour
         //        }
         //        else
         //        {
-        //            //Ã»ÓĞÈÎÎñ,Ìí¼Óµ½ÈÎÎñÁĞ±íÖĞ
+        //            //æ²¡æœ‰ä»»åŠ¡,æ·»åŠ åˆ°ä»»åŠ¡åˆ—è¡¨ä¸­
         //            QuestManager.Instance.tasks.Add(newTask);
         //            QuestManager.Instance.GetTask(newTask.questData).IsStarted = true;
 

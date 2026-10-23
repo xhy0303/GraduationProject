@@ -12,6 +12,17 @@ public enum ItemType
 
 public class ItemData_SO : ScriptableObject
 {
+    [SerializeField, HideInInspector] private string persistentId;
+    public string PersistentId => persistentId;
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        var path = UnityEditor.AssetDatabase.GetAssetPath(this);
+        if (!string.IsNullOrEmpty(path))
+            persistentId = UnityEditor.AssetDatabase.AssetPathToGUID(path);
+    }
+#endif
     public ItemType itemType;
 
     public string itemName;
@@ -32,4 +43,3 @@ public class ItemData_SO : ScriptableObject
 
     public AnimatorOverrideController weaponAnimator;
 }
-

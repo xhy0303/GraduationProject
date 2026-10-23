@@ -1,4 +1,4 @@
-using System;
+锘縰sing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,10 +30,10 @@ public class HealthBarUI : MonoBehaviour
     {
         camPos = Camera.main.transform;
 
-        foreach (Canvas canvas in FindObjectsOfType<Canvas>())
+        foreach (Canvas canvas in LegacyObjectLookup.FindAll<Canvas>())
         {
             //if (canvas.renderMode == RenderMode.WorldSpace)
-            //    //仅有血条UI为World Space模式
+            //    //浠呮湁琛�鏉I涓篧orld Space妯″紡
             if (canvas.name == "HealthBarCanvas") 
             {
                 UIBar = Instantiate(healthUIPrefab, canvas.transform).transform;
@@ -60,7 +60,7 @@ public class HealthBarUI : MonoBehaviour
     }
 
     private void LateUpdate()
-        //在所有的update方法结束后才执行
+        //鍦ㄦ墍鏈夌殑update鏂规硶缁撴潫鍚庢墠鎵ц
     {
         if (UIBar != null)
         {

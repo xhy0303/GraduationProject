@@ -1,35 +1,35 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class FinalLevelController : MonoBehaviour
 {
-    [Header("µĞÈËÉú³ÉÉèÖÃ")]
+    [Header("æ•Œäººç”Ÿæˆè®¾ç½®")]
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
-    [Tooltip("Éú³ÉµĞÈËÊ±¼ì²âÇøÓòÄÚµÄ°ë¾¶£¬·ÀÖ¹ÖØµş")]
+    [Tooltip("ç”Ÿæˆæ•Œäººæ—¶æ£€æµ‹åŒºåŸŸå†…çš„åŠå¾„ï¼Œé˜²æ­¢é‡å ")]
     public float safeSpawnRadius = 1.0f;
-    [Tooltip("µĞÈËËùÔÚµÄLayer")]
+    [Tooltip("æ•Œäººæ‰€åœ¨çš„Layer")]
     public LayerMask enemyLayer;
 
-    [Header("²¨´ÎÉèÖÃ")]
+    [Header("æ³¢æ¬¡è®¾ç½®")]
     public int totalWaves = 5;
     public int baseEnemiesPerWave = 3;
     public float spawnInterval = 1.5f;
 
     private int currentWave = 0;
-    private int aliveEnemies = 0; // »î×ÅµÄµĞÈËÊı
+    private int aliveEnemies = 0; // æ´»ç€çš„æ•Œäººæ•°
 
-    PlayableDirector director; // ÓÃÓÚ²¥·Å¶¯»­
+    PlayableDirector director; // ç”¨äºæ’­æ”¾åŠ¨ç”»
 
-    [Header("»ñÊ¤½±Àø")]
+    [Header("è·èƒœå¥–åŠ±")]
     public GameObject chest;
 
     void Start()
     {
-        director = FindObjectOfType<PlayableDirector>();
-        director.stopped += StartGame; // ¶©ÔÄ¶¯»­²¥·Å½áÊøÊÂ¼ş
+        director = LegacyObjectLookup.FindFirst<PlayableDirector>();
+        director.stopped += StartGame; // è®¢é˜…åŠ¨ç”»æ’­æ”¾ç»“æŸäº‹ä»¶
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,10 +53,10 @@ public class FinalLevelController : MonoBehaviour
         while (currentWave < totalWaves)
         {
             currentWave++;
-            // ²»Ï£ÍûµĞÈËÔ½À´Ô½¶à£¬ºóĞø²¨´ÎµĞÈËÊıÁ¿¼õÉÙ
+            // ä¸å¸Œæœ›æ•Œäººè¶Šæ¥è¶Šå¤šï¼Œåç»­æ³¢æ¬¡æ•Œäººæ•°é‡å‡å°‘
             int enemiesThisWave = baseEnemiesPerWave + (totalWaves - currentWave) * 2;
 
-            Debug.Log($"¿ªÊ¼µÚ {currentWave} ²¨£¬¹² {enemiesThisWave} ¸öµĞÈË¡£");
+            Debug.Log($"å¼€å§‹ç¬¬ {currentWave} æ³¢ï¼Œå…± {enemiesThisWave} ä¸ªæ•Œäººã€‚");
 
             for (int i = 0; i < enemiesThisWave; i++)
             {
@@ -64,72 +64,72 @@ public class FinalLevelController : MonoBehaviour
                 yield return new WaitForSeconds(spawnInterval);
             }
 
-            // µÈ´ıµ±Ç°²¨´ÎµÄËùÓĞµĞÈË±»ÇåÀí¸É¾»ºóÔÙ½øÈëÏÂÒ»²¨
+            // ç­‰å¾…å½“å‰æ³¢æ¬¡çš„æ‰€æœ‰æ•Œäººè¢«æ¸…ç†å¹²å‡€åå†è¿›å…¥ä¸‹ä¸€æ³¢
             yield return new WaitUntil(() => aliveEnemies <= 0);
-            Debug.Log($"µÚ {currentWave} ²¨ÒÑÇåÀíÍê±Ï¡£");
+            Debug.Log($"ç¬¬ {currentWave} æ³¢å·²æ¸…ç†å®Œæ¯•ã€‚");
 
-            yield return new WaitForSeconds(2f); // ÇåÍêºóÉÔµÈ
+            yield return new WaitForSeconds(2f); // æ¸…å®Œåç¨ç­‰
         }
 
-        Debug.Log("ËùÓĞ²¨´ÎÍê³É£¡");
+        Debug.Log("æ‰€æœ‰æ³¢æ¬¡å®Œæˆï¼");
         OnFinalWaveComplete();
     }
 
-    // ÀûÓÃĞ­³ÌÉú³ÉµĞÈË£¬È·±£Éú³ÉÇøÓòÄÚ²»»áÖØµş
+    // åˆ©ç”¨åç¨‹ç”Ÿæˆæ•Œäººï¼Œç¡®ä¿ç”ŸæˆåŒºåŸŸå†…ä¸ä¼šé‡å 
     IEnumerator SpawnEnemyRoutine()
     {
-        // ÉèÖÃ×î´ó³¢ÊÔ´ÎÊı£¬±ÜÃâ³¤Ê±¼äµÈ´ı
+        // è®¾ç½®æœ€å¤§å°è¯•æ¬¡æ•°ï¼Œé¿å…é•¿æ—¶é—´ç­‰å¾…
         int maxAttempts = 30;
         int attempts = 0;
         Transform chosenSpawn = null;
 
         while (attempts < maxAttempts)
         {
-            // Ëæ»úÑ¡È¡Ò»¸öÉú³Éµã
+            // éšæœºé€‰å–ä¸€ä¸ªç”Ÿæˆç‚¹
             chosenSpawn = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            // ÀûÓÃ OverlapSphere ¼ì²â¸ÃÇøÓòÊÇ·ñÒÑÓĞµĞÈË
+            // åˆ©ç”¨ OverlapSphere æ£€æµ‹è¯¥åŒºåŸŸæ˜¯å¦å·²æœ‰æ•Œäºº
             Collider[] colliders = Physics.OverlapSphere(chosenSpawn.position, safeSpawnRadius, enemyLayer);
             if (colliders.Length == 0)
             {
-                // ÕÒµ½¿ÕÏĞµÄÉú³Éµã£¬ÍË³öÑ­»·
+                // æ‰¾åˆ°ç©ºé—²çš„ç”Ÿæˆç‚¹ï¼Œé€€å‡ºå¾ªç¯
                 break;
             }
             else
             {
                 attempts++;
-                yield return null; // µÈ´ıÏÂÒ»Ö¡ÖØĞÂ¼ì²â
+                yield return null; // ç­‰å¾…ä¸‹ä¸€å¸§é‡æ–°æ£€æµ‹
             }
         }
 
-        // Èç¹û¾­¹ı¶à´Î³¢ÊÔÈÔÎ´ÕÒµ½¿ÕÏĞÎ»ÖÃ£¬ÔòÖ±½ÓÊ¹ÓÃ×îºóÑ¡ÔñµÄµã
+        // å¦‚æœç»è¿‡å¤šæ¬¡å°è¯•ä»æœªæ‰¾åˆ°ç©ºé—²ä½ç½®ï¼Œåˆ™ç›´æ¥ä½¿ç”¨æœ€åé€‰æ‹©çš„ç‚¹
         if (attempts >= maxAttempts)
         {
-            Debug.LogWarning("³¢ÊÔ¶à´ÎÎ´ÕÒµ½¿ÕÏĞÉú³Éµã£¬ÈÔÊ¹ÓÃ×îºóÑ¡¶¨Î»ÖÃÉú³ÉµĞÈË¡£");
+            Debug.LogWarning("å°è¯•å¤šæ¬¡æœªæ‰¾åˆ°ç©ºé—²ç”Ÿæˆç‚¹ï¼Œä»ä½¿ç”¨æœ€åé€‰å®šä½ç½®ç”Ÿæˆæ•Œäººã€‚");
         }
 
-        // ¸ù¾İµ±Ç°²¨´ÎÑ¡Ôñ¶ÔÓ¦Ç¿¶ÈµÄµĞÈËÔ¤ÖÆÌå£¨×î¶àÑ¡µ½Êı×é×îºóÒ»¸ö£©
+        // æ ¹æ®å½“å‰æ³¢æ¬¡é€‰æ‹©å¯¹åº”å¼ºåº¦çš„æ•Œäººé¢„åˆ¶ä½“ï¼ˆæœ€å¤šé€‰åˆ°æ•°ç»„æœ€åä¸€ä¸ªï¼‰
         int enemyIndex = Mathf.Min(currentWave - 1, enemyPrefabs.Length - 1);
         GameObject enemyPrefab = enemyPrefabs[enemyIndex];
 
         GameObject enemy = Instantiate(enemyPrefab, chosenSpawn.position, chosenSpawn.rotation);
-        aliveEnemies++; // Éú³ÉÊ±¼ÆÊı
+        aliveEnemies++; // ç”Ÿæˆæ—¶è®¡æ•°
 
-        // ¸øÉú³ÉµÄµĞÈË¸½¼ÓËÀÍö´¦Àí×é¼ş£¬ÓÃÓÚ¼ì²âËÀÍöÊ±µ÷ÓÃ»Øµ÷
+        // ç»™ç”Ÿæˆçš„æ•Œäººé™„åŠ æ­»äº¡å¤„ç†ç»„ä»¶ï¼Œç”¨äºæ£€æµ‹æ­»äº¡æ—¶è°ƒç”¨å›è°ƒ
         EnemyDeathHandler deathHandler = enemy.AddComponent<EnemyDeathHandler>();
         deathHandler.controller = this;
     }
 
-    // ¹©µĞÈËËÀÍöÊ±µ÷ÓÃ£¨¿ÉÓÉ EnemyDeathHandler »òµĞÈË×ÔÉíµ÷ÓÃ£©
+    // ä¾›æ•Œäººæ­»äº¡æ—¶è°ƒç”¨ï¼ˆå¯ç”± EnemyDeathHandler æˆ–æ•Œäººè‡ªèº«è°ƒç”¨ï¼‰
     public void OnEnemyKilled()
     {
         aliveEnemies--;
-        aliveEnemies = Mathf.Max(aliveEnemies, 0); // ·ÀÖ¹¼ÆÊı³ö´í
+        aliveEnemies = Mathf.Max(aliveEnemies, 0); // é˜²æ­¢è®¡æ•°å‡ºé”™
     }
 
     void OnFinalWaveComplete()
     {
-        Debug.Log("¹Ø¿¨Íê³É£¡");
-        // »ñÊ¤ÒÔºóµôÂä±¦Ïä£¬´ò¿ª±¦ÏäÒÔºóÔÙÏÔÊ¾Ê¤ÀûUI²¢´¦ÀíÊ¤ÀûÂß¼­
+        Debug.Log("å…³å¡å®Œæˆï¼");
+        // è·èƒœä»¥åæ‰è½å®ç®±ï¼Œæ‰“å¼€å®ç®±ä»¥åå†æ˜¾ç¤ºèƒœåˆ©UIå¹¶å¤„ç†èƒœåˆ©é€»è¾‘
         chest.SetActive(true);
     }
 }

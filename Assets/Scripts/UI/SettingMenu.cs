@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,7 +18,7 @@ public class SettingMenu : Manager<SettingMenu>
     protected override void Awake()
     {
         base.Awake();
-        DontDestroyOnLoad(this);
+        // This panel belongs to the scene UI and is recreated with that scene.
 
         bgmVolumnSlider.onValueChanged.AddListener(BGMManager.Instance.OnVolumeChanged);
         bgmVolumnSlider.value = BGMManager.Instance.GetVolume();

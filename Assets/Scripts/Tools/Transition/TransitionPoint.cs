@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +22,7 @@ public class TransitionPoint : MonoBehaviour
     {
         if (canTransit && Input.GetKeyDown(KeyCode.E))
         {
-            //TODO:´«ËÍ
+            //TODO:ä¼ é€
             SceneController.Instance.Transition2Destination(this);
         }
     }
@@ -34,7 +34,7 @@ public class TransitionPoint : MonoBehaviour
         {
             canTransit = true;
             GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().
-                UpdateHintUI(canTransit, "°´E´«ËÍ");
+                UpdateHintUI(canTransit, "æŒ‰Eä¼ é€");
         }
     }
 
@@ -43,7 +43,7 @@ public class TransitionPoint : MonoBehaviour
         if (other.tag == "Player")
         {
             canTransit = false;
-            GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().UpdateHintUI(canTransit, "°´E´«ËÍ");
+            GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().UpdateHintUI(canTransit, "æŒ‰Eä¼ é€");
         }
     }
 }

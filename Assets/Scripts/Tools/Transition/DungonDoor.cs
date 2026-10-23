@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,12 +12,12 @@ public class DungonDoor : TransitionPoint
             {
                 canTransit = true;
                 GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().
-                    UpdateHintUI(canTransit, "°´E´ò¿ª");
+                    UpdateHintUI(canTransit, "æŒ‰Eæ‰“å¼€");
             }
             else
             {
                 GameManager.Instance.playerStats.gameObject.GetComponent<InteractUI>().
-                    UpdateHintUI(true, "ĞèÒªÔ¿³×");
+                    UpdateHintUI(true, "éœ€è¦é’¥åŒ™");
             }
         }
     }
